@@ -14,9 +14,9 @@
 html, body {
 	background: var(--sand);
 	font-family: "Manrope", Arial, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 	scroll-behavior: smooth;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -24,9 +24,9 @@ html, body {
 }
 
 ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
+	width: 0;
+	height: 0;
+	background: transparent;
 }
 
 a {
@@ -93,17 +93,17 @@ a {
 }
 
 .nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  display: inline-flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: inline-flex;
 }
 
 .nav li {
-  display: block;
-  padding: 12px;
-  font-size: 18px;
+	display: block;
+	padding: 12px;
+	font-size: 18px;
 }
 
 button {
@@ -234,16 +234,16 @@ button:hover a {color: var(--coral);}
 
 @media only screen and (max-width: 820px) {
 
- .nav {
- 	width: calc(100vw - 60px);
- 	padding: 20px 30px;
- }
-  .text h1 {
-  	font-size: 4rem;
-  }
-  .text p {
-  	font-size: 18px;
-  }
+	.nav {
+	width: calc(100vw - 60px);
+	padding: 20px 30px;
+	}
+	.text h1 {
+	font-size: 4rem;
+	}
+	.text p {
+	font-size: 18px;
+	}
 }
 
 @media only screen and (max-width: 480px) {
@@ -270,7 +270,7 @@ button:hover a {color: var(--coral);}
 		font-size: 3rem;
 		line-height: 105%;
 	}
-
+	
 	button {
 		font-size: 16px;
 		padding: 10px 30px;
@@ -309,6 +309,7 @@ section:not(:nth-child(2)) {
 	grid-column: 5 / span 7;
 	font-size: 24px;
 	line-height: 150%;
+	padding-top: 20%;
 }
 
 
