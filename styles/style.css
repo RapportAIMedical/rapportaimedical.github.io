@@ -247,19 +247,33 @@ button:hover a {color: var(--coral);}
 }
 
 @media only screen and (max-width: 480px) {
+
+	.nav {
+		height: 50px;
+	}
+	
 	.hero {
 		flex-flow: column nowrap;
 	}
-
 	.hero img {
 		width: 100vw;
 		height: 50vh;
+		padding-top: 20px;
 	}
-
 	.hero .text {
 		width: calc(100vw - 60px);
 		height: 50vh;
 		margin-top: 0;
+		padding: 24px 30px;
+	}
+	.hero h1 {
+		font-size: 3rem;
+		line-height: 105%;
+	}
+
+	button {
+		font-size: 16px;
+		padding: 10px 30px;
 	}
 }
 
@@ -285,17 +299,9 @@ section:not(:nth-child(2)) {
 	}
 }
 
-#about {
-	height: calc(100vh - 200px);
-}
-
 .large-text {
 	font-size: 2.5rem;
 	line-height: 135%;
-}
-
-.col-6 {
-	grid-column: 1 / span 6;
 }
 
 #about .para {
@@ -336,7 +342,7 @@ section:not(:nth-child(2)) {
 }
 
 #product li {
-	list-style-image: url(assets/check.png);
+	list-style-image: url("../assets/check.png");
 	padding-inline-start: 24px;
 }
 
@@ -393,6 +399,8 @@ section:not(:nth-child(2)) {
 
 .journey img {
 	width: 75%;
+	margin: 0 auto;
+	display: block;
 }
 
 .find {
@@ -416,8 +424,6 @@ section:not(:nth-child(2)) {
 
 .admin img {
 	width: 50%;
-	display: block;
-	margin: 0 auto;
 }
 
 
@@ -457,13 +463,17 @@ section:not(:nth-child(2)) {
 	.find, .match, .admin {
 		grid-column: 1 / span 6;
 	}
-	.admin img {
+	.journey img {
 		width: 100%;
 	}
 }
 
 
 /* ––– CONTACT –––– */
+
+.col-6 {
+	grid-column: 1 / span 6;
+}
 
 .contact {
 	grid-row: 2;
@@ -477,14 +487,14 @@ section:not(:nth-child(2)) {
 
 input, textarea {
 	width: 100%;
-  padding: 12px 24px;
-  margin: 6px 0;
-  border: 0;
-  box-sizing: border-box;
-  border-radius: 6px;
-  font-size: 18px;
-  font-family: Manrope, Arial, sans-serif;
-  background-color: white;
+	padding: 12px 24px;
+	margin: 6px 0;
+	border: 0;
+	box-sizing: border-box;
+	border-radius: 6px;
+	font-size: 18px;
+	font-family: Manrope, Arial, sans-serif;
+	background-color: white;
 }
 
 label {
