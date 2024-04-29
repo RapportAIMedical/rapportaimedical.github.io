@@ -182,7 +182,7 @@ button:hover a {color: var(--coral);}
 
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 
 	.logo {
 		width: 140px;
@@ -246,7 +246,7 @@ button:hover a {color: var(--coral);}
 	}
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 
 	.nav {
 		height: 50px;
@@ -258,7 +258,7 @@ button:hover a {color: var(--coral);}
 	.hero img {
 		width: 100vw;
 		height: 50vh;
-		padding-top: 20px;
+		padding-top: 12%;
 	}
 	.hero .text {
 		width: calc(100vw - 60px);
@@ -313,7 +313,7 @@ section:not(:nth-child(2)) {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 
 	.large-text {
 		font-size: 2rem;
@@ -440,7 +440,7 @@ section:not(:nth-child(2)) {
 	}
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 	#product ul {
 		line-height: inherit;
 	}
@@ -466,6 +466,9 @@ section:not(:nth-child(2)) {
 	}
 	.journey img {
 		width: 100%;
+	}
+	.admin p {
+		text-align: left;
 	}
 }
 
@@ -533,7 +536,7 @@ label {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 	.contact {
 		grid-column: 1 / span 6;
 		width: calc(100vw - 60px);
@@ -586,7 +589,7 @@ footer p {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 540px) {
 	footer {
 		width: calc(100% - 60px);
 		padding: 48px 30px;
