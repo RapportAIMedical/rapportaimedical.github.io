@@ -518,12 +518,8 @@ label {
 }
 
 .submit:hover {
-	background: var(--black);
 	cursor: pointer;
-}
-
-.submit:hover {
-	color: var(--sand);
+	color: var(--coral);
 }
 
 #success h3 {
