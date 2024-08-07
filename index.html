@@ -16,10 +16,6 @@
   <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#ffa18a">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap')
-  </style>
   <script src="styles/float-panel.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -28,13 +24,14 @@
 
 <body>
   <header id="nav" class="nav">
-    <img src="assets/Rapport-logo-RGB_full_black.png" class="logo">
+    <div class="blur"></div>
+    <a href="index.html"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
     <div class="menu">
       <ul>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#product">What we do</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="product.html">Product</a></li>
       </ul>
-      <button type="button"><a href="#contact">Stay tuned</a></button>
+      <button type="button" class="button coral"><a href="contact.html">Request demo</a></button>
     </div>
     <div class="hamburger">
       <div class="line1"></div>
@@ -43,170 +40,216 @@
     </div>
     <div id="dropdown" class="dropdown">
       <ul>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">What we do</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="about.html">About us</a></li>\
+        <li><a href="product.html">Product</a></li>
+        <li><a href="contact.html">Request demo</a></li>
       </ul>
     </div>
   </header>
 
   <section id="hero">
-    <div class="hero">
-      <img src="assets/AskJune_screen.png">
-      <div class="text">
-        <h1>Building Better Healthcare</h1>
-        <div>
-          <p>A healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</p>
-          <button type="button"><a href="#about">Learn more</a></button>
+    <div class="headline">
+      <h1>Better Healthcare<br>for all</h1>
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-text">
+        <p>Let out intelligent technology handle the laborious burden, so your team can focus on delivering exceptional, personalized healthcare. Our intuitive system streamlines patient-provider interactions, allowing your team to build deeper, more meaningful connections.</p>
+        <button type="button" class="button darkgreen"><a href="contact.html">Request demo</a></button>
+      </div>
+      <div class="hero-img"><img src="assets/AskJune_screen.png"></div>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="meetJune">
+      <h1>Meet our AI Medical Assistant</h1><img src="assets/June-logo.png">
+      <h5>Created by data scientists, trained by doctors</h5>
+    </div>
+    <div class="june-features">
+      <div id="feature-img">
+        <img class="fp1" style="display:block" src="assets/AskJune_screen.png">
+        <img class="fp2" src="assets/AskJune_screen.png">
+        <img class="fp3" src="assets/AskJune_screen.png">
+        <img class="fp4" src="assets/AskJune_screen.png">
+      </div>
+      <div id="feature-points">
+        <div class="fp1" onclick="show(this)">
+          <h3 style="font-weight:600">Conversational Medical Advisor, Powered by Intelligence</h3>
+          <ul style="display:block">
+            <li>Our AI is trained by doctors and language experts to detect medical issues and symptoms, even from casual conversation.</li>
+            <li>We explain any unfamiliar medical terms in plain, easy-to-understand language.</li>
+            <li>Our intelligent system asks thoughtful follow-up questions to hone in on your specific condition and symptoms.</li>
+            <li>We summarize the key details of your medical history and symptoms to aid further analysis.</li>
+          </ul>
+        </div>
+
+        <div class="fp2" onclick="show(this)">
+          <h3>Clinically Trained Diagnostic System</h3>
+          <ul>
+            <li>Our complex proprietary recommendation system compares all possible diagnoses against the patient's symptoms.</li>
+            <li>The system mimics the nuanced thought process of an experienced human doctor.</li>
+            <li>It intelligently accounts for how the same symptom can carry different significance in different scenarios.</li>
+            <li>The full version continuously refines diagnostic accuracy through machine learning from doctor feedback.</li>
+          </ul>
+        </div>
+
+        <div class="fp3" onclick="show(this)">
+          <h3>Comprehensive and Tailored Evaluation Reports</h3>
+          <ul>
+            <li>Personalized reports for both healthcare providers and patients</li>
+            <li>Detailed transcript and summary of your medical evaluation</li>
+            <li>Estimated likelihood of potential conditions and relevant specialties</li>
+            <li>Assessment of symptom severity and urgency</li>
+            <li>Customized self-care tips and illness information</li>
+          </ul>
+        </div>
+
+        <div class="fp4" onclick="show(this)">
+          <h3>Simplified Doctor Matching & Booking</h3>
+          <ul>
+            <li>AI-recommended specialists based on patients' specific needs</li>
+            <li>Transparent provider details like specialty, qualifications, and expertise</li>
+            <li>Seamless scheduling integration with your healthcare system</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <p class="large-text col-8 slideanim">Founded in 2023 by two friends that witnessed the issues of a cumbersome and stagnant healthcare system first hand from a doctor and a patient’s perspective and saw the opportunities and potential that advancements in AI and technology could bring, they decided to match a problem to a solution.</p>
-    <p class="para slideanim">Designed with the needs of healthcare providers and patients in mind, the platform features an AI medical assistant that combines advancements in natural language processing and machine learning with their in-house diagnostics algorithm, in addition to other solutions in pre & post consultation patient management, care and communications.</p>
+  <section id="value">
   </section>
 
-  <section id="product">
-    <p class="large-text col-8 slideanim">We aim to support healthcare professionals by</p>
-    <ul class="col-8 slideanim">
-      <li>Providing pre-diagnostic analytics</li>
-      <li>Streamlining of workflows in:</li>
-    </ul>
-    <div class="workflow slideanim">
-      <div>
-        <p><span>Patient intake</span></p>
-        <img src="https://static.thenounproject.com/png/5995941-200.png">
+  <section id="use-cases">
+    <h2>Explore how our solution can be integrated into your services</h2>
+    <div>
+      <div id="case-tabs">
+        <button class="case-tab-button online active" onclick="tab(this, 'online')">Online Platform</button>
+        <button class="case-tab-button onSite" onclick="tab(this, 'onSite')">In Person</button>
+        <button class="case-tab-button compApp" onclick="tab(this, 'compApp')">Company App</button>
       </div>
-      <div>
-        <p><span>Triaging</span></p>
-        <img src="https://static.thenounproject.com/png/5995951-200.png">
+
+      <div id="case-content">
+      <div class="case-content online active">
+        <h6>Best suited for Chain Clinics or Specialty Out-Patient Departments</h6>
+        <ul>
+          <li>Allow your patient to gain access to your doctor early at their home</li>
+          <li>Boost online exposure and patient acquisition</li>
+        </ul>
       </div>
-      <div>
-        <p><span>Diagnosis</span></p>
-        <img src="https://static.thenounproject.com/png/5995971-200.png">
+
+      <div class="case-content onSite">
+        <h6>Best suited for A&E or General Clinic Department</h6>
+        <ul>
+          <li>Waiting time → can be utilized by AskJune for initial evaluation and automatic registration</li>
+          <li>Streamline workflow → Reduce nursing staff on tedious paper work</li>
+          <li>Assist doctor’s consultation by summarizing the basic medical evaluation and allow doctors to utilize their time on more important things</li>
+        </ul>
       </div>
-      <div>
-        <p><span>Treatment</span></p>
-        <img src="https://static.thenounproject.com/png/5995965-200.png">
+
+      <div class="case-content compApp">
+        <h6>Best suited for Insurance Companies or Hospitals</h6>
+        <ul>
+          <li>Customized incorporation (same as online platform and onsite devices) into company’s application</li>
+          <li>Accurate specialty matching - offer your clients a better after-sales service like hiring a medical professional in your team</li>
+          <li>One-step doctor match can be redirected to a selected list of company’s listed doctor</li>
+        </ul>
       </div>
-      <div>
-        <p>Post-consultation Care</p>
-        <img src="https://static.thenounproject.com/png/5995950-200.png">
       </div>
+
     </div>
   </section>
 
-  <section id="patient">
-    <p class="large-text col-8 slideanim">At the same time, we improve patient experience and outcome in their otherwise painful healthcare journey</p>
-    <div class="journey">
-      <div class="find slideanim">
-        <p>From finding relevant medical information,</p>
-        <img src="https://static.thenounproject.com/png/5995948-200.png">
-      </div>
-      <div class="match slideanim">
-        <p>matching healthcare providers</p>
-        <img src="https://static.thenounproject.com/png/5995940-200.png">
-      </div>
-      <div class="admin slideanim">
-        <p>to dealing with administrative hurdles before and after their consultation.</p>
-        <img src="https://static.thenounproject.com/png/6548003-200.png">
-      </div>
-    </div>
+  <section id="aboutus">
+    <h6>About us</h6>
+    <h2>At Rapport, we're revolutionizing healthcare by empowering hospitals and clinics with an AI-driven solution.</h2>
+    <p>Unlike generic chatbots or fragmented healthcare IT systems, our medically trained LLM and proprietary diagnostic algorithm power a unified, intelligent platform  that streamlines operations, improves patient outcomes, and delivers powerful data insights to drive better decision-making.</p>
+    <button class="text-bt"><a href="about.html">Learn more</a></button>
   </section>
 
-  <section id="contact">
-    <p class="large-text col-6 slideanim">We are working hard at developing our platform and are hoping to launch as soon as possible.</p>
-    <div class="contact slideanim">
-      <p>In the meantime, if you are interested in partnering with us, testing our platform features or have any questions, please do not hesitate to reach out. Our goal is to develop a user-centric platform and your feedback is extremely valuable to us.</p>
-
- 
-      <form id="form" 
-            name="form"
-            method="POST"
-            action="https://script.google.com/macros/s/AKfycbzdUxN8L274DKXQLpvoy-CyUVDnXYI-HbNuLBfKEqxHdtgOwtSQlRjPpAJEBSiMrhPe/exec"
-            onsubmit="return validate();"
-            target="iframe"> 
-
-        <div class="input_field"> 
-          <label for="name">Name</label>
-          <input type="text" 
-                 placeholder="Your Name" 
-                 name="Name"
-                 id="name"> 
-        </div> 
-
-        <div class="input_field"> 
-          <label for="email">Email *</label>
-          <input type="text" 
-                 placeholder="yourname@email.com" 
-                 name="Email"
-                 id="email"> 
-        </div>
-        <div id="error"> </div>
-
-        <div class="input_field">
-          <label for="message">Message</label>
-          <textarea name="Message" placeholder="What would you like to tell us?" style="height: 200px"></textarea>
-        </div>
-        
-        <div> 
-            <button type="submit" id="submitbtn" class="submit"><span id="submitted">Submit</span></button>
-        </div> 
-      </form> 
-      <iframe name="iframe" style="position: absolute; visibility: hidden"></iframe>
-      <div id="success" style="display:none">
-        <h3>Thanks for your interest!</h3>
-        <p>We have received your email. If you had a question or feedback, we will respond as soon as possible.</p>
-      </div>
-
-      <p>Or shoot us an email at <a href="mailto:admin@rapportaimedical.com" style="text-decoration:underline;">admin@rapportaimedical.com</a>.</p>
+  <section id="CTA">
+    <div class="CTA-text">
+      <h4>We are working hard at developing our platform and are hoping to launch as soon as possible.</h4>
+      <button type="button" class="button darkgreen"><a href="contact.html">Request demo</a></button>
+    </div>
+    <div class="graphic">
+      <div class="quadrant white round_TL"></div>
+      <div class="square coral"></div>
     </div>
   </section>
 
   <footer>
-    <div class="footer">
-      <img src="assets/Rapport-logo-RGB_tagline_color.png">
-      <div class="socials">
-        <h6>Follow us</h6>
-        <div class="icons">
-<!--           <a href="#">
-            <svg class="icon icon-instagram">
-              <symbol id="icon-instagram" viewBox="0 0 32 32">
-                <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-                <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-                <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-              </symbol>
-              <use xlink:href="#icon-instagram"></use>
-            </svg>
-          </a> -->
-          <a href="https://www.twitter.com/RapportAiMed" target="_blank">
-            <svg class="icon icon-x">
-              <symbol id="icon-x" viewBox="0 0 32 32">
-                <path d="M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z"></path>
-              </symbol>
-              <use xlink:href="#icon-x"></use>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/company/rapport-ai-medical/" target="_blank">
-            <svg class="icon icon-linkedin">
-              <symbol id="icon-linkedin" viewBox="0 0 32 32">
-                <path d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z"></path>
-              </symbol>
-                <use xlink:href="#icon-linkedin"></use>
-              </svg>
-          </a>
-        </div>
-        <p><a href="mailto:admin@rapportaimedical.com" style="text-decoration:underline;">admin@rapportaimedical.com</a></p>
+  <div class="footer-top">
+    <div class="footer-left">
+      <div class="logo"><img src="assets/Rapport-logo-RGB_symbol_black.png"></div>
+
+      <div class="desc">
+        <h6>Founded in 2023, Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
+        <button class="button"><a href="contact.html">Request demo</a></button>
       </div>
     </div>
-    <p>Copyright 2024 © Rapport AI Medical. All rights reserved.
-      <br>
-      Website designed and coded by <a href="https://antoinettechow.com/" target="_blank">Antoinette Chow</a>
-      <br>
-      Icons by putrakali735, from thenounproject.com CC BY 3.0
-    </p>
+
+    <div class="footer-right">
+      <div class="sub">
+        <h6>Stay in touch</h6>
+        <form id="subscribe" method="POST" action="subscribe.php"> 
+            <input type="email" name="subscribe" 
+                id="subscribe" 
+                placeholder="yourname@email.com" 
+                required> 
+            <button type="submit" class="button outlined">Submit</button> 
+        </form> 
+      </div>
+
+      <div class="page-links">
+        <p><a href="about.html">About us</a></p>
+        <p><a href="product.html">Product</a></p>
+        <p><a href="contact.html">Contact us</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="socials">
+      <div class="icons">
+        <!-- <a href="#">
+          <svg class="icon icon-instagram">
+            <symbol id="icon-instagram" viewBox="0 0 32 32">
+              <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
+              <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
+              <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
+            </symbol>
+            <use xlink:href="#icon-instagram"></use>
+          </svg>
+        </a> -->
+        <a href="https://www.twitter.com/RapportAiMed" target="_blank">
+          <svg class="icon icon-x">
+            <symbol id="icon-x" viewBox="0 0 32 32">
+              <path d="M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z"></path>
+            </symbol>
+            <use xlink:href="#icon-x"></use>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/rapport-ai-medical/" target="_blank">
+          <svg class="icon icon-linkedin">
+            <symbol id="icon-linkedin" viewBox="0 0 32 32">
+              <path d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z"></path>
+            </symbol>
+              <use xlink:href="#icon-linkedin"></use>
+            </svg>
+        </a>
+      </div>
+      <p><a href="mailto:admin@rapportaimedical.com" style="text-decoration:underline;">admin@rapportaimedical.com</a></p>
+    </div>
+
+    <div class="smallprint">
+      <p>
+        <span>© 2024 Rapport AI Medical. All rights reserved.</span>
+        &ensp;
+        <span>Website designed and developed by <a href="https://antoinettechow.com/" target="_blank">Antoinette Chow</a></span>
+      </p>
+    </div>
+
+  </div>
   </footer>
 
 
@@ -225,7 +268,6 @@
     prevScrollpos = currentScrollPos;
   }
 
-
   // Hamburger menu
 
   let open = document.querySelector(".hamburger");
@@ -236,54 +278,41 @@
         }
 
 
-  // Required field
+  // Show June feature points
 
-  function validate() { 
-    let email = document.getElementById("email").value; 
-    let error = document.getElementById("error"); 
-  
-    error.style.padding = "0 0 12px 0"; 
-  
-    let errors = []; 
-  
-    if (email.indexOf("@") == -1 || email.length < 6) { 
-        errors.push( 
-            "Please enter a valid email address");} 
-  
-    if (errors.length > 0) { 
-        error.innerHTML = 
-            errors.join("<br>"); 
-        return false;} 
-    else { 
-      document.getElementById("error").style.display = "none";
+  function show(e) {
+    let activeClassName = e.className;
+    let featurePoints = document.getElementById("feature-points").querySelectorAll("div");
+    let featureImg = document.getElementById("feature-img");
+    let featureImgItems = Array.from(featureImg.getElementsByTagName("div"));
 
-      // Send Contact Form input to Google Sheets
-      
-      const form = document.getElementById("form");
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const data = new FormData(form);
-        const action = e.target.action;
-        fetch(action, {
-          method: "POST",
-          body: data,
-        })
-          .then((res) => {
-            console.log(res, "response");
-          })
-          .catch((e) => {
-            console.error(e, "error"); // "oh, no!"
-          });
-      });
-      
-      var submitbtn = document.getElementById("submitbtn");
-        submitbtn.disabled = true;
-        submitbtn.style.backgroundColor = "#b1e0b6";
-        submitbtn.style.color = "var(--black)";
-      document.getElementById("submitted").innerHTML = 'Submitted!';
-      document.getElementById("success").style.display = "block";
+    featurePoints.forEach((fp) => {
+      let isActive = fp.className === activeClassName;
+      fp.querySelector("h3").style.fontWeight = isActive ? 600 : 400;
+      fp.querySelector("ul").style.display = isActive ? "block" : "none";
+    });
 
-      return true;}
+    featureImgItems.forEach((oi) => {
+      oi.style.display = oi.classList.contains(activeClassName) ? "block" : "none";
+    });
+  }
+
+
+  // Switch Case Study Tabs
+
+  function tab(element, argument) {
+    let tabs = document.getElementById("case-tabs");
+    let buttons = Array.from(tabs.getElementsByTagName("button"));
+    let caseContent = document.getElementById("case-content");
+    let content = Array.from(caseContent.getElementsByTagName("div"));
+
+    buttons.forEach((bt) => {
+      bt.classList.toggle("active", bt.isSameNode(element));
+    });
+
+    content.forEach((ct) => {
+      ct.classList.toggle("active", ct.className.includes(argument));
+    });
   }
 
 </script>
