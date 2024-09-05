@@ -261,7 +261,7 @@ ul li {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	.nav {
 		height: 50px;
@@ -343,7 +343,7 @@ section:not:first-child {
 	border-bottom-right-radius: 400px;
 }
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	.headline, .hero-bottom {
 		padding: 30px;
@@ -354,7 +354,7 @@ section:not:first-child {
 	}
 
 	.headline h1 {
-		font-size: 3.5em;
+		font-size: 3.25em;
 	}
 
 	.headline img {
@@ -445,7 +445,7 @@ section:not:first-child {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#overview {
 		padding: 60px 30px;
@@ -520,7 +520,7 @@ section:not:first-child {
  }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#use-cases {
 		padding: 30px;
@@ -580,7 +580,7 @@ section:not:first-child {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#aboutus {
 		padding: 60px 30px;
@@ -645,7 +645,7 @@ section:not:first-child {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#CTA {
 		flex-flow: column nowrap;
@@ -769,7 +769,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	footer {
 		width: calc(100% - 60px);
@@ -841,7 +841,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	.page_title {
 		padding-left: 30px;
@@ -938,7 +938,7 @@ label {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 	.contact {
 		grid-column: 1 / span 6;
 		width: calc(100vw - 60px);
@@ -1009,7 +1009,7 @@ label {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#about {
 		padding-bottom: 0;
@@ -1080,7 +1080,7 @@ label {
 }
 
 
-@media only screen and (max-width: 725px) {
+@media only screen and (max-width: 750px) {
 
 	#product .page_title h1 {
 		line-height: 1;
