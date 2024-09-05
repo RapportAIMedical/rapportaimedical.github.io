@@ -303,7 +303,7 @@ section:not:first-child {
 }
 
 .headline h1 {
-	font-size: 5em;
+	font-size: 5rem;
 	line-height: 1.1;
 }
 
@@ -354,7 +354,7 @@ section:not:first-child {
 	}
 
 	.headline h1 {
-		font-size: 3.25em;
+		font-size: 3.25rem;
 	}
 
 	.headline img {
@@ -761,8 +761,8 @@ footer {
 
 .icon {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.5rem;
+  height: 1.5rem;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
@@ -983,7 +983,7 @@ label {
 }
 
 #about-content h2 {
-	font-size: 2em;
+	font-size: 2rem;
 	padding: 36px 0 12px 0;
 }
 
@@ -1001,11 +1001,11 @@ label {
 .vision ol {
 	list-style-type: lower-roman;
 	line-height: 1.5;
-	padding-left: 1.5em;
+	padding-left: 1.5rem;
 }
 
 .vision li {
-	padding: 0 1em;
+	padding: 0 1rem;
 }
 
 
