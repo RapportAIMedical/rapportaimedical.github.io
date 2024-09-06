@@ -23,96 +23,106 @@
 </head>
 
 <body>
-  <header id="nav" class="nav">
+  <header id="nav">
     <div class="blur"></div>
-    <a href="index"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
-    <div class="menu">
-      <ul>
-        <li><a href="about">About us</a></li>
-        <li><a href="product">Meet June</a></li>
-      </ul>
-      <button type="button" class="button coral"><a href="contact">Request demo</a></button>
-    </div>
-    <div class="hamburger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-    <div id="dropdown" class="dropdown">
-      <ul>
-        <li><a href="product">Meet June</a></li>
-        <li><a href="about">About us</a></li>
-        <li><a href="contact">Request demo</a></li>
-      </ul>
+    <div class="nav-content">
+      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
+      <div class="menu">
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="product">Meet June</a></li>
+        </ul>
+        <button type="button" class="button coral"><a href="contact">Request demo</a></button>
+      </div>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div id="dropdown" class="dropdown">
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="product">Meet June</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <section id="product" class="page hero">
     <div class="page_title meetJune">
       <h1>Meet our AI Medical Assistant</h1><img src="assets/June-logo.png">
-      <h5>Created by doctors, Built by data scientists, Trusted by Patients</h5>
+      <h5>Created by doctors, Built by data scientists, and Trusted by Patients</h5>
     </div>
     <div class="product_hero"><img src="assets/AskJune_iphone.png"></div>
   </section>
 
   <section id="product-content">
-    <div class="chat">
-      <img src="assets/">
-      <div class="right">
-        <h2>Conversational Medical Advisor, Powered by Intelligence</h2>
+    <div class="matching">
+      <img src="assets/AskJune_matching.jpg" alt="Healthcare provider fitting an orthopedic device onto person's wrist. Credit: Tom Claes">
+      <div class="product-text right">
+        <h2>Accurate Doctor-Patient Matching & Streamlined Clinical Flow</h2>
         <ul>
-          <li>Our AI is trained by doctors and language experts to detect medical issues and symptoms, even from casual conversation.</li>
-          <li>We explain any unfamiliar medical terms in plain, easy-to-understand language.</li>
-          <li>Our intelligent system asks thoughtful follow-up questions to hone in on your specific condition and symptoms.</li>
-          <li>We summarize the key details of your medical history and symptoms to aid further analysis.</li>
+          <li>AI powered recommendations and doctor matching based on patients' specific needs</li>
+          <li>Seamless integration with online booking (or other CRM / ERP) systems</li>
+          <li>Streamlined clinical flow from booking, pre-diagnostic evaluation, check-in and consultation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chat">
+      <img src="assets/AskJune_convo.png" class="right">
+      <div class="product-text">
+        <h2>Conversational Medical Assistant, Powered by Intelligence</h2>
+        <ul>
+          <li>Advanced Large Language Model (LLM) capable of conversing fluently in the local languages (including Cantonese slangs), allowing patients to freely express their medical concerns</li>
+          <li>Trained by doctors to interpret medical context from layman conversation and detect medical issues for further analysis</li>
+          <li>Ability to explain and elaborate any unfamiliar medical terms or concepts</li>
+          <li>Ability to respond to patient input in real time and ask thoughtful follow-up questions to hone in on specific symptoms</li>
         </ul>
       </div>
     </div>
 
     <div class="system">
-      <img src="assets/" class="right">
-      <div>
-        <h2>Clinically Trained Diagnostic System</h2>
+      <img src="assets/AskJune_trained.png">
+      <div class="product-text right">
+        <h2>Clinically Trained Diagnostic & Recommendation System</h2>
         <ul>
-          <li>Our complex proprietary recommendation system compares all possible diagnoses against the patient's symptoms.</li>
-          <li>The system mimics the nuanced thought process of an experienced human doctor.</li>
-          <li>It intelligently accounts for how the same symptom can carry different significance in different scenarios.</li>
-          <li>The full version continuously refines diagnostic accuracy through machine learning from doctor feedback.</li>
+          <li>Intricately designed diagnostic algorithm considers a matrix of possible diagnoses against the patient's symptoms</li>
+          <li>Mimics the nuanced thought process of an experienced human doctor</li>
+          <li>Intelligently accounts for how the same symptom can carry differing significance under different scenarios</li>
         </ul>
       </div>
     </div>
 
     <div class="eval">
-      <img src="assets/">
-      <div class="right">
-        <h2>Comprehensive and Tailored Evaluation Reports</h2>
+      <img src="assets/AskJune_EvaluationReport.png" class="right">
+      <div class="product-text">
+        <h2>Personalised Recommendations and Evaluation Reports</h2>
         <ul>
-          <li>Personalized reports for both healthcare providers and patients</li>
-          <li>Detailed transcript and summary of your medical evaluation</li>
-          <li>Estimated likelihood of potential conditions and relevant specialties</li>
-          <li>Assessment of symptom severity and urgency</li>
-          <li>Customized self-care tips and illness information</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="matching">
-      <img src="assets/" class="right">
-      <div>
-        <h2>Simplified Doctor Matching & Booking</h2>
-        <ul>
-          <li>AI-recommended specialists based on patients' specific needs</li>
-          <li>Transparent provider details like specialty, qualifications, and expertise</li>
-          <li>Seamless scheduling integration with your healthcare system</li>
+          <li>Tailored and personalised reports for both healthcare providers and patients</li>
+            <li>For Patients:</li>
+            <li style="list-style-type:none"><ul class="second-lvl">
+              <li>Personalised recommendation on next step and self-care tips</li>
+              <li>Assessment of symptom severity and potential relevant conditions</li>
+            </ul></li>
+            <li>For Providers:</li>
+            <li style="list-style-type:none"><ul class="second-lvl">
+              <li>Summary of evaluation for easy doctor hand-over pre-consultation</li>
+              <li>Attachment of relevant differential diagnoses considered and disease information for intelligent point-of-care support for doctors</li>
+            </ul></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="CTA">
+  <section id="CTA" class="coral">
+    <div class="container">
     <div class="CTA-text">
-      <h4>We are working hard at developing our platform and are hoping to launch as soon as possible.</h4>
-      <button type="button" class="button darkgreen"><a href="contact">Request demo</a></button>
+      <h4>Our goal is to provide you with a customized solution tailored to your needs.</h4>
+      <p>Connect with our medical and tech experts to discuss your preferences.</p>
+      <button type="button" class="button darkgreen"><a href="contact">Chat with us</a></button>
+    </div>
     </div>
     <div class="graphic">
       <div class="quadrant white round_TL"></div>
@@ -121,12 +131,13 @@
   </section>
 
   <footer>
+  <div id="footer">
   <div class="footer-top">
     <div class="footer-left">
       <div class="logo"><img src="assets/Rapport-logo-RGB_symbol_black.png"></div>
 
       <div class="desc">
-        <h6>Founded in 2023, Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
+        <h6>Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
         <button class="button"><a href="contact">Request demo</a></button>
       </div>
     </div>
@@ -192,6 +203,7 @@
       </p>
     </div>
 
+  </div>
   </div>
   </footer>
 

@@ -23,38 +23,42 @@
 </head>
 
 <body>
-  <header id="nav" class="nav">
+  <header id="nav">
     <div class="blur"></div>
-    <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
-    <div class="menu">
-      <ul>
-        <li><a href="about">About us</a></li>
-        <li><a href="product">Meet June</a></li>
-      </ul>
-      <button type="button" class="button coral"><a href="contact">Request demo</a></button>
-    </div>
-    <div class="hamburger">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-    <div id="dropdown" class="dropdown">
-      <ul>
-        <li><a href="about">About us</a></li>
-        <li><a href="product">Meet June</a></li>
-        <li><a href="contact">Contact</a></li>
-      </ul>
+    <div class="nav-content">
+      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
+      <div class="menu">
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="product">Meet June</a></li>
+        </ul>
+        <button type="button" class="button coral"><a href="contact">Request demo</a></button>
+      </div>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div id="dropdown" class="dropdown">
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="product">Meet June</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <section id="hero">
-    <div class="headline blue">
-      <h1>Better Healthcare<br>for all</h1>
+    <div class="blue"><div class="container">
+    <div class="headline">
+      <h1>Let's make healthcare<br>better <span style="color:white;">together</span></h1>
       <img src="assets/graphic_outline.png">
     </div>
+    </div></div>
     <div class="hero-bottom">
       <div class="hero-text">
-        <p>Let our intelligent technology handle the laborious burden, so your team can focus on delivering exceptional, personalized healthcare. Our intuitive system streamlines patient-provider interactions, allowing your team to build deeper, more meaningful connections.</p>
+        <p>Leverage the power of AI to improve the efficiency, capacity and quality of healthcare services, so you can care and connect with your patients better.</p>
         <button type="button" class="button darkgreen"><a href="contact">Request demo</a></button>
       </div>
       <div class="hero-img"><img src="assets/AskJune_screen.png"></div>
@@ -64,53 +68,58 @@
   <section id="overview">
     <div class="meetJune">
       <h1>Meet our AI Medical Assistant</h1><img src="assets/June-logo.png">
-      <h5>Created by doctors, Built by data scientists, Trusted by Patients</h5>
+      <h5>Created by doctors, Built by data scientists, and Trusted by Patients</h5>
     </div>
     <div class="june-features">
       <div id="feature-img">
-        <img class="fp 1" style="display:block" src="assets/AskJune_screen.png">
-        <img class="fp 2" src="assets/AskJune_screen.png">
-        <img class="fp 3" src="assets/AskJune_screen.png">
-        <img class="fp 4" src="assets/AskJune_screen.png">
+        <img class="fp 1" style="display:block" src="assets/AskJune_matching.jpg">
+        <img class="fp 2" src="assets/AskJune_convo.png">
+        <img class="fp 3" src="assets/AskJune_trained.png">
+        <img class="fp 4" src="assets/AskJune_iphone.png" style="object-position:85%;">
       </div>
       <div id="feature-points">
         <div class="fp 1" onclick="show(this)">
-          <h3 style="font-weight:600">Conversational Medical Advisor, Powered by Intelligence</h3>
+          <h3 style="font-weight:600">Accurate Doctor-Patient Matching & Streamlined Clinical Flow<span>+</span></h3>
           <ul style="display:block">
-            <li>Our AI is trained by doctors and language experts to detect medical issues and symptoms, even from casual conversation.</li>
-            <li>We explain any unfamiliar medical terms in plain, easy-to-understand language.</li>
-            <li>Our intelligent system asks thoughtful follow-up questions to hone in on your specific condition and symptoms.</li>
-            <li>We summarize the key details of your medical history and symptoms to aid further analysis.</li>
+            <li>AI powered recommendations and doctor matching based on patients' specific needs</li>
+            <li>Seamless integration with online booking (or other CRM / ERP) systems</li>
+            <li>Streamlined clinical flow from booking, pre-diagnostic evaluation, check-in and consultation</li>
           </ul>
-        </div>
+        </div><span class="line"></span>
 
         <div class="fp 2" onclick="show(this)">
-          <h3>Clinically Trained Diagnostic System</h3>
+          <h3>Conversational Medical Assistant, Powered by Intelligence<span>+</span></h3>
           <ul>
-            <li>Our complex proprietary recommendation system compares all possible diagnoses against the patient's symptoms.</li>
-            <li>The system mimics the nuanced thought process of an experienced human doctor.</li>
-            <li>It intelligently accounts for how the same symptom can carry different significance in different scenarios.</li>
-            <li>The full version continuously refines diagnostic accuracy through machine learning from doctor feedback.</li>
+            <li>Advanced Large Language Model (LLM) capable of conversing fluently in the local languages (including Cantonese slangs), allowing patients to freely express their medical concerns</li>
+            <li>Trained by doctors to interpret medical context from layman conversation and detect medical issues for further analysis</li>
+            <li>Ability to explain and elaborate any unfamiliar medical terms or concepts</li>
+            <li>Ability to respond to patient input in real time and ask thoughtful follow-up questions to hone in on specific symptoms</li>
           </ul>
-        </div>
+        </div><span class="line"></span>
 
         <div class="fp 3" onclick="show(this)">
-          <h3>Simplified Provider Matching & Booking</h3>
+          <h3>Clinically Trained Diagnostic & Recommendation System<span>+</span></h3>
           <ul>
-            <li>AI-recommended specialists based on patients' specific needs</li>
-            <li>Transparent provider details like specialty, qualifications, and expertise</li>
-            <li>Seamless scheduling integration with your healthcare system</li>
+            <li>Intricately designed diagnostic algorithm considers a matrix of possible diagnoses against the patient's symptoms</li>
+            <li>Mimics the nuanced thought process of an experienced human doctor</li>
+            <li>Intelligently accounts for how the same symptom can carry differing significance under different scenarios</li>
           </ul>
-        </div>
+        </div><span class="line"></span>
 
         <div class="fp 4" onclick="show(this)">
-          <h3>Comprehensive and Tailored Evaluation Reports</h3>
+          <h3>Personalised Recommendations and Evaluation Reports<span>+</span></h3>
           <ul>
-            <li>Personalized reports for both healthcare providers and patients</li>
-            <li>Detailed transcript and summary of your medical evaluation</li>
-            <li>Estimated likelihood of potential conditions and relevant specialties</li>
-            <li>Assessment of symptom severity and urgency</li>
-            <li>Customized self-care tips and illness information</li>
+            <li>Tailored and personalised reports for both healthcare providers and patients</li>
+            <li>For Patients:</li>
+            <li style="list-style-type:none"><ul class="second-lvl">
+              <li>Personalised recommendation on next step and self-care tips</li>
+              <li>Assessment of symptom severity and potential relevant conditions</li>
+            </ul></li>
+            <li>For Providers:</li>
+            <li style="list-style-type:none"><ul class="second-lvl">
+              <li>Summary of evaluation for easy doctor hand-over pre-consultation</li>
+              <li>Attachment of relevant differential diagnoses considered and disease information for intelligent point-of-care support for doctors</li>
+            </ul></li>
           </ul>
         </div>
 
@@ -162,18 +171,22 @@
     </div>
   </section>
 
-  <section id="aboutus"class="cyan">
+  <section id="aboutus" class="cyan">
+    <div class="container">
     <h6>About us</h6>
     <h2>At Rapport, we're revolutionizing healthcare by empowering hospitals and clinics with an AI-driven solution.</h2>
     <p>Unlike generic chatbots or fragmented healthcare IT systems, our medically trained LLM and proprietary diagnostic algorithm power a unified, intelligent platform  that streamlines operations, improves patient outcomes, and delivers powerful data insights to drive better decision-making.</p>
     <button class="text-bt"><a href="about">Learn more</a></button>
+    </div>
   </section>
 
-  <section id="CTA">
+  <section id="CTA" class="coral">
+    <div class="container">
     <div class="CTA-text">
       <h4>Our goal is to provide you with a customized solution tailored to your needs.</h4>
       <p>Connect with our medical and tech experts to discuss your preferences.</p>
       <button type="button" class="button darkgreen"><a href="contact">Chat with us</a></button>
+    </div>
     </div>
     <div class="graphic">
       <div class="quadrant white round_TL"></div>
@@ -182,12 +195,13 @@
   </section>
 
   <footer>
+  <div id="footer">
   <div class="footer-top">
     <div class="footer-left">
       <div class="logo"><img src="assets/Rapport-logo-RGB_symbol_black.png"></div>
 
       <div class="desc">
-        <h6>Founded in 2023, Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
+        <h6>Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
         <button class="button"><a href="contact">Request demo</a></button>
       </div>
     </div>
@@ -254,6 +268,7 @@
     </div>
 
   </div>
+  </div>
   </footer>
 
 
@@ -294,6 +309,7 @@
     featurePoints.forEach((fp) => {
       let isActive = fp.className === activeClassName;
       fp.querySelector("h3").style.fontWeight = isActive ? 600 : 400;
+      fp.querySelector("span").innerHTML = isActive ? "-" : "+";
       fp.querySelector("ul").style.display = isActive ? "block" : "none";
     });
 
