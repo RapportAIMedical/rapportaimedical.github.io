@@ -20,13 +20,11 @@
 }
 
 @font-face {
- 	font-family: Platypi;
- 	src: url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+ 	font-family: 'Platypi';
 }
 
 @font-face {
-	font-family: Albert Sans;
-	src: url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap');
+	font-family: 'Albert Sans';
 }
 
 html, body {
@@ -459,9 +457,9 @@ section:not:first-child {
 }
 
 ul.second-lvl {
-	padding-top: 0;
-	display: block;
-	list-style-type: circle;
+	padding-top: 0 !important;
+	display: block !important;
+	list-style-type: circle !important;
 }
 
 #feature-points div {
@@ -1118,12 +1116,13 @@ label {
 	flex-flow: row nowrap;
 	gap: 24px;
 	width: 100%;
-	max-height: 400px;
+	max-height: 80vw;
 	justify-content: space-between;
 }
 
 #product-content img {
 	width: calc(50% - 12px);
+	max-height: 60vh;
 	object-fit: cover;
 }
 
