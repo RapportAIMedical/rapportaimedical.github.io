@@ -94,6 +94,7 @@
           <li>Intricately designed diagnostic algorithm considers a matrix of possible diagnoses against the patient's symptoms</li>
           <li>Mimics the nuanced thought process of an experienced human doctor</li>
           <li>Intelligently accounts for how the same symptom can carry differing significance under different scenarios</li>
+          <li>Balances factors of accuracy, urgency, risk and utility</li>
         </ul>
       </div>
     </div>
@@ -121,123 +122,12 @@
     </div>
   </section>
 
-  <section id="CTA" class="coral">
-    <div class="container">
-    <div class="CTA-text">
-      <h4>Our goal is to provide you with a customised solution tailored to your needs.</h4>
-      <p>Connect with our medical and tech experts to discuss your preferences.</p>
-      <button type="button" class="button darkgreen"><a href="contact">Chat with us</a></button>
-    </div>
-    </div>
-    <div class="graphic">
-      <div class="quadrant white round_TL"></div>
-      <div class="square coral"></div>
-    </div>
-  </section>
+  <section id="CTA" class="coral"></section>
 
-  <footer>
-  <div id="footer">
-  <div class="footer-top">
-    <div class="footer-left">
-      <div class="logo"><img src="assets/Rapport-logo-RGB_symbol_black.png"></div>
+  <footer><div id="footer"></div></footer>
 
-      <div class="desc">
-        <h6>Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.</h6>
-        <button class="button"><a href="contact">Chat with us</a></button>
-      </div>
-    </div>
-
-    <div class="footer-right">
-      <div class="sub">
-        <h6>Stay in touch</h6>
-        <form id="subscribe" method="POST" action="subscribe.php"> 
-            <input type="email" name="subscribe" 
-                id="subscribe" 
-                placeholder="yourname@email.com" 
-                required> 
-            <button type="submit" class="button outlined">Submit</button> 
-        </form> 
-      </div>
-
-      <div class="page-links">
-        <p><a href="about">About us</a></p>
-        <p><a href="product">Meet June</a></p>
-        <p><a href="contact">Contact us</a></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="socials">
-      <div class="icons">
-        <!-- <a href="#">
-          <svg class="icon icon-instagram">
-            <symbol id="icon-instagram" viewBox="0 0 32 32">
-              <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-              <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-              <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-            </symbol>
-            <use xlink:href="#icon-instagram"></use>
-          </svg>
-        </a> -->
-        <a href="https://www.twitter.com/RapportAiMed" target="_blank">
-          <svg class="icon icon-x">
-            <symbol id="icon-x" viewBox="0 0 32 32">
-              <path d="M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z"></path>
-            </symbol>
-            <use xlink:href="#icon-x"></use>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/company/rapport-ai-medical/" target="_blank">
-          <svg class="icon icon-linkedin">
-            <symbol id="icon-linkedin" viewBox="0 0 32 32">
-              <path d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z"></path>
-            </symbol>
-              <use xlink:href="#icon-linkedin"></use>
-            </svg>
-        </a>
-      </div>
-      <p><a href="mailto:admin@rapportaimedical.com" style="text-decoration:underline;">admin@rapportaimedical.com</a></p>
-    </div>
-
-    <div class="smallprint">
-      <p>
-        <span>© 2024 Rapport AI Medical. All rights reserved.</span>
-        &ensp;
-        <span>Website designed and developed by <a href="https://antoinettechow.com/" target="_blank">Antoinette Chow</a></span>
-      </p>
-    </div>
-
-  </div>
-  </div>
-  </footer>
-
-
+<script src="styles/script.js" defer></script>
 <script>
-
-  // Nav scroll
-
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.querySelector('.nav').style.top = "0";
-    } else {
-      document.querySelector('.nav').style.top = "-110px";
-    }
-    prevScrollpos = currentScrollPos;
-  }
-
-
-  // Hamburger menu
-
-  let open = document.querySelector(".hamburger");
-  let dropdown = document.querySelector(".dropdown");
-        open.onclick = function(){
-            open.classList.toggle("active");
-            dropdown.classList.toggle("open");
-        }
-
 
   // Required field
 
