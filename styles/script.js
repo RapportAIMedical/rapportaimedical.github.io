@@ -227,13 +227,13 @@
         socialIcons.className = "icons";
 
           const socialLinks = [
-            { name: "x", link: "https://www.twitter.com/RapportAiMed", icon: "M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z" },
-            { name: "linkedin", link: "https://www.linkedin.com/company/rapport-ai-medical/", icon: "M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z" },
-            // { name: "instagram", link: "https://instagram.com/RapportAiMed" icon: "M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"
+            { name: "x", link: "https://www.twitter.com/RapportAiMed", path: "M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z" },
+            { name: "linkedin", link: "https://www.linkedin.com/company/rapport-ai-medical/", path: "M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z" },
+            // { name: "instagram", link: "https://instagram.com/RapportAiMed" path: "M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"
             // OR "M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path> <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"}
           ];
 
-          function socialPageLinks(name, link, icon) {
+          function socialPageLinks(name, link, path) {
             const a = document.createElement('a');
             a.href = link;
             a.target = "_blank";
@@ -241,27 +241,19 @@
             const svgNS = "http://www.w3.org/2000/svg";
 
             const svg = document.createElementNS(svgNS, "svg");
-            svg.className = "icon icon-" + name;
+            svg.setAttribute("class", "icon icon-" + name);
+            svg.setAttribute("viewBox", "0 0 32 32"); // Set a viewBox
 
-            const symbol = document.createElementNS(svgNS, "symbol");
-            symbol.setAttribute("id", "icon-" + name);
-            symbol.setAttribute("viewBox", "0 0 32 32");
-            const path = document.createElementNS(svgNS, "path");
-            path.setAttribute("d", icon);
-            symbol.appendChild(path);
+            const svgPath = document.createElementNS(svgNS, "path");
+            svgPath.setAttribute("d", path);
 
-            svg.appendChild(symbol);
-
-            const use = document.createElementNS(svgNS, "use");
-            use.setAttribute("xlink:href", "#icon-" + name);
-
-            svg.appendChild(use);
+            svg.appendChild(svgPath);
             a.appendChild(svg);
             return a;
           }
 
-          socialLinks.forEach(({name, link, icon}) => {
-            const socialElement = socialPageLinks(name, link, icon);
+          socialLinks.forEach(({name, link, path}) => {
+            const socialElement = socialPageLinks(name, link, path);
             socialIcons.appendChild(socialElement);
           });
 
@@ -272,26 +264,28 @@
         emailAdd.textContent = "admin@rapportaimedical.com";
         email.appendChild(emailAdd);
 
-      const smallPrint = document.createElement('div');
-      smallPrint.className = "smallprint";
-      const smallPrintText = document.createElement('p');
+      socials.appendChild(socialIcons);
+      socials.appendChild(email);
 
-        const copyrightSpan = document.createElement('span');
-        copyrightSpan.textContent = '© 2024 Rapport AI Medical. All rights reserved.';
+        const smallPrint = document.createElement('div');
+        smallPrint.className = "smallprint";
+        const smallPrintText = document.createElement('p');
 
-        const designerSpan = document.createElement('span');
-        designerSpan.textContent = 'Website designed and developed by ';
-        const designerLink = document.createElement('a');
-        designerLink.href = 'https://antoinettechow.com/';
-        designerLink.target = '_blank';
-        designerLink.textContent = 'Antoinette Chow';
-        designerSpan.appendChild(designerLink);
+          const copyrightSpan = document.createElement('span');
+          copyrightSpan.textContent = '© 2024 Rapport AI Medical. All rights reserved.';
 
-      
-      smallPrintText.appendChild(copyrightSpan);
-      smallPrintText.appendChild(document.createTextNode('\u00A0'));
-      smallPrintText.appendChild(designerSpan);
-      smallPrint.appendChild(smallPrintText);
+          const designerSpan = document.createElement('span');
+          designerSpan.textContent = 'Website designed and developed by ';
+          const designerLink = document.createElement('a');
+          designerLink.href = 'https://antoinettechow.com/';
+          designerLink.target = '_blank';
+          designerLink.textContent = 'Antoinette Chow';
+          designerSpan.appendChild(designerLink);
+        
+        smallPrintText.appendChild(copyrightSpan);
+        smallPrintText.appendChild(document.createTextNode('\u00A0'));
+        smallPrintText.appendChild(designerSpan);
+        smallPrint.appendChild(smallPrintText);
 
     footerBtm.appendChild(socials);
     footerBtm.appendChild(smallPrint);
