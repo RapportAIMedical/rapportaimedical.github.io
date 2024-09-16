@@ -269,7 +269,7 @@ img {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	.nav-content {
 		height: 50px;
@@ -352,10 +352,11 @@ section:not:first-child {
 	max-height: 75vh;
 	aspect-ratio: 3/4;
 	object-fit: cover;
+	object-position: 55% 50%;
 	border-bottom-right-radius: 400px;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	.headline, .hero-bottom {
 		padding: 30px;
@@ -476,7 +477,7 @@ ul.second-lvl {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#overview {
 		padding: 60px 30px;
@@ -508,50 +509,47 @@ ul.second-lvl {
 
 /* ––– USE CASES ––– */
 
+#use-cases {
+	padding: 0 60px;
+}
+
+#use-cases h6, #aboutus h6 {
+	text-transform: uppercase;
+	padding-bottom: 54px;
+}
+
 #use-cases h2 {
-	font-size: 1.75rem;
-	text-align: center;
+	font-size: 2.5rem;
+	line-height: 1.2;
 }
 
 #case-tabs {
+	width: 100%;
 	display: flex;
-	justify-content: center;
-	gap: 48px;
-	padding: 36px 0;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding: 24px 0;
 }
-
-#case-tabs button {
-	font-weight: 400;
-	border-radius: 0;
-	border: 0px;
-}
-
-.case-tab-button {
-	text-align: center;
-	padding: 12px;
-	font-size: 2rem;
-	color: rgba(40,40,40,0.25);
-	transition: color 0.3s ease;
-}
-
-.case-tab-button.active {
-    color: var(--black);
-  }
 
 .case-content {
-	padding: 0 60px;
-	display: none;
-	transition: display 0s 0.3s, opacity 0.3s ease;
+	flex-basis: 49%;
+	padding: 12px 0;
 }
 
-.case-content.active {
-    display: block;
-    opacity: 1;
-    transition-delay: 0s;
- }
+.case-content h3 {
+	font-size: 1.75rem;
+}
+
+.case-content p {
+	font-size: 1.25rem;
+}
+
+.case-content img {
+	max-width: 100%;
+}
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#use-cases {
 		padding: 30px;
@@ -564,21 +562,7 @@ ul.second-lvl {
 	}
 
 	#case-tabs {
-		justify-content: initial;
-		transform: translateX(-30px);
-		width: 100%;
-		padding: 36px 30px;
-		overflow-x: scroll;
-	}
-	.case-tab-button {
-		font-size: 1.5rem;
-		text-align: left;
-		text-wrap: nowrap;
-		padding: 12px 0;
-	}
-
-	.case-content {
-		padding: 0;
+		flex-flow: column nowrap;
 	}
 
 }
@@ -590,11 +574,6 @@ ul.second-lvl {
 	padding: 60px;
 	padding-top: 48px;
 	margin-top: 72px;
-}
-
-#aboutus h6 {
-	text-transform: uppercase;
-	padding-bottom: 54px;
 }
 
 #aboutus h2 {
@@ -611,7 +590,7 @@ ul.second-lvl {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#aboutus {
 		padding: 60px 30px;
@@ -679,7 +658,7 @@ ul.second-lvl {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#CTA {
 		flex-flow: column nowrap;
@@ -803,7 +782,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	footer {
 		width: calc(100% - 60px);
@@ -875,7 +854,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	.page_title {
 		padding-left: 30px;
@@ -973,7 +952,7 @@ label {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 	.contact {
 		grid-column: 1 / span 6;
 		width: calc(100vw - 60px);
@@ -1046,7 +1025,7 @@ label {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#about {
 		padding-bottom: 0;
@@ -1140,7 +1119,7 @@ label {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 780px) {
 
 	#product .page_title h1 {
 		line-height: 1;

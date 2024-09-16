@@ -134,45 +134,31 @@
     </div>
   </section>
 
-  <section id="value">
-  </section>
-
   <section id="use-cases">
+    <h6>Use Cases</h6>
     <h2>Explore how our solution can be integrated into your services</h2>
-    <div>
-      <div id="case-tabs">
-        <button class="case-tab-button online active" onclick="tab(this, 'online')">Online Platform</button>
-        <button class="case-tab-button onSite" onclick="tab(this, 'onSite')">In Person</button>
-        <button class="case-tab-button compApp" onclick="tab(this, 'compApp')">Company App</button>
+    <div id="case-tabs">
+      <div class="case-content">
+        <img src="assets/UseCase_kiosk.png">
+        <h3>Kiosks</h3>
+        <p>for Hospital Departments</p>
       </div>
-
-      <div id="case-content">
-      <div class="case-content online active">
-        <h6>Best suited for Chain Clinics or Specialists Out-Patient Departments</h6>
-        <ul>
-          <li>Allow your patient to gain access to your provider early at their home</li>
-          <li>Boost online exposure and patient acquisition</li>
-        </ul>
+      <div class="case-content">
+        <img src="assets/UseCase_database.png">
+        <h3>Database</h3>
+        <p>for Chain Medical Clinics</p>
       </div>
-
-      <div class="case-content onSite">
-        <h6>Best suited for A&E or General Clinic Department</h6>
-        <ul>
-          <li>Waiting time → can be utilized by AskJune for initial evaluation and automatic registration</li>
-          <li>Streamline workflow → Reduce nursing staff on tedious paper work</li>
-          <li>Assist providers' consultation by summarizing the basic medical evaluation and allow providers to utilize their time on more important things</li>
-        </ul>
+      <div class="case-content">
+        <img src="assets/UseCase_webapp.png">
+        <h3>Web App</h3>
+        <p>for Insurance Companies</p>
       </div>
-
-      <div class="case-content compApp">
-        <h6>Best suited for Insurance Companies or Hospitals</h6>
-        <ul>
-          <li>Customised incorporation (same as online platform and onsite devices) into company’s application</li>
-          <li>Accurate specialty matching - offer your clients a better after-sales service like hiring a medical professional in your team</li>
-          <li>One-step provider match can be redirected to a selected list of company’s listed providers</li>
-        </ul>
+      <div class="case-content">
+        <img src="assets/UseCase_mobileapp.png">
+        <h3>Mobile App</h3>
+        <p>for Company Wellness Programs</p>
       </div>
-      </div>
+    </div>
 
     </div>
   </section>
@@ -212,24 +198,6 @@
     featureImgItems.forEach((oi) => {
       let activeImg = oi.className === activeClassName;
       oi.style.display = activeImg ? "block" : "none";
-    });
-  }
-
-
-  // Switch Case Study Tabs
-
-  function tab(element, argument) {
-    let tabs = document.getElementById("case-tabs");
-    let buttons = Array.from(tabs.getElementsByTagName("button"));
-    let caseContent = document.getElementById("case-content");
-    let content = Array.from(caseContent.getElementsByTagName("div"));
-
-    buttons.forEach((bt) => {
-      bt.classList.toggle("active", bt.isSameNode(element));
-    });
-
-    content.forEach((ct) => {
-      ct.classList.toggle("active", ct.className.includes(argument));
     });
   }
 
