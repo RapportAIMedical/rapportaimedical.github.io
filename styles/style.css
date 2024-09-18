@@ -523,6 +523,12 @@ ul.second-lvl {
 	line-height: 1.2;
 }
 
+#use-cases p {
+	font-size: 1.25rem;
+	padding-top: 16px;
+	line-height: 1.35;
+}
+
 #case-tabs {
 	width: 100%;
 	display: flex;
@@ -537,11 +543,7 @@ ul.second-lvl {
 }
 
 .case-content h3 {
-	font-size: 1.75rem;
-}
-
-.case-content p {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 .case-content img {
