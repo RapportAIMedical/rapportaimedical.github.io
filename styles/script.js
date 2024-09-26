@@ -284,7 +284,7 @@
         
         smallPrintText.appendChild(copyrightSpan);
         smallPrintText.appendChild(document.createTextNode('\u00A0'));
-        smallPrintText.appendChild(designerSpan);
+        // smallPrintText.appendChild(designerSpan);
         smallPrint.appendChild(smallPrintText);
 
     footerBtm.appendChild(socials);
