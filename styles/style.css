@@ -1166,7 +1166,7 @@ label {
 @media only screen and (min-width: 1440px) {
 	.nav-content, .container, .hero-bottom, #overview, #value, #use-cases, #footer,
 	#about .page_title, #product, #product-content {
-		max-width: 1440px;
+		max-width: 1320px;
 		margin: 0 auto;
 	}
 
