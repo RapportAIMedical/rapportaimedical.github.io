@@ -1192,6 +1192,10 @@ label {
 		width: 100%;
 	}
 
+	#contact .page_title {
+		padding-left: -60px;
+	}
+
 	.half-screen {
 		max-width: 720px;
 		min-width: 630px;
