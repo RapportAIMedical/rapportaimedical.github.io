@@ -57,8 +57,6 @@
     <div class="half-screen">
       <h1>Contact us</h1>
       <div class="socials">
-        <h6>Email</h6>
-        <p><a href="mailto:admin@rapportaimedical.com" style="text-decoration:underline;">admin@rapportaimedical.com</a></p>
         <h6>Follow us</h6>
         <div class="icons">
           <a href="https://www.twitter.com/RapportAiMed" target="_blank">
@@ -89,56 +87,8 @@
       <div class="form-text">
         <p>If you are interested in partnering with us, testing our platform features or have any questions, please do not hesitate to reach out. Your feedback is what keeps us working hard to make healthcare better each step along the way.</p>
 
-        <form id="form" 
-            name="form"
-            method="POST"
-            action="https://script.google.com/macros/s/AKfycby-gOsbUyMHq0GsjA93vnfW54sqQ_Kf65LrcWGkAv77eQTL78xCnF9A1cGr6Epi3Yg/exec"
-            onsubmit="return validate();"
-            target="iframe"> 
-
-        <div class="input_field"> 
-          <label for="name">Name</label>
-          <input type="text" 
-                 placeholder="Your Name" 
-                 name="Name"
-                 id="name"> 
-        </div> 
-
-        <div class="input_field"> 
-          <label for="email">Email *</label>
-          <input type="text" 
-                 placeholder="yourname@email.com" 
-                 name="Email"
-                 id="email"> 
-        </div>
-        
-          <div class="input_field" style="position: absolute; left: -9999px;">
-            <label for="website">Website *</label>
-            <input type="text" 
-                   placeholder="https://yourwebsite.com" 
-                   name="Website"
-                   id="website"
-                   tabindex="-1"
-                   autocomplete="off"
-                   aria-required="true">
-        </div>
-        
-        <div id="error"> </div>
-
-        <div class="input_field">
-          <label for="message">Message</label>
-          <textarea name="Message" placeholder="What would you like to tell us?" style="height: 200px"></textarea>
-        </div>
-        
-        <div><button type="submit" id="submitbtn" class="submit darkgreen"><span id="submitted">Submit</span></button></div>
-
-      </form>
-
-      <iframe name="iframe" style="position: absolute; visibility: hidden"></iframe>
-      <div id="success" style="display:none">
-        <h3>Thanks for your interest!</h3>
-        <p>We have received your email. If you had a question or feedback, we will respond as soon as possible.</p>
-      </div>
+         <h6>Email</h6>
+         <p><a href="mailto:admin@rapportaimedical.com" class="email-link">admin@rapportaimedical.com</a></p>
       
       </div>
     </div>

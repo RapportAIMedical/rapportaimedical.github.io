@@ -881,6 +881,24 @@ footer {
 	padding: 48px 0 12px 0;
 }
 
+#contact .form-text h6 {
+	margin-top: 32px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.email-link {
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: var(--darkblue);
+	text-decoration: underline;
+	transition: color 0.3s ease;
+}
+
+.email-link:hover {
+	color: var(--coral);
+}
+
 #contact .graphic {
 	width: 50%;
 	aspect-ratio: 1/1;
