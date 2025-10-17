@@ -230,7 +230,7 @@ function footerTemplate() {
     { link: "about", name: "About us" },
     { link: "solutions", name: "Our Solutions" },
     { link: "customers", name: "Our Customers" },
-    { link: "press", name: "Press" },
+    // { link: "press", name: "Press" },
     { link: "product", name: "Meet June" },
     { link: "contact", name: "Contact us" },
   ];

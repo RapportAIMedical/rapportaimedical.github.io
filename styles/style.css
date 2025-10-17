@@ -913,6 +913,9 @@ footer {
   .page_title {
     padding-left: 30px;
   }
+  .page_title h1 {
+    font-size: 3rem;
+  }
 }
 
 /* ---- CONTACT US ---- */
@@ -1537,6 +1540,93 @@ label {
 
   .benefit-card p {
     font-size: 0.85rem;
+  }
+}
+
+/* Custom Solutions Cards */
+.custom-solutions-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 0 50px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  max-width: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.solution-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.solution-card-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.solution-card-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-card-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--coral);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.solution-card-title .highlight {
+  color: var(--black);
+}
+
+/* Add line breaks on desktop using CSS */
+@media only screen and (min-width: 781px) {
+  .solution-card-title .highlight::before {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+/* Mobile responsive for custom solutions cards */
+@media only screen and (max-width: 780px) {
+  .custom-solutions-cards {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0 36px 0;
+    max-width: 100%;
+  }
+
+  .solution-card {
+    max-width: 100%;
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  .solution-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .solution-card-title {
+    font-size: 1rem;
   }
 }
 
