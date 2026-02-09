@@ -230,7 +230,7 @@ function footerTemplate() {
     { link: "about", name: "About us" },
     { link: "solutions", name: "Our Solutions" },
     { link: "customers", name: "Our Customers" },
-    // { link: "press", name: "Press" },
+    { link: "press", name: "Press" },
     { link: "product", name: "Meet June" },
     { link: "contact", name: "Contact us" },
   ];
@@ -318,7 +318,7 @@ function footerTemplate() {
   const smallPrintText = document.createElement("p");
 
   const copyrightSpan = document.createElement("span");
-  copyrightSpan.textContent = "© 2025 Rapport AI Medical. All rights reserved.";
+  copyrightSpan.textContent = "© " + new Date().getFullYear() + " Rapport AI Medical. All rights reserved.";
 
   const designerSpan = document.createElement("span");
   designerSpan.textContent = "Website designed and developed by ";
