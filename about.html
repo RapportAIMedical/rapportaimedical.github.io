@@ -24,16 +24,15 @@
   <script src="styles/float-panel.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>About us – Rapport AI Medical</title>
+  <title>About us - Rapport AI Medical</title>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZV0L8LGV"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    gtag("js", new Date());
 
-    gtag('config', 'G-BGZV0L8LGV');
+    gtag("config", "G-BGZV0L8LGV");
   </script>
 </head>
 
@@ -41,14 +40,25 @@
   <header id="nav">
     <div class="blur"></div>
     <div class="nav-content">
-      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
+      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo" alt="Rapport AI Medical logo"></a>
       <div class="menu">
         <ul>
           <li><a href="about">About us</a></li>
-          <li><a href="solutions">Our Solutions</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-parent" aria-expanded="false">
+              Our Solutions <span class="nav-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="submenu">
+              <li><a href="patient-reacq">Patient ReAcq</a></li>
+              <li><a href="product">AskJune</a></li>
+              <li><a href="smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="ai-course">AI Course</a></li>
+              <li><a href="others">Others</a></li>
+            </ul>
+          </li>
           <li><a href="customers">Our Customers</a></li>
           <li><a href="press">Press</a></li>
-          <li><a href="product">Meet June</a></li>
         </ul>
         <button type="button" class="button coral"><a href="contact">Contact us</a></button>
       </div>
@@ -60,10 +70,19 @@
       <div id="dropdown" class="dropdown">
         <ul>
           <li><a href="about">About us</a></li>
-          <li><a href="solutions">Our Solutions</a></li>
+          <li class="mobile-group">
+            <span>Our Solutions</span>
+            <ul class="mobile-submenu">
+              <li><a href="patient-reacq">Patient ReAcq</a></li>
+              <li><a href="product">AskJune</a></li>
+              <li><a href="smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="ai-course">AI Course</a></li>
+              <li><a href="others">Others</a></li>
+            </ul>
+          </li>
           <li><a href="customers">Our Customers</a></li>
           <li><a href="press">Press</a></li>
-          <li><a href="product">Meet June</a></li>
           <li><a href="contact">Contact</a></li>
         </ul>
       </div>
@@ -80,37 +99,41 @@
   </section>
 
   <section id="about-content">
+    <div class="value-pitch-card">
+      <h3>
+        <span class="value-pitch-title-main">Your Partner in Healthcare</span>
+        <span class="value-pitch-title-accent">Intelligence</span>
+      </h3>
+      <p>We build <span class="value-pitch-accent">customisable AI healthcare solutions</span> that help healthcare
+        providers:</p>
+      <ul class="value-pitch-list">
+        <li><strong>capture &amp; retain</strong> patients in their healthcare journey</li>
+        <li>increase <strong>service utilisation &amp; cross-selling</strong></li>
+        <li>expand <strong>clinical capacity &amp; efficiency</strong></li>
+        <li>unlock <strong>data-driven healthcare intelligence</strong></li>
+      </ul>
+    </div>
+
     <div class="mission">
       <h2>Our Mission</h2>
-      <p>Founded in 2023 by two friends that witnessed the issues of our healthcare system first hand from a doctor and
-        a patient's perspective and saw the opportunities and potential that advancements in AI and technology could
-        bring, <span class="highlight">Rapport AI Medical has since been on a mission to build better healthcare for
-          all.</span></p>
-      <p>By working with health care and insurance providers to build customisable AI-powered integration solutions used
+      <p>Founded in 2023 by two friends who witnessed the issues of our healthcare system first hand from a doctor and
+        a patient's perspective, Rapport AI Medical has since been on a mission to <span class="highlight">build better
+          healthcare for all</span>.</p>
+      <p>By working with healthcare and insurance providers to build customisable AI-powered integration solutions used
         to digitalise, streamline and enhance healthcare systems, our goal is to improve the medical care process at
         every level for both providers and patients.</p>
     </div>
 
     <div class="vision">
       <h2>Our Vision</h2>
-      <p>With a severe shortage of doctors, a growing ageing population and an industry that is still reliant on
-        outdated and inefficient processes, a multitude of systematic issues are crippling our healthcare system and
-        placing a significant burden on our healthcare providers.</p>
-      <p>Fragmentation, intransparency and the absence of a reliable infrastructure for access to medical information
-        and support are all factors that have resulted in a deep disconnect between healthcare providers and their
-        patients, and problematic practices of self-diagnosing and doctor-shopping across our community.</p>
-      <p>Such problems are not only posing a serious risk to public health but also wasting valuable time, money and
-        already limited healthcare resources.</p>
-      <p class="highlight">We have a vision that by leveraging the power of AI and technology, we can improve the
-        capacity, quality and efficiency for healthcare providers, and provide better access, experiences and outcomes
-        for their patients.</p>
-      <p>Healthcare can be intuitive, accessible and efficient and our platform holds the key to paving the way forward
-        for the healthcare industry.</p>
+      <p>We have a vision that by leveraging the power of AI and technology, we can <span class="highlight">improve
+          capacity, quality and efficiency for healthcare providers</span>, while giving patients better access,
+        experiences and outcomes.</p>
+      <p>Healthcare can be intuitive, accessible and efficient, and our platform holds the key to paving the way
+        forward for the healthcare industry.</p>
     </div>
-
   </section>
 
-  <!-- Member Logos Section -->
   <section class="partners-section">
     <div class="member-of">
       <h3>Proudly a member of:</h3>
@@ -137,9 +160,7 @@
     <div id="footer"></div>
   </footer>
 
-
   <script src="styles/script.js" defer></script>
-
 </body>
 
 </html>

@@ -41,14 +41,25 @@
   <header id="nav">
     <div class="blur"></div>
     <div class="nav-content">
-      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo"></a>
+      <a href="/"><img src="assets/Rapport-logo-RGB_full_black.png" class="logo" alt="Rapport AI Medical logo"></a>
       <div class="menu">
         <ul>
           <li><a href="about">About us</a></li>
-          <li><a href="solutions">Our Solutions</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-parent" aria-expanded="false">
+              Our Solutions <span class="nav-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="submenu">
+              <li><a href="patient-reacq">Patient ReAcq</a></li>
+              <li><a href="product">AskJune</a></li>
+              <li><a href="smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="ai-course">AI Course</a></li>
+              <li><a href="others">Others</a></li>
+            </ul>
+          </li>
           <li><a href="customers">Our Customers</a></li>
           <li><a href="press">Press</a></li>
-          <li><a href="product">Meet June</a></li>
         </ul>
         <button type="button" class="button coral"><a href="contact">Contact us</a></button>
       </div>
@@ -60,10 +71,19 @@
       <div id="dropdown" class="dropdown">
         <ul>
           <li><a href="about">About us</a></li>
-          <li><a href="solutions">Our Solutions</a></li>
+          <li class="mobile-group">
+            <span>Our Solutions</span>
+            <ul class="mobile-submenu">
+              <li><a href="patient-reacq">Patient ReAcq</a></li>
+              <li><a href="product">AskJune</a></li>
+              <li><a href="smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="ai-course">AI Course</a></li>
+              <li><a href="others">Others</a></li>
+            </ul>
+          </li>
           <li><a href="customers">Our Customers</a></li>
           <li><a href="press">Press</a></li>
-          <li><a href="product">Meet June</a></li>
           <li><a href="contact">Contact</a></li>
         </ul>
       </div>
@@ -129,7 +149,6 @@
 
 
   <script src="styles/script.js" defer></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 
