@@ -15,10 +15,12 @@ Plain HTML/CSS/JS — no build step, no framework, no package manager.
 - **Branch:** `staging`
 - **How:** Netlify watches the `staging` branch directly — every push auto-deploys. No GitHub Actions needed.
 
-## Workflow
-1. Make changes on the `staging` branch
-2. Test at https://rapportaimedical-staging.netlify.app
-3. Merge `staging` → `main` to go live
+## Dev Workflow
+1. Developers make changes on the `staging` branch and push
+2. Changes auto-deploy to https://rapportaimedical-staging.netlify.app
+3. Internal team reviews the staging site
+4. Once approved, developers merge `staging` → `main` (via PR or direct merge)
+5. Production auto-deploys to https://rapportaimedical.com
 
 ## GitHub Access
 - Repo: `RapportAIMedical/rapportaimedical.github.io`
