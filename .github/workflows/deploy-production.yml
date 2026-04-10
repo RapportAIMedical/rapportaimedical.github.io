@@ -19,4 +19,3 @@ jobs:
           branch: gh-pages
           folder: .
           clean: true
-          clean-exclude: staging/

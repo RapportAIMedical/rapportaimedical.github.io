@@ -4,19 +4,11 @@ on:
   push:
     branches: [staging]
 
-permissions:
-  contents: write
-
+# Netlify auto-deploys from the staging branch.
+# This workflow is a placeholder — no action needed here.
 jobs:
-  deploy:
+  notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy to GitHub Pages (staging)
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: .
-          target-folder: staging
-          clean: true
+      - name: Staging deploy handled by Netlify
+        run: echo "Netlify will auto-deploy from the staging branch."
