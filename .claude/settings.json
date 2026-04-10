@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/User1/Downloads/**)",
+      "Bash(python -c \"import PyPDF2; r=PyPDF2.PdfReader\\('C:/Users/User1/Downloads/Website Revamp Mar 26.pdf'\\); print\\('PAGES:', len\\(r.pages\\)\\); [print\\(f'\\\\n=== PAGE {i+1} ===\\\\n', p.extract_text\\(\\)\\) for i,p in enumerate\\(r.pages\\)]\")",
+      "Bash(python -c \"import pypdf; r=pypdf.PdfReader\\('C:/Users/User1/Downloads/Website Revamp Mar 26.pdf'\\); print\\('PAGES:', len\\(r.pages\\)\\); [print\\(f'\\\\n=== PAGE {i+1} ===\\\\n', p.extract_text\\(\\)\\) for i,p in enumerate\\(r.pages\\)]\")"
+    ]
+  }
+}
