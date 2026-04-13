@@ -121,9 +121,9 @@
           </div>
           <div class="db-rows">
             <div class="db-row">
-              <div class="db-avatar">PL</div>
+              <div class="db-avatar">陳</div>
               <div class="db-info">
-                <span class="db-name">P.L. · 58F</span>
+                <span class="db-name">陳美玲 · 58F</span>
                 <span class="db-detail">Last visit: 14 months ago</span>
               </div>
               <span class="db-badge db-badge--overdue">Overdue</span>
@@ -155,6 +155,15 @@
               </div>
               <span class="db-badge db-badge--screen">Screening</span>
               <span class="db-value">+$260</span>
+            </div>
+            <div class="db-row">
+              <div class="db-avatar">吳</div>
+              <div class="db-info">
+                <span class="db-name">吳國輝 · 71M</span>
+                <span class="db-detail">No follow-up in 18 months</span>
+              </div>
+              <span class="db-badge db-badge--overdue">Overdue</span>
+              <span class="db-value">+$390</span>
             </div>
           </div>
           <div class="db-footer">
@@ -289,30 +298,50 @@
   <script>
     (function () {
       var allPatients = [
-        { initials: 'PL', name: 'P.L. · 58F', detail: 'Last visit: 14 months ago',      badge: 'overdue', badgeText: 'Overdue',   val: 320 },
-        { initials: 'KT', name: 'K.T. · 45M', detail: 'Eligible for screening',          badge: 'screen',  badgeText: 'Screening', val: 180 },
-        { initials: 'MR', name: 'M.R. · 62F', detail: 'Missed follow-up',                badge: 'overdue', badgeText: 'Overdue',   val: 450 },
-        { initials: 'JW', name: 'J.W. · 39F', detail: 'New service opportunity',         badge: 'screen',  badgeText: 'Screening', val: 260 },
-        { initials: 'HS', name: 'H.S. · 71M', detail: 'No follow-up in 18 months',       badge: 'overdue', badgeText: 'Overdue',   val: 390 },
-        { initials: 'AL', name: 'A.L. · 52F', detail: 'Cancer screening eligible',       badge: 'screen',  badgeText: 'Screening', val: 210 },
-        { initials: 'TC', name: 'T.C. · 44M', detail: 'Lab results not reviewed',        badge: 'overdue', badgeText: 'Overdue',   val: 290 },
-        { initials: 'RN', name: 'R.N. · 67F', detail: 'Chronic care follow-up due',      badge: 'overdue', badgeText: 'Overdue',   val: 520 },
-        { initials: 'BK', name: 'B.K. · 38M', detail: 'Preventive care opportunity',     badge: 'screen',  badgeText: 'Screening', val: 155 },
-        { initials: 'YP', name: 'Y.P. · 55F', detail: 'Annual check overdue',            badge: 'overdue', badgeText: 'Overdue',   val: 340 },
-        { initials: 'CM', name: 'C.M. · 49M', detail: 'Suitable for health package',     badge: 'screen',  badgeText: 'Screening', val: 195 },
-        { initials: 'SW', name: 'S.W. · 63F', detail: 'Post-discharge follow-up missed', badge: 'overdue', badgeText: 'Overdue',   val: 480 },
-        { initials: 'DN', name: 'D.N. · 47M', detail: 'Diabetic review outstanding',     badge: 'overdue', badgeText: 'Overdue',   val: 310 },
-        { initials: 'FL', name: 'F.L. · 60F', detail: 'Bone density screening due',      badge: 'screen',  badgeText: 'Screening', val: 230 },
-        { initials: 'OB', name: 'O.B. · 55M', detail: 'Cardiovascular check overdue',    badge: 'overdue', badgeText: 'Overdue',   val: 415 },
-        { initials: 'VT', name: 'V.T. · 41F', detail: 'Postnatal follow-up missed',      badge: 'overdue', badgeText: 'Overdue',   val: 275 },
+        { initials: '陳', name: '陳美玲 · 58F', detail: 'Last visit: 14 months ago',      badge: 'overdue', badgeText: 'Overdue',   val: 320 },
+        { initials: 'KT', name: 'K.T. · 45M',  detail: 'Eligible for screening',          badge: 'screen',  badgeText: 'Screening', val: 180 },
+        { initials: 'MR', name: 'M.R. · 62F',  detail: 'Missed follow-up',                badge: 'overdue', badgeText: 'Overdue',   val: 450 },
+        { initials: 'JW', name: 'J.W. · 39F',  detail: 'New service opportunity',         badge: 'screen',  badgeText: 'Screening', val: 260 },
+        { initials: '吳', name: '吳國輝 · 71M', detail: 'No follow-up in 18 months',       badge: 'overdue', badgeText: 'Overdue',   val: 390 },
+        { initials: 'AL', name: 'A.L. · 52F',  detail: 'Cancer screening eligible',       badge: 'screen',  badgeText: 'Screening', val: 210 },
+        { initials: 'TC', name: 'T.C. · 44M',  detail: 'Lab results not reviewed',        badge: 'overdue', badgeText: 'Overdue',   val: 290 },
+        { initials: 'RN', name: 'R.N. · 67F',  detail: 'Chronic care follow-up due',      badge: 'overdue', badgeText: 'Overdue',   val: 520 },
+        { initials: '林', name: '林嘉欣 · 38F', detail: 'Preventive care opportunity',     badge: 'screen',  badgeText: 'Screening', val: 155 },
+        { initials: 'YP', name: 'Y.P. · 55F',  detail: 'Annual check overdue',            badge: 'overdue', badgeText: 'Overdue',   val: 340 },
+        { initials: 'CM', name: 'C.M. · 49M',  detail: 'Suitable for health package',     badge: 'screen',  badgeText: 'Screening', val: 195 },
+        { initials: 'SW', name: 'S.W. · 63F',  detail: 'Post-discharge follow-up missed', badge: 'overdue', badgeText: 'Overdue',   val: 480 },
+        { initials: 'DN', name: 'D.N. · 47M',  detail: 'Diabetic review outstanding',     badge: 'overdue', badgeText: 'Overdue',   val: 310 },
+        { initials: 'FL', name: 'F.L. · 60F',  detail: 'Bone density screening due',      badge: 'screen',  badgeText: 'Screening', val: 230 },
+        { initials: '李', name: '李志明 · 55M', detail: 'Cardiovascular check overdue',    badge: 'overdue', badgeText: 'Overdue',   val: 415 },
+        { initials: 'VT', name: 'V.T. · 41F',  detail: 'Postnatal follow-up missed',      badge: 'overdue', badgeText: 'Overdue',   val: 275 },
       ];
 
-      var visibleIndices = [0, 1, 2, 3];
-      var current = [320, 180, 450, 260];
+      var visibleIndices = [0, 1, 2, 3, 4];
+      var current = [320, 180, 450, 260, 390];
 
       function init() {
         var rows = document.querySelectorAll('.db-row');
         if (!rows.length) return;
+
+        function burstDollars(el) {
+          var rect = el.getBoundingClientRect();
+          var cx = rect.left + rect.width / 2;
+          var cy = rect.top + rect.height / 2;
+          var count = 5;
+          for (var b = 0; b < count; b++) {
+            var span = document.createElement('span');
+            span.textContent = '$';
+            span.className = 'dollar-burst';
+            var angle = (b / count) * Math.PI * 2 + (Math.random() * 0.8);
+            var dist = 22 + Math.random() * 22;
+            span.style.left = cx + 'px';
+            span.style.top = cy + 'px';
+            span.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+            span.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+            document.body.appendChild(span);
+            span.addEventListener('animationend', function () { this.remove(); });
+          }
+        }
 
         // Phase 1: count up each value from 0 to its base on load
         rows.forEach(function (row, i) {
@@ -327,7 +356,7 @@
             var p = Math.min((ts - startTime) / duration, 1);
             var eased = 1 - Math.pow(1 - p, 3);
             valEl.textContent = '+$' + Math.round(eased * target).toLocaleString();
-            if (p < 1) requestAnimationFrame(step);
+            if (p < 1) { requestAnimationFrame(step); } else { burstDollars(valEl); }
           }
           requestAnimationFrame(step);
         });
@@ -337,7 +366,7 @@
           function tick() {
             var liveRows = document.querySelectorAll('.db-row');
             var i = Math.floor(Math.random() * liveRows.length);
-            var inc = Math.floor(Math.random() * 60) + 25;
+            var inc = Math.floor(Math.random() * 150) + 75;
             current[i] += inc;
             var valEl = liveRows[i].querySelector('.db-value');
             valEl.textContent = '+$' + current[i].toLocaleString();
@@ -345,7 +374,8 @@
             void valEl.offsetWidth;
             valEl.classList.add('db-value--tick');
             setTimeout(function () { valEl.classList.remove('db-value--tick'); }, 500);
-            setTimeout(tick, Math.random() * 700 + 600);
+            burstDollars(valEl);
+            setTimeout(tick, Math.random() * 300 + 200);
           }
           tick();
         }, 1600);
@@ -365,6 +395,7 @@
             } while (visibleIndices.indexOf(nextIdx) !== -1 && attempts < 30);
 
             // Slide out
+            row.classList.remove('db-row--settled');
             row.classList.add('db-row--out');
 
             setTimeout(function () {
@@ -382,7 +413,11 @@
 
               row.classList.remove('db-row--out');
               row.classList.add('db-row--in');
-              setTimeout(function () { row.classList.remove('db-row--in'); }, 420);
+              setTimeout(function () {
+                row.classList.remove('db-row--in');
+                row.classList.add('db-row--settled');
+                burstDollars(row.querySelector('.db-value'));
+              }, 420);
             }, 270);
 
             setTimeout(swapNext, Math.random() * 1400 + 2000);
