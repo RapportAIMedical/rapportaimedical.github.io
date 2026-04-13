@@ -323,10 +323,19 @@
         var rows = document.querySelectorAll('.db-row');
         if (!rows.length) return;
 
+        var widgetVisible = true;
+        var widget = document.querySelector('.database-visual');
+        if (widget && 'IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            widgetVisible = entries[0].isIntersecting;
+          }, { threshold: 0.1 }).observe(widget);
+        }
+
         function burstDollars(el) {
-          var rect = el.getBoundingClientRect();
-          var cx = rect.left + rect.width / 2;
-          var cy = rect.top + rect.height / 2;
+          var elRect = el.getBoundingClientRect();
+          var widgetRect = widget.getBoundingClientRect();
+          var cx = elRect.left + elRect.width / 2 - widgetRect.left;
+          var cy = elRect.top + elRect.height / 2 - widgetRect.top;
           var count = 5;
           for (var b = 0; b < count; b++) {
             var span = document.createElement('span');
@@ -338,7 +347,7 @@
             span.style.top = cy + 'px';
             span.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
             span.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
-            document.body.appendChild(span);
+            widget.appendChild(span);
             span.addEventListener('animationend', function () { this.remove(); });
           }
         }
@@ -364,17 +373,19 @@
         // Phase 2: continuous dollar ticks upward
         setTimeout(function () {
           function tick() {
-            var liveRows = document.querySelectorAll('.db-row');
-            var i = Math.floor(Math.random() * liveRows.length);
-            var inc = Math.floor(Math.random() * 150) + 75;
-            current[i] += inc;
-            var valEl = liveRows[i].querySelector('.db-value');
-            valEl.textContent = '+$' + current[i].toLocaleString();
-            valEl.classList.remove('db-value--tick');
-            void valEl.offsetWidth;
-            valEl.classList.add('db-value--tick');
-            setTimeout(function () { valEl.classList.remove('db-value--tick'); }, 500);
-            burstDollars(valEl);
+            if (widgetVisible) {
+              var liveRows = document.querySelectorAll('.db-row');
+              var i = Math.floor(Math.random() * liveRows.length);
+              var inc = Math.floor(Math.random() * 150) + 75;
+              current[i] += inc;
+              var valEl = liveRows[i].querySelector('.db-value');
+              valEl.textContent = '+$' + current[i].toLocaleString();
+              valEl.classList.remove('db-value--tick');
+              void valEl.offsetWidth;
+              valEl.classList.add('db-value--tick');
+              setTimeout(function () { valEl.classList.remove('db-value--tick'); }, 500);
+              burstDollars(valEl);
+            }
             setTimeout(tick, Math.random() * 300 + 200);
           }
           tick();

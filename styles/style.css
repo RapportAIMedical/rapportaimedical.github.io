@@ -3712,6 +3712,8 @@ label {
 
 /* ── DATABASE VISUAL (Patient ReAcq) ── */
 .database-visual {
+  position: relative;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -3805,11 +3807,11 @@ label {
 }
 
 .dollar-burst {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--product-accent);
+  color: var(--product-accent-dark);
   transform: translate(-50%, -50%);
   animation: dollar-burst 1.1s ease forwards;
   z-index: 999;
