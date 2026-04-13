@@ -315,3 +315,21 @@ function footerTemplate() {
 }
 
 footerTemplate();
+
+console.log(
+  "\n" +
+  "%c            ___\n" +
+  "           /   \\\n" +
+  "___/\\  /\\_/     \\____/\\/\\___\n" +
+  "    \\/\\/\n" +
+  "\n" +
+  "RAPPORT AI MEDICAL — PATIENT INTAKE\n" +
+  "────────────────────────────────────────\n" +
+  "Name        : Curious Developer\n" +
+  "Status      : Nosy\n" +
+  "Diagnosis   : Chronic code-inspecting behaviour\n" +
+  "Treatment   : Join our team ;)\n" +
+  "Contact     : admin@rapportaimedical.com\n" +
+  "────────────────────────────────────────\n",
+  "font-family: monospace; font-size: 13px; color: #2d7a5a;"
+);
