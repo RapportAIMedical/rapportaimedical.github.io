@@ -3510,9 +3510,14 @@ label {
 }
 
 .audience-anchor {
-  padding: 10px 16px;
+  padding: 10px 20px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--product-accent-dark);
+  color: white;
+  text-transform: none;
+  letter-spacing: 0.2px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .product-hero h1 {
@@ -3923,6 +3928,15 @@ label {
   background: linear-gradient(135deg, white 0%, var(--product-soft) 100%);
 }
 
+.scheduler-hero-shot {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: float-primary 5.5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
 .scheduler-visual img {
   max-height: 100%;
   object-fit: contain;
@@ -4241,6 +4255,109 @@ label {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+}
+
+.feature-grid--modules {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.feature-grid--modules .feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature-grid--modules .feature-card i {
+  padding-bottom: 12px;
+}
+
+.feature-grid--modules .feature-card h3 {
+  padding-bottom: 0;
+}
+
+.scheduler-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.scheduler-story--reverse .scheduler-story-copy {
+  order: 2;
+}
+
+.scheduler-story--reverse .scheduler-story-media {
+  order: 1;
+}
+
+.scheduler-story-copy {
+  min-width: 0;
+}
+
+.scheduler-story .feature-grid {
+  gap: 20px;
+}
+
+.scheduler-story-media {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scheduler-shot-card {
+  padding: 18px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, color-mix(in srgb, var(--product-soft) 72%, white 28%) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.scheduler-shot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+.scheduler-shot-card--primary {
+  animation: float-primary 6.4s ease-in-out infinite;
+}
+
+.scheduler-shot-card--secondary {
+  animation: float-secondary 7.1s ease-in-out infinite;
+}
+
+.scheduler-how-steps {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 18px;
+}
+
+.scheduler-how-steps li {
+  padding: 28px 24px 24px;
+}
+
+.scheduler-how-steps h3 {
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width: 780px) {
+  .feature-grid--modules .feature-card {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .feature-grid--modules .feature-card i {
+    padding-bottom: 0;
+    flex-shrink: 0;
+  }
 }
 
 .feature-card,
@@ -4577,6 +4694,12 @@ label {
   gap: 18px;
 }
 
+.product-proof-cta-grid--solo {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .product-proof-panel,
 .product-cta-panel {
   min-width: 0;
@@ -4599,21 +4722,24 @@ label {
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
-  text-align: left;
+  text-align: center;
 }
 
 .product-cta-card h2 {
   max-width: 16ch;
-  margin: 0;
+  margin: 0 auto;
   font-size: clamp(1.6rem, 1.9vw, 2rem);
   line-height: 1.1;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .product-cta-card p {
   max-width: 34ch;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -4622,7 +4748,7 @@ label {
   margin-top: 4px;
   padding: 14px 24px;
   font-size: 1rem;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .cta-button-rich {
@@ -4691,6 +4817,10 @@ label {
   .product-proof-cta-grid {
     grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
     align-items: start;
+  }
+
+  .product-proof-cta-grid--solo {
+    grid-template-columns: 1fr;
   }
 
   .product-proof-panel .proof-card,
@@ -4812,6 +4942,16 @@ label {
     min-height: auto;
   }
 
+  .scheduler-story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .scheduler-story--reverse .scheduler-story-copy,
+  .scheduler-story--reverse .scheduler-story-media {
+    order: 0;
+  }
+
   .flow-visual {
     flex-direction: column;
     align-items: center;
@@ -4884,6 +5024,14 @@ label {
     padding: 16px;
   }
 
+  .scheduler-shot-card {
+    padding: 14px;
+  }
+
+  .scheduler-story-media {
+    gap: 12px;
+  }
+
   .flow-diagram {
     flex-direction: column;
     align-items: stretch;
@@ -4938,5 +5086,13 @@ label {
 
   .product-section {
     padding: 72px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scheduler-hero-shot,
+  .scheduler-shot-card--primary,
+  .scheduler-shot-card--secondary {
+    animation: none;
   }
 }
