@@ -2088,10 +2088,8 @@ label {
 
 .partners-section {
   width: calc(100% - 120px);
-  padding: 60px 60px;
+  padding: 36px 0 60px;
   margin: 0 auto 60px auto;
-  background: var(--sand);
-  border-radius: 12px;
   text-align: center;
 }
 
@@ -2195,7 +2193,7 @@ label {
   }
 
   .partners-section {
-    padding: 40px 30px;
+    padding: 28px 0 40px;
     width: calc(100% - 60px);
     margin: 20px auto;
   }
@@ -2243,9 +2241,19 @@ label {
 }
 
 .customers-intro {
-  width: 60%;
-  padding: 40px 0 20px 0;
+  width: calc(100% - 40px);
+  max-width: 1320px;
+  padding: 40px 20px 20px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.customers-intro .intro-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
@@ -2253,23 +2261,31 @@ label {
   font-size: 1.25rem;
   line-height: 1.5;
   padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 60ch;
+  text-align: center;
 }
 
 /* Section 1: Clients & Solutions Graphic */
 .clients-solutions-section {
-  width: calc(100% - 120px);
-  padding: 20px 60px 40px 60px;
+  width: calc(100% - 40px);
+  padding: 10px 20px 48px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 .solutions-graphic {
-  max-width: 800px;
-  margin: 0 auto;
+  width: min(100%, 980px);
+  max-width: none;
+  margin: 0;
 }
 
 .solutions-image {
   width: 100%;
+  max-width: none;
   height: auto;
   object-fit: contain;
 }
@@ -3173,14 +3189,31 @@ label {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.press-photos-group {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .lsc-photos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
+.press-photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .lsc-photos-grid .gallery-photo {
   aspect-ratio: 1;
+  min-height: auto;
+}
+
+.press-photos-grid .gallery-photo {
+  aspect-ratio: 3 / 4;
   min-height: auto;
 }
 
@@ -3301,8 +3334,18 @@ label {
     padding-top: 24px;
   }
 
+  .press-photos-group {
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+
   .lsc-photos-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .press-photos-grid {
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
