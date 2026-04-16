@@ -291,9 +291,9 @@ function footerTemplate() {
 
   const email = document.createElement("p");
   const emailAddress = document.createElement("a");
-  emailAddress.href = "mailto:admin@rapportaimedical.com";
+  emailAddress.href = "mailto:hello@rapportaimedical.com";
   emailAddress.style.textDecoration = "underline";
-  emailAddress.textContent = "admin@rapportaimedical.com";
+  emailAddress.textContent = "hello@rapportaimedical.com";
   email.appendChild(emailAddress);
 
   socials.appendChild(socialIcons);
@@ -329,7 +329,7 @@ console.log(
   "Status      : Nosy\n" +
   "Diagnosis   : Chronic code-inspecting behaviour\n" +
   "Treatment   : Join our team ;)\n" +
-  "Contact     : admin@rapportaimedical.com\n" +
+  "Contact     : hello@rapportaimedical.com\n" +
   "────────────────────────────────────────\n",
   "font-family: monospace; font-size: 13px; color: #2d7a5a;"
 );
