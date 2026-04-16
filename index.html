@@ -34,6 +34,474 @@
 
     gtag("config", "G-BGZV0L8LGV");
   </script>
+
+  <style>
+    /* Home page — editorial split layout (scoped to index.html) */
+    .home-pill {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 9px 18px;
+      background: var(--coral);
+      border-radius: 8px;
+      width: fit-content;
+      margin-bottom: 28px;
+    }
+
+    .home-photo-placeholder {
+      background: #ece7df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      color: #9a938a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .home-photo-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 24px, rgba(40, 40, 40, 0.035) 24px, rgba(40, 40, 40, 0.035) 25px);
+      pointer-events: none;
+    }
+
+    .home-photo-placeholder svg,
+    .home-photo-placeholder span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-photo-placeholder svg {
+      opacity: 0.35;
+    }
+
+    .home-photo-placeholder .ph-sub {
+      font-size: 10px;
+      opacity: 0.75;
+    }
+
+    /* HERO */
+    .home-hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+
+    .home-hero-split .hero-text-col {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--offwhite);
+    }
+
+    .home-hero-split .hero-text-col h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      line-height: 1.06;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .home-hero-split .hero-text-col h1 .accent {
+      color: var(--coral);
+    }
+
+    .home-hero-split .hero-text-col p.lead {
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #555;
+      max-width: 460px;
+      margin-bottom: 32px;
+    }
+
+    .home-hero-split .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .home-hero-split .hero-photo-col {
+      min-height: 540px;
+    }
+
+    /* STATS */
+    .home-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(40, 40, 40, 0.08);
+      border-bottom: 1px solid rgba(40, 40, 40, 0.08);
+      background: #fff;
+    }
+
+    .home-stats .stat {
+      padding: 36px 40px;
+      border-right: 1px solid rgba(40, 40, 40, 0.08);
+    }
+
+    .home-stats .stat:last-child {
+      border-right: none;
+    }
+
+    .home-stats .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      color: var(--coral);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .home-stats .stat-lbl {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+    }
+
+    /* SOLUTIONS */
+    .home-solutions {
+      padding: 80px 60px;
+      background: #fff;
+    }
+
+    .home-section-head {
+      margin-bottom: 48px;
+      max-width: 720px;
+    }
+
+    .home-section-head h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+    }
+
+    .home-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .home-card {
+      border: 1px solid rgba(40, 40, 40, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-card:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .home-card .card-photo {
+      height: 195px;
+      width: 100%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .card-photo-askjune {
+      background-image: url('assets/AskJune_screen.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .card-photo-scheduler {
+      background-image: url('assets/scheduler-schedule.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .home-card .card-body {
+      padding: 22px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .home-card .card-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .home-card .card-desc {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: #5a5a5a;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .home-card .card-link {
+      margin-top: 16px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--coral);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .home-card .card-link:hover {
+      color: var(--black);
+    }
+
+    /* ABOUT */
+    .home-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--offwhite);
+    }
+
+    .home-about .about-photo-col {
+      min-height: 440px;
+    }
+
+    .home-about .about-text-col {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .home-about h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .home-about p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
+    .home-about .about-badges {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .home-about .about-badges img {
+      max-height: 38px;
+      max-width: 130px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.85;
+    }
+
+    .home-about .about-link {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    .home-about .about-link:hover {
+      color: var(--black);
+    }
+
+    /* TESTIMONIAL */
+    .home-testimonial {
+      padding: 80px 60px;
+      background: #fff;
+      border-top: 1px solid rgba(40, 40, 40, 0.08);
+    }
+
+    .home-testimonial-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .home-testimonial .quote-mark {
+      font-family: Georgia, serif;
+      font-size: 64px;
+      color: var(--coral);
+      line-height: 0.8;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .home-testimonial blockquote {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      line-height: 1.6;
+      color: var(--black);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .home-testimonial cite {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: #777;
+      font-style: normal;
+    }
+
+    /* CTA BANNER */
+    .home-cta-banner {
+      padding: 60px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .home-cta-banner h3 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-weight: 700;
+      color: var(--offwhite);
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
+    }
+
+    .home-cta-banner p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .home-cta-banner .cta-btn-wrap a {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--coral);
+      color: var(--black);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .home-cta-banner .cta-btn-wrap a:hover {
+      background: var(--offwhite);
+      color: var(--black);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1050px) {
+      .home-hero-split,
+      .home-about {
+        grid-template-columns: 1fr;
+      }
+
+      .home-hero-split .hero-text-col,
+      .home-about .about-text-col {
+        padding: 60px 40px;
+      }
+
+      .home-hero-split .hero-photo-col,
+      .home-about .about-photo-col {
+        min-height: 320px;
+      }
+
+      .home-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .home-stats .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .home-stats .stat:nth-child(1),
+      .home-stats .stat:nth-child(2) {
+        border-bottom: 1px solid rgba(40, 40, 40, 0.08);
+      }
+
+      .home-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .home-solutions,
+      .home-testimonial {
+        padding: 60px 40px;
+      }
+
+      .home-cta-banner {
+        padding: 48px 40px;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .home-hero-split .hero-text-col,
+      .home-about .about-text-col {
+        padding: 48px 30px;
+      }
+
+      .home-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .home-stats .stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(40, 40, 40, 0.08);
+      }
+
+      .home-stats .stat:last-child {
+        border-bottom: none;
+      }
+
+      .home-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .home-solutions,
+      .home-testimonial {
+        padding: 48px 30px;
+      }
+
+      .home-cta-banner {
+        padding: 40px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -89,38 +557,200 @@
     </div>
   </header>
 
-  <section id="hero">
-    <div class="blue">
-      <div class="container">
-        <div class="headline home-hero">
-          <h1>Your Partner in Healthcare Intelligence</h1>
-          <img src="assets/graphic_outline.png" alt="Abstract Rapport AI Medical graphic">
+  <!-- HERO: editorial split -->
+  <section class="home-hero-split">
+    <div class="hero-text-col">
+      <div class="home-pill">Healthcare Intelligence Platform</div>
+      <h1>Your Partner in<br>Healthcare<br><span class="accent">Intelligence.</span></h1>
+      <p class="lead">Leverage the power of AI to improve the efficiency, capacity and quality of healthcare operations
+        and services — so you can care for and connect with your patients better.</p>
+      <div class="hero-ctas">
+        <button type="button" class="button coral"><a href="#solutions">Explore solutions &rarr;</a></button>
+        <button type="button" class="button outlined"><a href="contact">Book a demo</a></button>
+      </div>
+    </div>
+    <div class="hero-photo-col home-photo-placeholder">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"
+        aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+      <span>Photo: Doctor-patient interaction</span>
+      <span class="ph-sub">Warm, human, clinical setting</span>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="home-stats">
+    <div class="stat">
+      <div class="stat-num">36,714+</div>
+      <div class="stat-lbl">Patient opportunities identified</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$1.2M</div>
+      <div class="stat-lbl">Est. recoverable revenue per clinic</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">64,831</div>
+      <div class="stat-lbl">Patient records analysed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2023</div>
+      <div class="stat-lbl">Founded in Hong Kong</div>
+    </div>
+  </div>
+
+  <!-- SOLUTIONS -->
+  <section class="home-solutions" id="solutions">
+    <div class="home-section-head">
+      <div class="home-pill">Our Solutions</div>
+      <h2>AI-powered tools built for healthcare providers.</h2>
+    </div>
+    <div class="home-cards">
+      <a class="home-card" href="patient-reacq" style="text-decoration:none;color:inherit;">
+        <div class="card-photo home-photo-placeholder" style="height:195px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+          </svg>
+          <span class="ph-sub">Dashboard UI photo</span>
         </div>
-      </div>
-    </div>
-    <div class="hero-bottom">
-      <div class="hero-text">
-        <p class="hero-lead">Leverage the power of AI to improve the efficiency, capacity and quality of healthcare
-          operations and services, so you can care for and connect with your patients better.</p>
-      </div>
-      <div class="hero-img">
-        <img src="assets/AskJune_screen.png" alt="AskJune patient engagement interface">
-      </div>
+        <div class="card-body">
+          <div class="card-title">Patient ReAcq</div>
+          <div class="card-desc">Unlock your patient database to identify and capture hidden opportunities automatically.
+            Built for primary care, clinic chains and health screening centres.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
+
+      <a class="home-card" href="product" style="text-decoration:none;color:inherit;">
+        <div class="card-photo card-photo-askjune" style="height:195px;" role="img" aria-label="AskJune app interface"></div>
+        <div class="card-body">
+          <div class="card-title">AskJune</div>
+          <div class="card-desc">AI medical assistant created by doctors, built by data scientists, and trusted by
+            patients. Accurate doctor-patient matching and streamlined clinical flow.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
+
+      <a class="home-card" href="smart-scheduler" style="text-decoration:none;color:inherit;">
+        <div class="card-photo card-photo-scheduler" style="height:195px;" role="img" aria-label="Smart Scheduler schedule view"></div>
+        <div class="card-body">
+          <div class="card-title">Smart Scheduler</div>
+          <div class="card-desc">A smarter way to generate hospital rosters — automating complex on-call and A&amp;E duty
+            schedules with fairness, rule-compliance and transparency.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
+
+      <a class="home-card" href="ai-typist" style="text-decoration:none;color:inherit;">
+        <div class="card-photo home-photo-placeholder" style="height:195px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+          </svg>
+          <span class="ph-sub">Clinical documentation photo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">AI Typist</div>
+          <div class="card-desc">Automated clinical documentation — less time on notes, more time for in-depth
+            consultation and meaningful patient care.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
+
+      <a class="home-card" href="ai-course" style="text-decoration:none;color:inherit;">
+        <div class="card-photo home-photo-placeholder" style="height:195px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+          <span class="ph-sub">Training / workshop photo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">AI Course</div>
+          <div class="card-desc">Upskill your healthcare team with hands-on AI training programs designed by medical
+            and AI professionals.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
+
+      <a class="home-card" href="others" style="text-decoration:none;color:inherit;">
+        <div class="card-photo home-photo-placeholder" style="height:195px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+          <span class="ph-sub">Custom solutions photo</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Others</div>
+          <div class="card-desc">Not every healthcare workflow fits a standard product. We design custom tools and
+            solutions tailored to our clients' specific challenges.</div>
+          <span class="card-link">Learn more &rarr;</span>
+        </div>
+      </a>
     </div>
   </section>
 
-  <section id="aboutus" class="cyan">
-    <div class="container">
-      <h2>At Rapport AI Medical, we are revolutionising healthcare by empowering providers with an AI-driven
-        solution.</h2>
-      <p>Unlike generic chatbots or fragmented healthcare IT systems, our medical and technical expertise allow us to
-        create specialised solutions that power a unified and intelligent system which connects patients, streamlines
-        operations, improves services, and delivers powerful data insights to drive better decision-making.</p>
-      <button class="text-bt"><a href="about">Learn more</a></button>
+  <!-- ABOUT SPLIT -->
+  <section class="home-about">
+    <div class="about-photo-col" style="background:url('assets/event_photos/1748342386678.jfif') center/cover no-repeat;min-height:440px;"></div>
+    <div class="about-text-col">
+      <div class="home-pill">About us</div>
+      <h2>Revolutionising healthcare, one provider at a time.</h2>
+      <p>Founded in 2023 by two friends — one a doctor, one a patient — who witnessed first-hand the systemic issues in
+        our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to build
+        better healthcare for all by empowering providers with specialised AI-driven solutions that connect patients,
+        streamline operations, and deliver powerful data insights.</p>
+      <div class="about-badges">
+        <a href="https://www.hkstp.org/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/HKSTP_PartnerLogo_EN_Black_RGB.png" alt="HKSTP">
+        </a>
+        <a href="https://cloud.google.com/startup" target="_blank" rel="noopener noreferrer">
+          <img src="assets/google-for-startups.png" alt="Google for Startups">
+        </a>
+        <a href="https://www.investhk.gov.hk/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/Press_investhk.png" alt="InvestHK">
+        </a>
+        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/aws-startup.png" alt="AWS">
+        </a>
+        <a href="https://www.hkmedtech.org/en/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/hkmta_logo.png" alt="Hong Kong MedTech Association">
+        </a>
+      </div>
+      <a class="about-link" href="about">Learn more about us &rarr;</a>
     </div>
   </section>
 
-  <section id="CTA" class="coral"></section>
+  <!-- TESTIMONIAL -->
+  <section class="home-testimonial">
+    <div class="home-testimonial-inner">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>It helped us systematically identify patients due for screening, without adding any manual workload to
+        our team. It unlocked revenue we didn't even realise we were missing.</blockquote>
+      <div class="quote-mark">&rdquo;</div>
+      <cite>&mdash; Established Clinic Chain, Hong Kong</cite>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="home-cta-banner">
+    <div class="cta-copy">
+      <h3>Ready to transform your practice?</h3>
+      <p>Preview our solutions using your own patient data — no commitment required.</p>
+    </div>
+    <div class="cta-btn-wrap">
+      <a href="mailto:admin@rapportaimedical.com?subject=Demo%20Request">Contact us for a demo &rarr;</a>
+    </div>
+  </section>
 
   <footer>
     <div id="footer"></div>
