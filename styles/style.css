@@ -3196,20 +3196,26 @@ label {
 }
 
 .lsc-photos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  height: 360px;
   gap: 20px;
+  overflow: hidden;
+}
+
+.lsc-photos-grid .gallery-photo {
+  flex: 1 1 auto;
+  height: 100%;
+  width: auto;
+  min-width: 0;
+  aspect-ratio: auto;
+  min-height: auto;
+  object-fit: cover;
 }
 
 .press-photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-}
-
-.lsc-photos-grid .gallery-photo {
-  aspect-ratio: 1;
-  min-height: auto;
 }
 
 .press-photos-grid .gallery-photo {
@@ -3340,13 +3346,13 @@ label {
   }
 
   .lsc-photos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    height: 180px;
+    gap: 10px;
   }
 
   .press-photos-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 
   .lsc-photos-caption {
@@ -3585,6 +3591,22 @@ label {
   flex-wrap: nowrap;
 }
 
+.patented-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #e8b830;
+  color: #1a2744;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 11px 22px;
+  border-radius: 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .social-proof-inline {
   list-style: none;
   display: flex;
@@ -3635,6 +3657,7 @@ label {
   .product-name-row {
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 24px;
   }
 
   .icon-ticker-wrap {
@@ -3712,6 +3735,7 @@ label {
   height: auto;
   display: block;
   border-radius: 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.13);
 }
 
 @keyframes float-primary {
@@ -3727,11 +3751,15 @@ label {
 .screenshot-stack {
   display: grid;
   gap: 0;
-  background: linear-gradient(135deg, white 0%, var(--product-soft) 100%);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: auto;
 }
 
 .screenshot-stack img:first-child {
-  animation: float-primary 5s ease-in-out infinite;
+  /* no animation */
 }
 
 .screenshot-stack .secondary-shot {
@@ -3742,7 +3770,6 @@ label {
   border-radius: 24px;
   position: relative;
   z-index: 1;
-  animation: float-secondary 6s ease-in-out infinite;
 }
 
 .screenshot-row {
@@ -3968,16 +3995,19 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, white 0%, var(--product-soft) 100%);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: auto;
 }
 
 .scheduler-hero-shot {
   width: 100%;
   height: auto;
   display: block;
-  animation: float-primary 5.5s ease-in-out infinite;
-  transform-origin: center center;
-  will-change: transform;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.13);
 }
 
 .scheduler-visual img {
@@ -4350,6 +4380,14 @@ label {
   gap: 16px;
 }
 
+.scheduler-story-media > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.13);
+}
+
 .scheduler-shot-card {
   padding: 18px;
   border-radius: 28px;
@@ -4368,11 +4406,11 @@ label {
 }
 
 .scheduler-shot-card--primary {
-  animation: float-primary 6.4s ease-in-out infinite;
+  /* no animation */
 }
 
 .scheduler-shot-card--secondary {
-  animation: float-secondary 7.1s ease-in-out infinite;
+  /* no animation */
 }
 
 .scheduler-how-steps {
@@ -4510,6 +4548,109 @@ label {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+}
+
+.scheduler-problem-section h2 {
+  max-width: 920px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.scheduler-pain-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.58fr) minmax(0, 1fr);
+  grid-template-areas:
+    "hours image fairness"
+    "rules image chaos";
+  gap: 16px 22px;
+  align-items: center;
+}
+
+.scheduler-pain-card {
+  min-height: 124px;
+  padding: 20px 24px;
+  background: var(--offwhite);
+  border: 1px solid rgba(26, 39, 68, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.scheduler-pain-card:nth-child(1) { grid-area: hours; }
+.scheduler-pain-card:nth-child(2) { grid-area: fairness; }
+.scheduler-pain-card:nth-child(4) { grid-area: rules; }
+.scheduler-pain-card:nth-child(5) { grid-area: chaos; }
+
+.scheduler-pain-card h3 {
+  font-family: var(--sans);
+  font-size: clamp(1.08rem, 1.4vw, 1.32rem);
+  line-height: 1.18;
+  font-weight: 800;
+  color: var(--black);
+  padding: 0;
+  margin: 0 0 8px;
+}
+
+.scheduler-pain-card p {
+  margin: 0;
+  color: #535b66;
+  line-height: 1.42;
+}
+
+.scheduler-pain-image {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+  margin: 0;
+  min-height: 280px;
+}
+
+.scheduler-pain-image img {
+  width: min(100%, 205px);
+  max-height: 310px;
+  object-fit: contain;
+  align-self: end;
+  filter: grayscale(1) drop-shadow(0 16px 24px rgba(26, 39, 68, 0.13));
+  opacity: 0.88;
+}
+
+.scheduler-solution-compact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  row-gap: 8px;
+  align-items: start;
+  margin-top: 24px;
+  padding: 24px 28px;
+  border: 1px solid rgba(26, 39, 68, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.42) 100%), var(--offwhite);
+}
+
+.scheduler-solution-compact i {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(124, 170, 238, 0.2);
+  color: var(--darkblue);
+  padding: 0;
+}
+
+.scheduler-solution-compact h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.scheduler-solution-compact p {
+  grid-column: 2;
 }
 
 .proof-grid-metrics {
@@ -4738,7 +4879,7 @@ label {
 }
 
 .product-proof-cta-grid--solo {
-  max-width: 640px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4792,6 +4933,10 @@ label {
   padding: 14px 24px;
   font-size: 1rem;
   align-self: center;
+}
+
+.product-proof-cta-grid--solo .product-cta-card h2 {
+  max-width: 860px;
 }
 
 .cta-button-rich {
@@ -4864,6 +5009,33 @@ label {
 
   .product-proof-cta-grid--solo {
     grid-template-columns: 1fr;
+  }
+
+  .product-proof-cta-grid--solo .product-cta-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+    padding: 34px 42px;
+    text-align: left;
+  }
+
+  .product-proof-cta-grid--solo .product-cta-card h2 {
+    margin: 0;
+    font-size: clamp(1.72rem, 2.1vw, 2.18rem);
+    line-height: 1.08;
+    text-align: left;
+  }
+
+  .product-proof-cta-grid--solo .product-cta-card p {
+    margin: 0;
+    text-align: left;
+  }
+
+  .product-proof-cta-grid--solo .product-cta-card .cta-button {
+    justify-self: end;
+    margin-top: 0;
+    white-space: nowrap;
   }
 
   .product-proof-panel .proof-card,
@@ -4985,6 +5157,24 @@ label {
     min-height: auto;
   }
 
+  .scheduler-pain-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "image image"
+      "hours fairness"
+      "rules chaos";
+  }
+
+  .scheduler-pain-image {
+    min-height: 200px;
+  }
+
+  .scheduler-pain-image img {
+    width: min(38vw, 190px);
+    max-height: 220px;
+    align-self: center;
+  }
+
   .scheduler-story {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -5061,6 +5251,41 @@ label {
   .product-subtitle,
   .section-intro {
     font-size: 1rem;
+  }
+
+  .scheduler-pain-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "hours"
+      "fairness"
+      "rules"
+      "chaos";
+    gap: 14px;
+  }
+
+  .scheduler-pain-card {
+    min-height: 0;
+    padding: 18px 20px;
+    border-radius: 20px;
+  }
+
+  .scheduler-pain-image {
+    min-height: 170px;
+  }
+
+  .scheduler-pain-image img {
+    width: min(52vw, 165px);
+    max-height: 190px;
+  }
+
+  .scheduler-solution-compact {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .scheduler-solution-compact p {
+    grid-column: auto;
   }
 
   .database-visual {
