@@ -3591,21 +3591,6 @@ label {
   flex-wrap: nowrap;
 }
 
-.patented-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  background: #e8b830;
-  color: #1a2744;
-  font-size: 0.92rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  padding: 11px 22px;
-  border-radius: 28px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
 
 .social-proof-inline {
   list-style: none;
