@@ -11,13 +11,13 @@ Plain HTML/CSS/JS — no build step, no framework, no package manager.
 - **How:** Pushing to `main` triggers `.github/workflows/deploy-production.yml`, which deploys to the `gh-pages` branch via `JamesIves/github-pages-deploy-action`. GitHub Pages serves from `gh-pages`.
 
 ### Staging
-- **URL:** https://rapportaimedical-staging.netlify.app
+- **URL:** https://staging-rapportaimedical.netlify.app
 - **Branch:** `staging`
 - **How:** Netlify watches the `staging` branch directly — every push auto-deploys. No GitHub Actions needed.
 
 ## Dev Workflow
 1. Developers make changes on the `staging` branch and push
-2. Changes auto-deploy to https://rapportaimedical-staging.netlify.app
+2. Changes auto-deploy to https://staging-rapportaimedical.netlify.app
 3. Internal team reviews the staging site
 4. Once approved, developers merge `staging` → `main` (via PR or direct merge)
 5. Production auto-deploys to https://rapportaimedical.com

@@ -92,6 +92,179 @@ window.addEventListener("resize", () => {
   closeDesktopDropdowns();
 });
 
+function initReacqDatabaseVisuals() {
+  const widgets = document.querySelectorAll(".database-visual[data-reacq-animation]");
+
+  if (!widgets.length) {
+    return;
+  }
+
+  const patients = [
+    { initials: "AL", name: "A.L. - 52F", detail: "Cancer screening eligible", badge: "screen", badgeText: "Screening", val: 1210 },
+    { initials: "MR", name: "M.R. - 62F", detail: "Missed follow-up", badge: "overdue", badgeText: "Overdue", val: 1850 },
+    { initials: "KT", name: "K.T. - 45M", detail: "Eligible for screening", badge: "screen", badgeText: "Screening", val: 1180 },
+    { initials: "RN", name: "R.N. - 67F", detail: "Chronic care follow-up due", badge: "overdue", badgeText: "Overdue", val: 2120 },
+    { initials: "TC", name: "T.C. - 44M", detail: "Lab results not reviewed", badge: "overdue", badgeText: "Overdue", val: 1290 },
+    { initials: "CM", name: "C.M. - 49M", detail: "Suitable for health package", badge: "screen", badgeText: "Screening", val: 1195 },
+    { initials: "SW", name: "S.W. - 63F", detail: "Post-discharge follow-up missed", badge: "overdue", badgeText: "Overdue", val: 1980 },
+    { initials: "FL", name: "F.L. - 60F", detail: "Bone density screening due", badge: "screen", badgeText: "Screening", val: 1430 },
+  ];
+
+  function burstDollars(widget, el) {
+    const elRect = el.getBoundingClientRect();
+    const widgetRect = widget.getBoundingClientRect();
+    const cx = elRect.left + elRect.width / 2 - widgetRect.left;
+    const cy = elRect.top + elRect.height / 2 - widgetRect.top;
+
+    for (let i = 0; i < 4; i += 1) {
+      const span = document.createElement("span");
+      span.textContent = "$";
+      span.className = "dollar-burst";
+      const angle = (i / 4) * Math.PI * 2 + Math.random() * 0.8;
+      const dist = 18 + Math.random() * 18;
+      span.style.left = `${cx}px`;
+      span.style.top = `${cy}px`;
+      span.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+      span.style.setProperty("--dy", `${Math.sin(angle) * dist}px`);
+      widget.appendChild(span);
+      span.addEventListener("animationend", () => span.remove());
+    }
+  }
+
+  widgets.forEach((widget) => {
+    const rows = Array.from(widget.querySelectorAll(".db-row"));
+    const opportunityCount = widget.querySelector(".db-footer strong");
+
+    if (!rows.length) {
+      return;
+    }
+
+    let widgetVisible = true;
+    let visibleIndices = rows.map((_, index) => index);
+    let currentValues = rows.map((row, index) => {
+      const seeded = patients[index] || patients[0];
+      return seeded.val;
+    });
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        widgetVisible = entries[0].isIntersecting;
+      }, { threshold: 0.1 }).observe(widget);
+    }
+
+    rows.forEach((row, index) => {
+      const value = row.querySelector(".db-value");
+      const target = currentValues[index];
+      const duration = 800;
+      const delay = index * 180;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) {
+          startTime = timestamp + delay;
+        }
+
+        if (timestamp < startTime) {
+          requestAnimationFrame(step);
+          return;
+        }
+
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        value.textContent = `+$${Math.round(eased * target).toLocaleString()}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          burstDollars(widget, value);
+        }
+      }
+
+      requestAnimationFrame(step);
+    });
+
+    setTimeout(function tickValue() {
+      if (widgetVisible) {
+        const liveRows = Array.from(widget.querySelectorAll(".db-row"));
+        const index = Math.floor(Math.random() * liveRows.length);
+        const increment = Math.floor(Math.random() * 140) + 65;
+        const value = liveRows[index].querySelector(".db-value");
+
+        currentValues[index] += increment;
+        value.textContent = `+$${currentValues[index].toLocaleString()}`;
+        value.classList.remove("db-value--tick");
+        void value.offsetWidth;
+        value.classList.add("db-value--tick");
+        setTimeout(() => value.classList.remove("db-value--tick"), 500);
+        burstDollars(widget, value);
+      }
+
+      setTimeout(tickValue, Math.random() * 650 + 450);
+    }, 1400);
+
+    setTimeout(function swapRow() {
+      if (widgetVisible) {
+        const liveRows = Array.from(widget.querySelectorAll(".db-row"));
+        const rowIndex = Math.floor(Math.random() * liveRows.length);
+        const row = liveRows[rowIndex];
+        let nextIndex = Math.floor(Math.random() * patients.length);
+        let attempts = 0;
+
+        while (visibleIndices.includes(nextIndex) && attempts < 30) {
+          nextIndex = Math.floor(Math.random() * patients.length);
+          attempts += 1;
+        }
+
+        row.classList.remove("db-row--settled");
+        row.classList.add("db-row--out");
+
+        setTimeout(() => {
+          const patient = patients[nextIndex];
+          row.querySelector(".db-avatar").textContent = patient.initials;
+          row.querySelector(".db-name").textContent = patient.name;
+          row.querySelector(".db-detail").textContent = patient.detail;
+          const badge = row.querySelector(".db-badge");
+          badge.textContent = patient.badgeText;
+          badge.className = `db-badge db-badge--${patient.badge}`;
+          const value = row.querySelector(".db-value");
+          value.textContent = `+$${patient.val.toLocaleString()}`;
+          currentValues[rowIndex] = patient.val;
+          visibleIndices[rowIndex] = nextIndex;
+
+          row.classList.remove("db-row--out");
+          row.classList.add("db-row--in");
+          setTimeout(() => {
+            row.classList.remove("db-row--in");
+            row.classList.add("db-row--settled");
+            burstDollars(widget, value);
+          }, 420);
+        }, 270);
+      }
+
+      setTimeout(swapRow, Math.random() * 1400 + 2000);
+    }, 3000);
+
+    if (opportunityCount) {
+      let count = 36714;
+
+      setTimeout(function tickOpportunities() {
+        if (widgetVisible) {
+          count += Math.floor(Math.random() * 5) + 1;
+          opportunityCount.textContent = count.toLocaleString();
+        }
+
+        setTimeout(tickOpportunities, Math.random() * 4000 + 1500);
+      }, 2200);
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initReacqDatabaseVisuals);
+} else {
+  initReacqDatabaseVisuals();
+}
+
 const cta = document.getElementById("CTA");
 
 if (cta) {
@@ -290,9 +463,9 @@ function footerTemplate() {
 
   const email = document.createElement("p");
   const emailAddress = document.createElement("a");
-  emailAddress.href = "mailto:admin@rapportaimedical.com";
+  emailAddress.href = "mailto:hello@rapportaimedical.com";
   emailAddress.style.textDecoration = "underline";
-  emailAddress.textContent = "admin@rapportaimedical.com";
+  emailAddress.textContent = "hello@rapportaimedical.com";
   email.appendChild(emailAddress);
 
   socials.appendChild(socialIcons);
@@ -314,3 +487,21 @@ function footerTemplate() {
 }
 
 footerTemplate();
+
+console.log(
+  "\n" +
+  "%c            ___\n" +
+  "           /   \\\n" +
+  "___/\\  /\\_/     \\____/\\/\\___\n" +
+  "    \\/\\/\n" +
+  "\n" +
+  "RAPPORT AI MEDICAL — PATIENT INTAKE\n" +
+  "────────────────────────────────────────\n" +
+  "Name        : Curious Developer\n" +
+  "Status      : Nosy\n" +
+  "Diagnosis   : Chronic code-inspecting behaviour\n" +
+  "Treatment   : Join our team ;)\n" +
+  "Contact     : hello@rapportaimedical.com\n" +
+  "────────────────────────────────────────\n",
+  "font-family: monospace; font-size: 13px; color: #2d7a5a;"
+);
