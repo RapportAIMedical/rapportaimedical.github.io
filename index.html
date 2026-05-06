@@ -139,6 +139,13 @@
 
     .home-hero-split .hero-photo-col {
       min-height: 650px;
+      box-sizing: border-box;
+      padding-top: 86px;
+      background-image: url('assets/home-hero-offwhite.png');
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-origin: content-box;
     }
 
     /* STATS */
@@ -309,6 +316,192 @@
 
     .home-reacq-visual .dollar-burst {
       font-size: 1rem;
+    }
+
+    /* AI COURSE — mini floating module cards (mirrors course page hero) */
+    .home-course-visual {
+      height: 195px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);
+      gap: 8px;
+      padding: 14px;
+      background: linear-gradient(155deg, #fdf9ec 0%, #ffffff 55%, rgba(247, 213, 99, 0.28) 100%);
+      overflow: hidden;
+    }
+
+    .home-course-card {
+      padding: 10px 11px;
+      border-radius: 13px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      animation: home-course-float 4s ease-in-out infinite;
+      min-width: 0;
+    }
+
+    .home-course-card:nth-child(2) { animation-delay: 0.7s; }
+    .home-course-card:nth-child(3) { animation-delay: 1.4s; }
+    .home-course-card:nth-child(4) { animation-delay: 2.1s; }
+
+    @keyframes home-course-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      35%       { transform: translateY(-4px) rotate(0.5deg); }
+      70%       { transform: translateY(-1.5px) rotate(-0.3deg); }
+    }
+
+    .home-course-card-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(247, 213, 99, 0.32);
+      color: #8a6a14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .home-course-card-num {
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.42;
+      margin-top: 1px;
+    }
+
+    .home-course-card-title {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.7rem;
+      line-height: 1.25;
+      color: var(--black);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    /* OTHERS — orbital benefits visual */
+    .home-others-visual {
+      height: 195px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(150deg, #fff3ee 0%, #ffffff 55%, rgba(255, 161, 138, 0.22) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .home-others-rings {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 168px;
+      height: 168px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 124, 92, 0.28);
+      pointer-events: none;
+    }
+
+    .home-others-rings::before {
+      content: '';
+      position: absolute;
+      inset: 22px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 124, 92, 0.16);
+    }
+
+    .home-others-orbit {
+      position: relative;
+      width: 168px;
+      height: 168px;
+      animation: home-orbit-spin 26s linear infinite;
+    }
+
+    @keyframes home-orbit-spin {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .home-others-sat {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 38px;
+      height: 38px;
+      margin: -19px 0 0 -19px;
+      transform: rotate(var(--angle)) translateY(-72px);
+    }
+
+    .home-others-sat-icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid rgba(40, 40, 40, 0.07);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: home-orbit-counter 26s linear infinite;
+    }
+
+    @keyframes home-orbit-counter {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+
+    .home-others-sat-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      opacity: 0.78;
+    }
+
+    .home-others-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--coral);
+      box-shadow: 0 8px 22px rgba(255, 124, 92, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--black);
+      font-size: 1.35rem;
+      z-index: 3;
+      animation: home-hub-pulse 2.6s ease-in-out infinite;
+    }
+
+    .home-others-hub::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 124, 92, 0.5);
+      animation: home-hub-ring 2.6s ease-out infinite;
+    }
+
+    @keyframes home-hub-pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50%      { transform: translate(-50%, -50%) scale(1.05); }
+    }
+
+    @keyframes home-hub-ring {
+      0%   { transform: scale(0.85); opacity: 0.7; }
+      100% { transform: scale(1.45); opacity: 0; }
     }
 
     .home-card .card-body {
@@ -513,6 +706,10 @@
         min-height: 420px;
       }
 
+      .home-hero-split .hero-photo-col {
+        display: none;
+      }
+
       .home-stats {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -642,7 +839,7 @@
         <button type="button" class="button outlined"><a href="contact">Book a demo</a></button>
       </div>
     </div>
-    <div class="hero-photo-col" style="background-image:url('assets/home-hero.png');background-size:contain;background-position:center;background-repeat:no-repeat;"></div>
+    <div class="hero-photo-col"></div>
   </section>
 
   <!-- SOLUTIONS -->
@@ -733,13 +930,28 @@
       </a>
 
       <a class="home-card" href="ai-course" style="text-decoration:none;color:inherit;">
-        <div class="card-photo home-photo-placeholder" style="height:195px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            aria-hidden="true">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-          </svg>
-          <span class="ph-sub">Training / workshop photo</span>
+        <div class="card-photo home-course-visual" role="img"
+          aria-label="Animated AI Course modules: AI fundamentals, clinical use cases, responsible AI, practical integration">
+          <div class="home-course-card">
+            <div class="home-course-card-icon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+            <span class="home-course-card-num">Module 01</span>
+            <span class="home-course-card-title">AI &amp; ML Fundamentals</span>
+          </div>
+          <div class="home-course-card">
+            <div class="home-course-card-icon"><i class="fa fa-stethoscope" aria-hidden="true"></i></div>
+            <span class="home-course-card-num">Module 02</span>
+            <span class="home-course-card-title">Clinical Use Cases</span>
+          </div>
+          <div class="home-course-card">
+            <div class="home-course-card-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+            <span class="home-course-card-num">Module 03</span>
+            <span class="home-course-card-title">Responsible AI</span>
+          </div>
+          <div class="home-course-card">
+            <div class="home-course-card-icon"><i class="fa fa-plug" aria-hidden="true"></i></div>
+            <span class="home-course-card-num">Module 04</span>
+            <span class="home-course-card-title">Practical Integration</span>
+          </div>
         </div>
         <div class="card-body">
           <div class="card-title">AI Course</div>
@@ -750,13 +962,30 @@
       </a>
 
       <a class="home-card" href="others" style="text-decoration:none;color:inherit;">
-        <div class="card-photo home-photo-placeholder" style="height:195px;">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            aria-hidden="true">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-          </svg>
-          <span class="ph-sub">Custom solutions photo</span>
+        <div class="card-photo home-others-visual" role="img"
+          aria-label="Animated visual of custom-built healthcare benefits orbiting a central hub">
+          <div class="home-others-rings"></div>
+          <div class="home-others-orbit">
+            <div class="home-others-sat" style="--angle:0deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_1.png" alt=""></div>
+            </div>
+            <div class="home-others-sat" style="--angle:60deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_2.png" alt=""></div>
+            </div>
+            <div class="home-others-sat" style="--angle:120deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_3.png" alt=""></div>
+            </div>
+            <div class="home-others-sat" style="--angle:180deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_4.png" alt=""></div>
+            </div>
+            <div class="home-others-sat" style="--angle:240deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_5.png" alt=""></div>
+            </div>
+            <div class="home-others-sat" style="--angle:300deg;">
+              <div class="home-others-sat-icon"><img src="assets/Our_Solutions_Benefit_6.png" alt=""></div>
+            </div>
+          </div>
+          <div class="home-others-hub" aria-hidden="true"><i class="fa fa-cogs"></i></div>
         </div>
         <div class="card-body">
           <div class="card-title">Others</div>
