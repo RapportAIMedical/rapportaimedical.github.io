@@ -3591,6 +3591,35 @@ label {
   flex-wrap: nowrap;
 }
 
+.patent-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 7px;
+  background: var(--product-accent-dark);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.patent-badge .fa {
+  color: #f0c040;
+  font-size: 0.95em;
+}
+
+@media only screen and (max-width: 700px) {
+  .patent-badge {
+    font-size: 0.75rem;
+    padding: 6px 13px;
+  }
+}
+
 
 .social-proof-inline {
   list-style: none;
@@ -5339,6 +5368,43 @@ label {
 
   .product-section {
     padding: 72px 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .audience-anchor {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .database-visual {
+    padding: 12px;
+  }
+
+  .db-row {
+    gap: 6px;
+    padding: 8px 10px;
+  }
+
+  .db-value {
+    display: none;
+  }
+
+  .db-badge {
+    min-width: 54px;
+    font-size: 0.58rem;
+    padding: 3px 6px;
+  }
+
+  .db-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .db-detail {
+    font-size: 0.62rem;
   }
 }
 
