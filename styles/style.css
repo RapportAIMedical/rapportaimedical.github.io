@@ -1014,6 +1014,27 @@ footer {
   font-size: 14px;
 }
 
+.smallprint {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer-member-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 12px;
+}
+
+.footer-member-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
 .icons {
   display: inline-flex;
   gap: 24px;
@@ -1075,6 +1096,19 @@ footer {
 
   .socials {
     padding: 24px 0;
+  }
+
+  .smallprint {
+    align-items: flex-start;
+  }
+
+  .footer-member-logos {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .footer-member-logo {
+    height: 24px;
   }
 }
 
