@@ -475,10 +475,36 @@ function footerTemplate() {
   const smallPrint = document.createElement("div");
   smallPrint.className = "smallprint";
 
+  const footerMemberLogos = document.createElement("div");
+  footerMemberLogos.className = "footer-member-logos";
+
+  const memberLogoData = [
+    { href: "https://www.hkstp.org/", src: "assets/HKSTP_PartnerLogo_EN_Black_RGB.png", alt: "HKSTP" },
+    { href: "https://cloud.google.com/startup", src: "assets/google-for-startups.png", alt: "Google for Startups" },
+    { href: "https://www.investhk.gov.hk/", src: "assets/Press_investhk.png", alt: "InvestHK" },
+    { href: "https://aws.amazon.com/", src: "assets/aws-startup.png", alt: "AWS" },
+    { href: "https://www.hkmedtech.org/en/", src: "assets/hkmta_logo.png", alt: "Hong Kong MedTech Association" },
+  ];
+
+  memberLogoData.forEach(({ href, src, alt }) => {
+    const a = document.createElement("a");
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.className = "member-link";
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt;
+    img.className = "footer-member-logo";
+    a.appendChild(img);
+    footerMemberLogos.appendChild(a);
+  });
+
   const smallPrintText = document.createElement("p");
   smallPrintText.textContent =
     "\u00A9 " + new Date().getFullYear() + " Rapport AI Medical. All rights reserved.";
 
+  smallPrint.appendChild(footerMemberLogos);
   smallPrint.appendChild(smallPrintText);
   footerBottom.appendChild(socials);
   footerBottom.appendChild(smallPrint);
