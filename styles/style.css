@@ -3245,6 +3245,27 @@ label {
   object-fit: cover;
 }
 
+/* Justified gallery row: widths scale to each photo's aspect ratio
+   (flex-grow), so the row fills the full width with equal heights. */
+.booth-photos-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.booth-photos-grid .gallery-photo {
+  flex: 0.75 1 0;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: auto;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+.booth-photos-grid .gallery-photo:nth-child(2) {
+  flex-grow: 1.333;
+}
+
 .press-photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3380,6 +3401,10 @@ label {
 
   .lsc-photos-grid {
     height: 180px;
+    gap: 10px;
+  }
+
+  .booth-photos-grid {
     gap: 10px;
   }
 
