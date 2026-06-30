@@ -138,14 +138,63 @@
     }
 
     .home-hero-split .hero-photo-col {
+      position: relative;
       min-height: 650px;
-      box-sizing: border-box;
-      padding-top: 86px;
-      background-image: url('assets/home-hero-offwhite.png');
-      background-size: contain;
-      background-position: center top;
+      overflow: hidden;
+    }
+
+    /* Blend the photo into the offwhite text column on the left */
+    .home-hero-split .hero-photo-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(to right,
+        #f9f5ee 0%,
+        rgba(249, 245, 238, 0.85) 12%,
+        rgba(249, 245, 238, 0) 45%);
+    }
+
+    .home-hero-split .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
-      background-origin: content-box;
+      opacity: 0;
+      animation: heroFade 28s infinite;
+      will-change: opacity;
+    }
+
+    .home-hero-split .hero-slide:nth-child(1) {
+      background-image: url('assets/hero-screening-report.jpg');
+      animation-delay: -2s;
+    }
+    .home-hero-split .hero-slide:nth-child(2) {
+      background-image: url('assets/hero-nurse-tablet.jpg');
+      animation-delay: 5s;
+    }
+    .home-hero-split .hero-slide:nth-child(3) {
+      background-image: url('assets/hero-walking-consult.jpg');
+      animation-delay: 12s;
+    }
+    .home-hero-split .hero-slide:nth-child(4) {
+      background-image: url('assets/hero-consult-elderly.jpg');
+      animation-delay: 19s;
+    }
+
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      4%   { opacity: 1; }
+      21%  { opacity: 1; }
+      29%  { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-hero-split .hero-slide { animation: none; opacity: 0; }
+      .home-hero-split .hero-slide:nth-child(1) { opacity: 1; }
     }
 
     /* STATS */
@@ -245,8 +294,8 @@
       background-repeat: no-repeat;
     }
 
-    .card-photo-ai-typist {
-      background-image: url('assets/ai-typist-radiology-reporting.png');
+    .card-photo-radiology-assistant {
+      background-image: url('assets/radiology-assistant-reporting.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -790,7 +839,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI-Powered Radiology Assistant</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -814,7 +863,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI-Powered Radiology Assistant</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -830,23 +879,28 @@
   <!-- HERO: editorial split -->
   <section class="home-hero-split">
     <div class="hero-text-col">
-      <div class="home-pill">Healthcare Intelligence Platform</div>
-      <h1>Your Partner in<br>Healthcare<br><span class="accent">Intelligence.</span></h1>
-      <p class="lead">Leverage the power of AI to improve the efficiency, capacity and quality of healthcare operations
+      <div class="home-pill">HealthTech Solutions Platform</div>
+      <h1>Your Partner in<br><span class="accent">Building Better Healthcare</span></h1>
+      <p class="lead">We help Healthcare Providers leverage the power of AI to improve the efficiency, capacity and quality of healthcare operations
         and services — so you can care for and connect with your patients better.</p>
       <div class="hero-ctas">
         <button type="button" class="button coral"><a href="#solutions">Explore solutions &rarr;</a></button>
         <button type="button" class="button outlined"><a href="contact">Book a demo</a></button>
       </div>
     </div>
-    <div class="hero-photo-col"></div>
+    <div class="hero-photo-col" aria-hidden="true">
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
   </section>
 
   <!-- SOLUTIONS -->
   <section class="home-solutions" id="solutions">
     <div class="home-section-head">
       <div class="home-pill">Our Solutions</div>
-      <h2>AI-powered tools built for healthcare providers.</h2>
+      <h2 style="white-space: nowrap;">AI-powered tools built for healthcare providers.</h2>
     </div>
     <div class="home-cards">
       <a class="home-card" href="patient-reacq" style="text-decoration:none;color:inherit;">
@@ -919,10 +973,10 @@
         </div>
       </a>
 
-      <a class="home-card" href="ai-typist" style="text-decoration:none;color:inherit;">
-        <div class="card-photo card-photo-ai-typist" style="height:195px;" role="img" aria-label="AI Typist radiology reporting illustration"></div>
+      <a class="home-card" href="radiology-assistant" style="text-decoration:none;color:inherit;">
+        <div class="card-photo card-photo-radiology-assistant" style="height:195px;" role="img" aria-label="AI-Powered Radiology Assistant illustration"></div>
         <div class="card-body">
-          <div class="card-title">AI Typist</div>
+          <div class="card-title">AI-Powered Radiology Assistant</div>
           <div class="card-desc">Automated clinical documentation — less time on notes, more time for in-depth
             consultation and meaningful patient care.</div>
           <span class="card-link">Learn more &rarr;</span>
@@ -1002,7 +1056,7 @@
     <div class="about-photo-col" style="background:url('assets/event_photos/1748342386678.jfif') center/cover no-repeat;min-height:440px;"></div>
     <div class="about-text-col">
       <div class="home-pill">About us</div>
-      <h2>Revolutionising healthcare, one provider at a time.</h2>
+      <h2>Empowering providers to revolutionise healthcare</h2>
       <p>Founded in 2023 by two friends — one a doctor, one a patient — who witnessed first-hand the systemic issues in
         our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to build
         better healthcare for all by empowering providers with specialised AI-driven solutions that connect patients,

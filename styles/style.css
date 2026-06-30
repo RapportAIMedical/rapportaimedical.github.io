@@ -2297,7 +2297,6 @@ label {
   padding: 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 60ch;
   text-align: center;
 }
 
@@ -4063,7 +4062,7 @@ label {
   object-fit: contain;
 }
 
-/* ── WAVEFORM VISUAL (AI Typist) ── */
+/* ── WAVEFORM VISUAL (AI-Powered Radiology Assistant) ── */
 .waveform-visual {
   display: flex;
   flex-direction: column;
@@ -4395,6 +4394,8 @@ label {
 }
 
 .feature-grid--modules .feature-card h3 {
+  width: 100%;
+  text-align: center;
   padding-bottom: 0;
 }
 
@@ -4419,6 +4420,11 @@ label {
 
 .scheduler-story .feature-grid {
   gap: 20px;
+}
+
+.scheduler-story .feature-grid--modules {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .scheduler-story-media {
@@ -4486,6 +4492,11 @@ label {
   .feature-grid--modules .feature-card i {
     padding-bottom: 0;
     flex-shrink: 0;
+  }
+
+  .feature-grid--modules .feature-card h3 {
+    width: auto;
+    text-align: left;
   }
 }
 
@@ -4946,45 +4957,96 @@ label {
 }
 
 .product-cta-card {
+  position: relative;
+  overflow: hidden;
   margin: 0;
-  padding: 26px 28px 28px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--product-accent) 84%, white 16%) 0%, color-mix(in srgb, var(--product-soft) 72%, white 28%) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px 28px 28px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid rgba(40, 40, 40, 0.1);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
-  text-align: center;
+  text-align: left;
+}
+
+/* accent top bar */
+.product-cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 1;
+  background: linear-gradient(90deg, var(--product-accent), var(--product-accent-dark));
+}
+
+/* faint Rapport symbol watermark in the corner, tinted to the page accent */
+.product-cta-card::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  bottom: -18px;
+  width: 132px;
+  height: 132px;
+  z-index: 0;
+  background: var(--product-accent);
+  opacity: 0.16;
+  -webkit-mask: url("../assets/Rapport-logo-RGB_symbol_black.png") no-repeat center / contain;
+  mask: url("../assets/Rapport-logo-RGB_symbol_black.png") no-repeat center / contain;
+  pointer-events: none;
+}
+
+.product-cta-chip {
+  position: relative;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--product-soft);
+  color: var(--product-accent-dark);
+  font-size: 1.25rem;
+  flex-shrink: 0;
 }
 
 .product-cta-card h2 {
-  max-width: 16ch;
-  margin: 0 auto;
-  font-size: clamp(1.6rem, 1.9vw, 2rem);
-  line-height: 1.1;
-  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 20ch;
+  margin: 0;
+  font-size: clamp(1.4rem, 1.8vw, 1.7rem);
+  line-height: 1.14;
+  text-align: left;
   text-wrap: balance;
 }
 
 .product-cta-card p {
-  max-width: 34ch;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+  max-width: 40ch;
+  margin: 0;
+  text-align: left;
+  font-size: 0.97rem;
   line-height: 1.55;
+  opacity: 0.82;
 }
 
 .product-cta-card .cta-button {
+  position: relative;
+  z-index: 1;
   margin-top: 4px;
   padding: 14px 24px;
   font-size: 1rem;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .product-proof-cta-grid--solo .product-cta-card h2 {
-  max-width: 860px;
+  max-width: 40ch;
 }
 
 .cta-button-rich {
@@ -5061,17 +5123,30 @@ label {
 
   .product-proof-cta-grid--solo .product-cta-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 28px;
-    padding: 34px 42px;
+    gap: 26px;
+    padding: 30px 42px;
     text-align: left;
+  }
+
+  /* logo watermark only suits the tall narrow card, not the wide solo band */
+  .product-proof-cta-grid--solo .product-cta-card::after {
+    display: none;
+  }
+
+  .product-proof-cta-grid--solo .product-cta-chip {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    font-size: 1.5rem;
   }
 
   .product-proof-cta-grid--solo .product-cta-card h2 {
     margin: 0;
-    font-size: clamp(1.72rem, 2.1vw, 2.18rem);
-    line-height: 1.08;
+    max-width: 44ch;
+    font-size: clamp(1.6rem, 2vw, 2.05rem);
+    line-height: 1.1;
     text-align: left;
   }
 
@@ -5275,6 +5350,7 @@ label {
 
   .value-pitch-list,
   .feature-grid,
+  .scheduler-story .feature-grid--modules,
   .mini-grid,
   .audience-grid,
   .course-visual,
@@ -5367,9 +5443,9 @@ label {
   .product-cta-card {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    text-align: center;
-    align-items: center;
+    gap: 16px;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .cta-button-rich {
@@ -5392,12 +5468,13 @@ label {
   .product-cta-card h2,
   .product-cta-card p {
     max-width: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .product-cta-card .cta-button {
-    justify-self: center;
+    justify-self: flex-start;
+    align-self: flex-start;
   }
 
   .product-section {
