@@ -5947,6 +5947,311 @@ label {
   }
 }
 
+.radiology-benefits-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255, 161, 138, 0.12), transparent 34%),
+    linear-gradient(24deg, rgba(134, 194, 168, 0.2), transparent 44%),
+    var(--offwhite);
+}
+
+.radiology-benefits-hub {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 670px;
+  max-width: 960px;
+}
+
+.radiology-benefits-hub h2 {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 3;
+  margin: 0;
+  max-width: none;
+  font-size: clamp(2.85rem, 4.35vw, 4.2rem);
+  line-height: 0.95;
+}
+
+.radiology-benefits-core {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(10, 37, 81, 0.12);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0.98) 0 42%,
+      rgba(124, 170, 238, 0.15) 43% 61%,
+      rgba(255, 161, 138, 0.16) 62% 100%);
+  box-shadow: 0 22px 54px rgba(40, 40, 40, 0.11);
+}
+
+.radiology-benefits-image {
+  display: grid;
+  place-items: center;
+  width: 202px;
+  height: 202px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f8f1e8;
+  box-shadow: inset 0 0 0 1px rgba(40, 40, 40, 0.08);
+}
+
+.radiology-benefits-image img {
+  display: block;
+  width: 176px;
+  height: auto;
+}
+
+.radiology-benefits-ring {
+  position: absolute;
+  inset: 50%;
+  width: 500px;
+  height: 500px;
+  translate: -50% -50%;
+  border: 1px dashed rgba(10, 37, 81, 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.radiology-benefits-connector {
+  position: absolute;
+  inset: 50%;
+  width: 610px;
+  height: 610px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 18deg,
+      transparent 0deg 18deg,
+      rgba(255, 161, 138, 0.32) 18deg 22deg,
+      transparent 22deg 90deg,
+      rgba(124, 170, 238, 0.28) 90deg 94deg,
+      transparent 94deg 165deg,
+      rgba(134, 194, 168, 0.3) 165deg 169deg,
+      transparent 169deg 230deg,
+      rgba(139, 228, 235, 0.28) 230deg 234deg,
+      transparent 234deg 304deg,
+      rgba(177, 156, 217, 0.3) 304deg 308deg,
+      transparent 308deg 360deg);
+  -webkit-mask: radial-gradient(circle, transparent 0 38%, #000 39% 41%, transparent 42% 100%);
+  mask: radial-gradient(circle, transparent 0 38%, #000 39% 41%, transparent 42% 100%);
+  pointer-events: none;
+}
+
+.radiology-benefits-list {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.radiology-benefits-list li {
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  width: 260px;
+  min-height: 72px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 15px 17px;
+  border: 1px solid rgba(40, 40, 40, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 253, 248, 0.95);
+  box-shadow: 0 14px 34px rgba(40, 40, 40, 0.08);
+}
+
+.radiology-benefits-list li:nth-child(1) {
+  top: 158px;
+  left: 70px;
+}
+
+.radiology-benefits-list li:nth-child(2) {
+  top: 158px;
+  right: 70px;
+}
+
+.radiology-benefits-list li:nth-child(3) {
+  bottom: 184px;
+  left: 42px;
+}
+
+.radiology-benefits-list li:nth-child(4) {
+  bottom: 62px;
+  left: 50%;
+  translate: -50% 0;
+}
+
+.radiology-benefits-list li:nth-child(5) {
+  bottom: 184px;
+  right: 42px;
+}
+
+.radiology-benefits-list span:last-child {
+  min-width: 0;
+  color: var(--black);
+  font-size: clamp(0.95rem, 1vw, 1.06rem);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+@media only screen and (min-width: 1051px) {
+  .radiology-benefits-list span:last-child {
+    font-size: clamp(0.86rem, 0.88vw, 0.96rem);
+    font-weight: 650;
+  }
+}
+
+.radiology-benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  color: var(--darkblue);
+  font-size: 1rem;
+}
+
+.radiology-benefit-icon--coral {
+  background: rgba(255, 161, 138, 0.28);
+}
+
+.radiology-benefit-icon--green {
+  background: rgba(134, 194, 168, 0.26);
+}
+
+.radiology-benefit-icon--blue {
+  background: rgba(124, 170, 238, 0.26);
+}
+
+.radiology-benefit-icon--cyan {
+  background: rgba(139, 228, 235, 0.28);
+}
+
+.radiology-benefit-icon--purple {
+  background: rgba(177, 156, 217, 0.26);
+}
+
+@media only screen and (max-width: 1050px) {
+  .radiology-benefits-hub {
+    display: grid;
+    grid-template-areas:
+      "heading"
+      "image"
+      "benefits";
+    place-items: center;
+    min-height: 0;
+    gap: 30px;
+  }
+
+  .radiology-benefits-hub h2,
+  .radiology-benefits-list,
+  .radiology-benefits-list li,
+  .radiology-benefits-core,
+  .radiology-benefits-ring,
+  .radiology-benefits-connector {
+    position: static;
+    inset: auto;
+    translate: 0 0;
+    transform: none;
+  }
+
+  .radiology-benefits-hub h2 {
+    grid-area: heading;
+    justify-self: start;
+    margin-bottom: 6px;
+    font-size: clamp(2.55rem, 8vw, 4.6rem);
+  }
+
+  .radiology-benefits-core {
+    grid-area: image;
+    width: min(62vw, 300px);
+    height: min(62vw, 300px);
+  }
+
+  .radiology-benefits-image {
+    width: min(45vw, 214px);
+    height: min(45vw, 214px);
+  }
+
+  .radiology-benefits-image img {
+    width: min(39vw, 188px);
+  }
+
+  .radiology-benefits-ring,
+  .radiology-benefits-connector {
+    display: none;
+  }
+
+  .radiology-benefits-list {
+    grid-area: benefits;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+
+  .radiology-benefits-list li:nth-child(1),
+  .radiology-benefits-list li:nth-child(2),
+  .radiology-benefits-list li:nth-child(3),
+  .radiology-benefits-list li:nth-child(4),
+  .radiology-benefits-list li:nth-child(5) {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    translate: 0 0;
+  }
+
+  .radiology-benefits-list li {
+    width: auto;
+    min-height: 94px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .radiology-benefits-section {
+    overflow-x: hidden;
+  }
+
+  .radiology-benefits-hub {
+    gap: 22px;
+  }
+
+  .radiology-benefits-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .radiology-benefits-list li {
+    min-height: 78px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .radiology-benefits-list span:last-child {
+    font-size: 1.05rem;
+  }
+
+  .radiology-benefit-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+  }
+}
+
 .stat-card strong {
   display: block;
   font-family: var(--serif);
