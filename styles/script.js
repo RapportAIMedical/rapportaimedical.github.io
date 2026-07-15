@@ -397,7 +397,7 @@ function footerTemplate() {
     { link: "product", name: "AskJune" },
     { link: "patient-reacq", name: "Patient ReAcq" },
     { link: "smart-scheduler", name: "Smart Scheduler" },
-    { link: "radiology-assistant", name: "AI-Powered Radiology Assistant" },
+    { link: "radiology-assistant", name: "AI Radiology Report Solution" },
     { link: "ai-course", name: "AI Course" },
     { link: "others", name: "Others" },
     { link: "customers", name: "Our Customers" },
