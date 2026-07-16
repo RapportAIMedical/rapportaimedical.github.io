@@ -7170,22 +7170,37 @@ label {
 }
 
 /* ===== Patient ReAcq — Benefits for your clinic ===== */
+/* no cream seam above this section; gradient flows straight out of the
+   white Features section above it */
+.product-page > section.reacq-benefits {
+  margin-top: 0;
+}
+
 .reacq-benefits {
   position: relative;
   overflow: hidden;
   background:
+    linear-gradient(180deg, #ffffff 0, rgba(255, 255, 255, 0) 180px),
     linear-gradient(135deg, rgba(255, 161, 138, 0.1), transparent 32%),
     linear-gradient(20deg, rgba(134, 194, 168, 0.16), transparent 42%),
     var(--offwhite);
 }
 
+.reacq-benefits .product-shell > h2,
+.reacq-benefit-grid {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .reacq-benefit-grid {
   list-style: none;
-  margin: 30px 0 8px;
+  margin-top: 54px;
+  margin-bottom: 4px;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 52px 40px;
+  gap: 34px 24px;
 }
 
 .reacq-benefit-tile {
@@ -7193,24 +7208,24 @@ label {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 22px;
+  gap: 16px;
 }
 
 /* zigzag stagger: nudge the middle column down */
 .reacq-benefit-tile:nth-child(3n+2) {
-  margin-top: 56px;
+  margin-top: 32px;
 }
 
 .reacq-benefit-medallion {
   position: relative;
   display: grid;
   place-items: center;
-  width: 108px;
-  height: 108px;
+  width: 86px;
+  height: 86px;
   border-radius: 50%;
-  font-size: 2.7rem;
+  font-size: 2.15rem;
   color: #fff;
-  box-shadow: 0 18px 40px rgba(40, 40, 40, 0.18);
+  box-shadow: 0 14px 30px rgba(40, 40, 40, 0.18);
   animation: reacqFloat 5s ease-in-out infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -7218,7 +7233,7 @@ label {
 .reacq-benefit-medallion::after {
   content: "";
   position: absolute;
-  inset: -11px;
+  inset: -9px;
   border-radius: 50%;
   border: 1px dashed rgba(40, 40, 40, 0.18);
 }
@@ -7230,12 +7245,12 @@ label {
 
 .reacq-benefit-tile h3 {
   font-family: var(--sans);
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   font-weight: 700;
-  line-height: 1.28;
+  line-height: 1.26;
   color: var(--product-accent-dark);
   margin: 0;
-  max-width: 15rem;
+  max-width: 13rem;
 }
 
 /* offset the float so the medallions bob out of sync */
@@ -7269,7 +7284,8 @@ label {
 @media only screen and (max-width: 900px) {
   .reacq-benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 46px 30px;
+    gap: 34px 24px;
+    max-width: 640px;
   }
 
   .reacq-benefit-tile:nth-child(3n+2) {
@@ -7278,14 +7294,15 @@ label {
 
   /* zigzag on the 2-column layout instead */
   .reacq-benefit-tile:nth-child(2n) {
-    margin-top: 44px;
+    margin-top: 30px;
   }
 }
 
 @media only screen and (max-width: 560px) {
   .reacq-benefit-grid {
     grid-template-columns: 1fr;
-    gap: 38px;
+    gap: 30px;
+    max-width: 320px;
   }
 
   .reacq-benefit-tile:nth-child(2n) {
@@ -7293,8 +7310,8 @@ label {
   }
 
   .reacq-benefit-medallion {
-    width: 94px;
-    height: 94px;
-    font-size: 2.35rem;
+    width: 84px;
+    height: 84px;
+    font-size: 2.1rem;
   }
 }
