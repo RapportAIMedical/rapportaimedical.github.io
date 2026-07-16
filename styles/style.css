@@ -7195,12 +7195,12 @@ label {
 
 .reacq-benefit-grid {
   list-style: none;
-  margin-top: 54px;
+  margin-top: 74px;
   margin-bottom: 4px;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 34px 24px;
+  gap: 52px 24px;
 }
 
 .reacq-benefit-tile {
@@ -7208,12 +7208,7 @@ label {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
-}
-
-/* zigzag stagger: nudge the middle column down */
-.reacq-benefit-tile:nth-child(3n+2) {
-  margin-top: 32px;
+  gap: 18px;
 }
 
 .reacq-benefit-medallion {
@@ -7225,7 +7220,8 @@ label {
   border-radius: 50%;
   font-size: 2.15rem;
   color: #fff;
-  box-shadow: 0 14px 30px rgba(40, 40, 40, 0.18);
+  background: linear-gradient(150deg, var(--green), var(--darkgreen));
+  box-shadow: 0 14px 30px rgba(31, 89, 89, 0.22);
   animation: reacqFloat 5s ease-in-out infinite;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -7260,16 +7256,6 @@ label {
 .reacq-benefit-tile:nth-child(5) .reacq-benefit-medallion { animation-delay: 2.4s; }
 .reacq-benefit-tile:nth-child(6) .reacq-benefit-medallion { animation-delay: 3s; }
 
-.reacq-benefit-medallion--coral  { background: linear-gradient(150deg, #ffb59f, #ff8f73); }
-.reacq-benefit-medallion--green  { background: linear-gradient(150deg, #9bd0b7, #6fb094); }
-.reacq-benefit-medallion--blue   { background: linear-gradient(150deg, #93b9f1, #5f95e8); }
-.reacq-benefit-medallion--cyan   { background: linear-gradient(150deg, #a2ebf0, #67d6df); }
-.reacq-benefit-medallion--purple { background: linear-gradient(150deg, #c4b2e3, #9f86ce); }
-.reacq-benefit-medallion--yellow {
-  background: linear-gradient(150deg, #f7de85, #f0c948);
-  color: var(--darkgreen);
-}
-
 @keyframes reacqFloat {
   0%, 100% { translate: 0 0; }
   50% { translate: 0 -9px; }
@@ -7284,29 +7270,16 @@ label {
 @media only screen and (max-width: 900px) {
   .reacq-benefit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px 24px;
+    gap: 46px 24px;
     max-width: 640px;
-  }
-
-  .reacq-benefit-tile:nth-child(3n+2) {
-    margin-top: 0;
-  }
-
-  /* zigzag on the 2-column layout instead */
-  .reacq-benefit-tile:nth-child(2n) {
-    margin-top: 30px;
   }
 }
 
 @media only screen and (max-width: 560px) {
   .reacq-benefit-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 34px;
     max-width: 320px;
-  }
-
-  .reacq-benefit-tile:nth-child(2n) {
-    margin-top: 0;
   }
 
   .reacq-benefit-medallion {
