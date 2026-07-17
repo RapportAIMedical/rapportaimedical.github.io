@@ -34,6 +34,17 @@
 
     gtag("config", "G-BGZV0L8LGV");
   </script>
+  <script>
+    document.documentElement.className += " js-anim";
+    window.addEventListener("error", function () {
+      document.documentElement.classList.remove("js-anim");
+    });
+    setTimeout(function () {
+      if (!document.documentElement.hasAttribute("data-sched-anim-ready")) {
+        document.documentElement.classList.remove("js-anim");
+      }
+    }, 2500);
+  </script>
 </head>
 
 <body>
@@ -115,7 +126,7 @@
         </div>
 
         <div class="hero-visual scheduler-visual">
-          <div class="scheduler-hero-board" role="img"
+          <div class="scheduler-hero-board sched-reveal" role="img"
             aria-label="Smart Scheduler preview showing leave entered, rules checked, roster generated, and fairness tracked.">
             <div class="scheduler-browser-chrome" aria-hidden="true">
               <span></span><span></span><span></span>
@@ -127,17 +138,17 @@
                 <span class="scheduler-status-pill"><i class="fa fa-check"></i> Generated in 4 s</span>
               </div>
               <div class="scheduler-hero-flow">
-                <div class="scheduler-hero-step">
+                <div class="scheduler-hero-step" style="--delay: 0s">
                   <span class="scheduler-step-dot">1</span>
                   <strong>CN leave added</strong>
                   <small>Aug 10-12</small>
                 </div>
-                <div class="scheduler-hero-step">
+                <div class="scheduler-hero-step" style="--delay: .09s">
                   <span class="scheduler-step-dot">2</span>
                   <strong>Rules enforced</strong>
                   <small>No night-after-night</small>
                 </div>
-                <div class="scheduler-hero-step">
+                <div class="scheduler-hero-step" style="--delay: .18s">
                   <span class="scheduler-step-dot">3</span>
                   <strong>Fairness visible</strong>
                   <small>Past duties tracked</small>
@@ -159,7 +170,7 @@
               </div>
               <div class="scheduler-fairness-strip">
                 <span>Workload balance</span>
-                <div><i style="width: 24%"></i><i style="width: 18%"></i><i style="width: 14%"></i><i style="width: 20%"></i></div>
+                <div><i style="width: 24%; --delay: 0s"></i><i style="width: 18%; --delay: .067s"></i><i style="width: 14%; --delay: .134s"></i><i style="width: 20%; --delay: .2s"></i></div>
               </div>
             </div>
           </div>
@@ -231,7 +242,7 @@
           </div>
         </div>
         <figure class="scheduler-story-media">
-          <div class="scheduler-browser-frame scheduler-leave-mock" role="img"
+          <div class="scheduler-browser-frame scheduler-leave-mock sched-reveal" role="img"
             aria-label="Leave entry mockup for CN showing selected August leave and an Add Leave action.">
             <div class="scheduler-browser-chrome" aria-hidden="true">
               <span></span><span></span><span></span>
@@ -249,7 +260,7 @@
                   <div class="scheduler-calendar-days">
                     <span></span><span></span><span></span><span></span><span></span><span></span><span>1</span>
                     <span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
-                    <span>9</span><span class="is-selected">10</span><span class="is-selected">11</span><span class="is-selected">12</span><span>13</span><span>14</span><span>15</span>
+                    <span>9</span><span class="is-selected" style="--delay: 0s">10</span><span class="is-selected" style="--delay: .037s">11</span><span class="is-selected" style="--delay: .074s">12</span><span>13</span><span>14</span><span>15</span>
                     <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span>
                     <span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span>
                     <span>30</span><span>31</span><span></span><span></span><span></span><span></span><span></span>
@@ -307,7 +318,7 @@
           </ol>
         </div>
         <figure class="scheduler-story-media">
-          <div class="scheduler-rules-mock" role="img"
+          <div class="scheduler-rules-mock sched-reveal" role="img"
             aria-label="Rules management mockup with duty spacing, senior night caps, off days and policy toggles enabled.">
             <div class="scheduler-rules-header" aria-hidden="true">
               <h3>Rules Management</h3>
@@ -315,17 +326,17 @@
             </div>
             <div class="scheduler-rules-grid" aria-hidden="true">
               <div class="scheduler-slider-list">
-                <div class="scheduler-slider-row" style="--value: 100%">
+                <div class="scheduler-slider-row" style="--value: 100%" data-count-from="0" data-count-to="2" data-count-unit-one="DAY" data-count-unit-many="DAYS">
                   <div><span class="scheduler-toggle is-on"></span><strong>Duty Spacing</strong><i class="fa fa-lock"></i></div>
                   <em>2 DAYS</em>
                   <span class="scheduler-slider-track"><i></i></span>
                 </div>
-                <div class="scheduler-slider-row" style="--value: 14%">
+                <div class="scheduler-slider-row" style="--value: 14%" data-count-from="1" data-count-to="3" data-count-unit-one="DUTY" data-count-unit-many="DUTIES">
                   <div><span class="scheduler-toggle is-on"></span><strong>Senior Night Duty Cap</strong><i class="fa fa-lock"></i></div>
                   <em>3 DUTIES</em>
                   <span class="scheduler-slider-track"><i></i></span>
                 </div>
-                <div class="scheduler-slider-row" style="--value: 23%">
+                <div class="scheduler-slider-row" style="--value: 23%" data-count-from="1" data-count-to="8" data-count-unit-one="DAY" data-count-unit-many="DAYS">
                   <div><span class="scheduler-toggle is-on"></span><strong>Off Days per Month</strong><i class="fa fa-lock"></i></div>
                   <em>8 DAYS</em>
                   <span class="scheduler-slider-track"><i></i></span>
@@ -334,11 +345,11 @@
                   part-time and locum rules are configured the same way.</p>
               </div>
               <div class="scheduler-toggle-list">
-                <div><span><strong>One Call per Holiday Block</strong><small>Christmas / CNY protected</small></span><span class="scheduler-toggle is-on"></span></div>
-                <div><span><strong>Senior Doctor Call Days</strong><small>Fri, Sat, Sun + public holidays blocked</small></span><span class="scheduler-toggle is-on"></span></div>
-                <div><span><strong>Pro-Rata Monthly Caps</strong><small>Adjusts caps by working days</small></span><span class="scheduler-toggle is-on"></span></div>
-                <div><span><strong>No Day After Night</strong><small>Hard sequence rule</small></span><span class="scheduler-toggle is-on"></span></div>
-                <div><span><strong>No Evening After Night</strong><small>Hard sequence rule</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: 0s"><span><strong>One Call per Holiday Block</strong><small>Christmas / CNY protected</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .133s"><span><strong>Senior Doctor Call Days</strong><small>Fri, Sat, Sun + public holidays blocked</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .266s"><span><strong>Pro-Rata Monthly Caps</strong><small>Adjusts caps by working days</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .399s"><span><strong>No Day After Night</strong><small>Hard sequence rule</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .532s"><span><strong>No Evening After Night</strong><small>Hard sequence rule</small></span><span class="scheduler-toggle is-on"></span></div>
               </div>
             </div>
           </div>
@@ -355,7 +366,7 @@
             workload evidence is visible for the whole team.</p>
         </div>
         <div class="scheduler-outcome-grid">
-          <div class="scheduler-browser-frame scheduler-schedule-mock" role="img"
+          <div class="scheduler-browser-frame scheduler-schedule-mock sched-reveal" role="img"
             aria-label="Generated August 2026 duty schedule mockup with leave, day, evening, night and off-duty cells.">
             <div class="scheduler-browser-chrome" aria-hidden="true">
               <span></span><span></span><span></span>
@@ -393,7 +404,7 @@
             </div>
           </div>
 
-          <aside class="scheduler-metrics-mock" role="img"
+          <aside class="scheduler-metrics-mock sched-reveal" role="img"
             aria-label="Fairness metrics mockup showing balanced day, evening, night and off-day workload bars.">
             <div class="scheduler-metrics-head" aria-hidden="true">
               <h3>Metrics - Fairness &amp; Transparency</h3>
@@ -407,13 +418,13 @@
             </div>
             <div class="scheduler-metric-list" aria-hidden="true">
               <div class="scheduler-metric-row" style="--delay: 0s"><strong>CN</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 25%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 21%"></i></span><em>52 (416.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .08s"><strong>DC</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .16s"><strong>EC</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 20%"></i></span><em>51 (408.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .24s"><strong>MK</strong><span><i class="metric-day" style="width: 28%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .32s"><strong>LD</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 21%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>49 (392.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .40s"><strong>EJ</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 21%"></i></span><em>51 (408.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .48s"><strong>RA</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 21%"></i></span><em>50 (400.0)</em></div>
-              <div class="scheduler-metric-row" style="--delay: .56s"><strong>AB</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 20%"></i></span><em>52 (416.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .067s"><strong>DC</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .134s"><strong>EC</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 20%"></i></span><em>51 (408.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .2s"><strong>MK</strong><span><i class="metric-day" style="width: 28%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .268s"><strong>LD</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 21%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>49 (392.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .335s"><strong>EJ</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 21%"></i></span><em>51 (408.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .402s"><strong>RA</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 21%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .469s"><strong>AB</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 20%"></i></span><em>52 (416.0)</em></div>
             </div>
           </aside>
         </div>

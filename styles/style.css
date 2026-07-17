@@ -4198,6 +4198,30 @@ label {
   overflow: hidden;
 }
 
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-status-pill,
+html.js-anim .sched-reveal:not(.is-revealed) .shift,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-calendar-days .is-selected,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-toast,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-metric-row > span,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-hero-step,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-fairness-strip i,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-toggle-list > div {
+  animation-play-state: paused;
+}
+
+html.js-anim .scheduler-rules-mock .scheduler-toggle.is-on:not(.sched-flip-on) {
+  background: #ddd6c8;
+}
+
+html.js-anim .scheduler-rules-mock .scheduler-toggle.is-on:not(.sched-flip-on)::after {
+  transform: none;
+}
+
+html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-on) {
+  border-color: var(--scheduler-line);
+  background: #fbf9f4;
+}
+
 .scheduler-browser-chrome {
   display: flex;
   align-items: center;
@@ -4292,6 +4316,7 @@ label {
   border: 1px solid var(--scheduler-line-soft);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.82);
+  animation: scheduler-step-in 0.51s cubic-bezier(0.25, 0.8, 0.35, 1) both var(--delay, 0s);
 }
 
 .scheduler-step-dot {
@@ -4384,7 +4409,7 @@ label {
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
-  animation: scheduler-cell-pop 0.45s ease both;
+  animation: scheduler-cell-pop 0.48s cubic-bezier(0.25, 0.8, 0.35, 1) both var(--delay, 0s);
 }
 
 .shift-day {
@@ -4425,8 +4450,8 @@ label {
 }
 
 @keyframes scheduler-cell-pop {
-  from { opacity: 0; transform: scale(0.82); }
-  to   { opacity: 1; transform: scale(1); }
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
 }
 
 .scheduler-fairness-strip {
@@ -4446,6 +4471,21 @@ label {
   overflow: hidden;
   border-radius: 999px;
   background: #ede7d9;
+}
+
+.scheduler-fairness-strip i {
+  transform-origin: left center;
+  animation: scheduler-metric-grow 0.6s cubic-bezier(0.4, 0, 0.2, 1) both var(--delay, 0s);
+}
+
+@keyframes scheduler-pill-in-x {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scheduler-step-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .scheduler-fairness-strip i:nth-child(1),
@@ -5355,7 +5395,20 @@ label {
   background: #0b5fd6 !important;
   border-color: #0b5fd6 !important;
   box-shadow: 0 8px 16px rgba(11, 95, 214, 0.26);
-  animation: scheduler-selected-date 1.8s ease-in-out infinite;
+  animation:
+    scheduler-leave-day-in 0.167s linear both var(--delay, 0s),
+    scheduler-leave-day-pop 0.4s ease both calc(var(--delay, 0s) + 0.2s),
+    scheduler-selected-date 1.8s ease-in-out infinite calc(var(--delay, 0s) + 0.6s);
+}
+
+@keyframes scheduler-leave-day-in {
+  from { opacity: 0; transform: scale(0.86); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scheduler-leave-day-pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.14); }
 }
 
 @keyframes scheduler-selected-date {
@@ -5416,7 +5469,14 @@ label {
   font-weight: 850;
   white-space: nowrap;
   box-shadow: 0 14px 30px rgba(46, 158, 107, 0.28);
-  animation: scheduler-toast-float 3.2s ease-in-out infinite;
+  animation:
+    scheduler-toast-rise 0.53s cubic-bezier(0.25, 0.8, 0.35, 1) both 0.28s,
+    scheduler-toast-float 3.2s ease-in-out infinite 0.81s;
+}
+
+@keyframes scheduler-toast-rise {
+  from { opacity: 0; transform: translate(-50%, 18px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
 @keyframes scheduler-toast-float {
@@ -5576,6 +5636,11 @@ label {
   border: 1px solid #fad3c6;
   border-radius: 12px;
   background: var(--scheduler-salmon-tint);
+  animation: scheduler-step-in 0.51s cubic-bezier(0.25, 0.8, 0.35, 1) both var(--delay, 0s);
+}
+
+.scheduler-schedule-mock .scheduler-status-pill {
+  animation: scheduler-pill-in-x 0.53s cubic-bezier(0.25, 0.8, 0.35, 1) both 0.133s;
 }
 
 .scheduler-toggle-list strong,
@@ -5775,7 +5840,7 @@ label {
   border-radius: 7px;
   background: #f6f2e8;
   transform-origin: left center;
-  animation: scheduler-metric-grow 0.8s ease both var(--delay);
+  animation: scheduler-metric-grow 0.6s cubic-bezier(0.4, 0, 0.2, 1) both var(--delay);
 }
 
 .scheduler-metric-row > span i {
@@ -7264,8 +7329,25 @@ label {
   .shift,
   .scheduler-calendar-days .is-selected,
   .scheduler-toast,
-  .scheduler-metric-row > span {
+  .scheduler-metric-row > span,
+  .scheduler-hero-step,
+  .scheduler-fairness-strip i,
+  .scheduler-toggle-list > div,
+  .scheduler-schedule-mock .scheduler-status-pill {
     animation: none;
+  }
+
+  html.js-anim .scheduler-rules-mock .scheduler-toggle.is-on:not(.sched-flip-on) {
+    background: var(--scheduler-salmon);
+  }
+
+  html.js-anim .scheduler-rules-mock .scheduler-toggle.is-on:not(.sched-flip-on)::after {
+    transform: translateX(18px);
+  }
+
+  html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-on) {
+    border-color: #fad3c6;
+    background: var(--scheduler-salmon-tint);
   }
 
   .scheduler-toggle::after {

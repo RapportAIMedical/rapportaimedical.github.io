@@ -265,6 +265,162 @@ if (document.readyState === "loading") {
   initReacqDatabaseVisuals();
 }
 
+function schedulerEase(progress) {
+  let t = progress;
+
+  for (let i = 0; i < 4; i += 1) {
+    const oneMinusT = 1 - t;
+    const x = 3 * oneMinusT * oneMinusT * t * 0.4 +
+      3 * oneMinusT * t * t * 0.2 + t * t * t;
+    const derivative = 3 * oneMinusT * oneMinusT * 0.4 +
+      6 * oneMinusT * t * (0.2 - 0.4) + 3 * t * t * (1 - 0.2);
+
+    if (Math.abs(derivative) < 0.000001) {
+      break;
+    }
+
+    t = Math.max(0, Math.min(1, t - (x - progress) / derivative));
+  }
+
+  return 3 * (1 - t) * t * t + t * t * t;
+}
+
+function runRulesChoreography(mock, reduced) {
+  const sliderRows = Array.from(mock.querySelectorAll(".scheduler-slider-row[data-count-to]"));
+  const listRows = Array.from(mock.querySelectorAll(".scheduler-toggle-list > div"));
+  const listFlipTimes = [600, 800, 1000, 1200, 1333];
+
+  if (reduced) {
+    mock.querySelectorAll(".scheduler-toggle").forEach((toggle) => {
+      toggle.classList.add("sched-flip-on");
+    });
+    listRows.forEach((row) => row.classList.add("sched-row-on"));
+    return;
+  }
+
+  sliderRows.forEach((row, index) => {
+    const toggle = row.querySelector(".scheduler-toggle");
+    setTimeout(() => {
+      if (toggle) {
+        toggle.classList.add("sched-flip-on");
+      }
+    }, index * 333);
+  });
+
+  listRows.forEach((row, index) => {
+    setTimeout(() => {
+      row.classList.add("sched-row-on");
+      const toggle = row.querySelector(".scheduler-toggle");
+      if (toggle) {
+        toggle.classList.add("sched-flip-on");
+      }
+    }, listFlipTimes[index]);
+  });
+
+  const counters = sliderRows.map((row, index) => ({
+    row,
+    label: row.querySelector("em"),
+    from: Number(row.dataset.countFrom),
+    to: Number(row.dataset.countTo),
+    unitOne: row.dataset.countUnitOne,
+    unitMany: row.dataset.countUnitMany,
+    finalPct: parseFloat(row.style.getPropertyValue("--value")),
+    delay: index * 333,
+  }));
+  const duration = 667;
+  let startTime;
+
+  function updateCounters(timestamp) {
+    if (startTime === undefined) {
+      startTime = timestamp;
+    }
+
+    const elapsed = timestamp - startTime;
+
+    counters.forEach((counter) => {
+      const progress = Math.max(0, Math.min(1, (elapsed - counter.delay) / duration));
+      const eased = schedulerEase(progress);
+      const value = Math.round(counter.from + eased * (counter.to - counter.from));
+      const pct = (value / counter.to) * counter.finalPct;
+      const unit = value === 1 ? counter.unitOne : counter.unitMany;
+
+      counter.row.style.setProperty("--value", `${pct}%`);
+      if (counter.label) {
+        counter.label.textContent = `${value} ${unit}`;
+      }
+    });
+
+    if (elapsed < (counters.length - 1) * 333 + duration) {
+      requestAnimationFrame(updateCounters);
+    }
+  }
+
+  requestAnimationFrame(updateCounters);
+}
+
+function initSchedulerReveals() {
+  document.documentElement.setAttribute("data-sched-anim-ready", "");
+
+  const targets = Array.from(document.querySelectorAll(".scheduler-page .sched-reveal"));
+  if (!targets.length) {
+    return;
+  }
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function reveal(target) {
+    try {
+      const rows = Array.from(target.querySelectorAll(
+        ".scheduler-roster-table tbody tr, .scheduler-mini-row:not(.scheduler-mini-head)"
+      ));
+      const baseDelay = target.classList.contains("scheduler-schedule-mock") ? 267 : 60;
+
+      rows.forEach((row, fallbackRowIndex) => {
+        const rowIndex = typeof row.rowIndex === "number" ? row.rowIndex : fallbackRowIndex;
+        const cells = Array.from(row.querySelectorAll(".shift"));
+
+        cells.forEach((cell, columnIndex) => {
+          const seed = rowIndex * 8 + columnIndex;
+          const x = Math.sin(seed * 12.9898 + 78.233) * 43758.5453;
+          const jitter = x - Math.floor(x);
+          const delay = baseDelay + (rowIndex + columnIndex) * 57 + jitter * 100;
+          cell.style.setProperty("--delay", `${delay.toFixed(3)}ms`);
+        });
+      });
+
+      if (target.classList.contains("scheduler-rules-mock")) {
+        runRulesChoreography(target, reduced);
+      }
+
+      target.classList.add("is-revealed");
+    } catch (error) {
+      document.documentElement.classList.remove("js-anim");
+    }
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    targets.forEach(reveal);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        reveal(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  targets.forEach((target) => observer.observe(target));
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSchedulerReveals);
+} else {
+  initSchedulerReveals();
+}
+
 const cta = document.getElementById("CTA");
 
 if (cta) {
