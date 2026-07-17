@@ -358,6 +358,320 @@ function runRulesChoreography(mock, reduced) {
   requestAnimationFrame(updateCounters);
 }
 
+
+function initSchedulerHeroLoop() {
+  const board = document.querySelector(".scheduler-hero-board");
+
+  if (!board || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const stage = board.querySelector(".scheduler-hero-stage");
+  const monthLabel = board.querySelector("[data-scheduler-month]");
+  const stateLabel = board.querySelector("[data-scheduler-state]");
+  const nextMonth = board.querySelector(".scheduler-next-month");
+  const generateButton = board.querySelector(".scheduler-generate-button");
+  const generateButtonLabel = generateButton && generateButton.querySelector("span");
+  const success = board.querySelector(".scheduler-hero-success");
+  const successTitle = success && success.querySelector("strong");
+  const successMeta = success && success.querySelector("small");
+  const summaryDays = board.querySelector(".scheduler-hero-summary span:first-child strong");
+  const summaryDoctors = board.querySelector(".scheduler-hero-summary span:nth-child(2) strong");
+  const cursor = board.querySelector(".scheduler-demo-cursor");
+  const rows = Array.from(board.querySelectorAll(
+    ".scheduler-hero-roster-row:not(.scheduler-hero-roster-head)"
+  ));
+
+  if (!stage || !monthLabel || !stateLabel || !nextMonth || !generateButton ||
+      !generateButtonLabel || !success || !successTitle || !successMeta ||
+      !summaryDays || !summaryDoctors || !cursor || !rows.length) {
+    return;
+  }
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const shiftPool = ["D", "O", "E", "N", "D", "O", "E", "D", "O"];
+  const doctorCount = 42;
+  const kindClasses = {
+    D: "shift-day",
+    E: "shift-evening",
+    N: "shift-night",
+    O: "shift-off",
+    VL: "shift-vl",
+  };
+
+  let currentMonth = new Date(2026, 8, 1);
+  let cycleToken = 0;
+  let running = false;
+
+  function wait(ms) {
+    return new Promise((resolve) => window.setTimeout(resolve, ms));
+  }
+
+  function monthKey(monthDate) {
+    return monthDate.getFullYear() * 12 + monthDate.getMonth();
+  }
+
+  function formatMonth(monthDate) {
+    return `${monthNames[monthDate.getMonth()]} ${monthDate.getFullYear()}`;
+  }
+
+  function daysInMonth(monthDate) {
+    return new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0).getDate();
+  }
+
+  function nextCalendarMonth(monthDate) {
+    return new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 1);
+  }
+
+  function randomFrom(seed) {
+    const x = Math.sin(seed * 91.7 + 47.3) * 10000;
+    return x - Math.floor(x);
+  }
+
+  function visibleDates(monthDate) {
+    return rows.map((row, rowIndex) => {
+      const day = rowIndex + 1;
+      const date = new Date(monthDate.getFullYear(), monthDate.getMonth(), day);
+      return `${day} ${weekdayNames[date.getDay()]}`;
+    });
+  }
+
+  function makeRoster(monthDate) {
+    const key = monthKey(monthDate);
+    const leaveDoctor = Math.abs(key * 5 + 2) % 7;
+    const leaveStart = 5 + Math.abs(key % 2);
+
+    return rows.map((row, rowIndex) => (
+      Array.from(row.querySelectorAll(".scheduler-hero-duty")).map((cell, columnIndex) => {
+        if (columnIndex === leaveDoctor &&
+            (rowIndex === leaveStart || rowIndex === leaveStart + 1)) {
+          return "VL";
+        }
+
+        const seed = key * 101 + rowIndex * 17 + columnIndex * 29;
+        const jitter = Math.floor(randomFrom(seed) * 4);
+        const poolIndex = Math.abs(
+          rowIndex * 2 + columnIndex * 3 + key + jitter
+        ) % shiftPool.length;
+        return shiftPool[poolIndex];
+      })
+    ));
+  }
+
+  function setCell(cell, kind, animate) {
+    cell.textContent = kind;
+    cell.className = `scheduler-hero-duty shift ${kindClasses[kind]}${animate ? " is-filling" : ""}`;
+  }
+
+  function updateRowDates(monthDate) {
+    const dates = visibleDates(monthDate);
+
+    rows.forEach((row, rowIndex) => {
+      const date = row.querySelector("strong");
+      const actualDate = new Date(
+        monthDate.getFullYear(),
+        monthDate.getMonth(),
+        rowIndex + 1
+      );
+
+      if (date) {
+        date.textContent = dates[rowIndex];
+      }
+
+      row.classList.toggle("is-weekend", actualDate.getDay() === 0 || actualDate.getDay() === 6);
+    });
+  }
+
+  function setRoster(monthDate, roster, animate) {
+    updateRowDates(monthDate);
+
+    rows.forEach((row, rowIndex) => {
+      Array.from(row.querySelectorAll(".scheduler-hero-duty")).forEach((cell, columnIndex) => {
+        setCell(cell, roster[rowIndex][columnIndex], animate);
+      });
+    });
+  }
+
+  function emptyRoster(monthDate) {
+    updateRowDates(monthDate);
+
+    rows.forEach((row) => {
+      Array.from(row.querySelectorAll(".scheduler-hero-duty")).forEach((cell) => {
+        cell.textContent = "";
+        cell.className = "scheduler-hero-duty is-empty";
+      });
+    });
+  }
+
+  function fillRoster(monthDate, roster, token) {
+    let finalDelay = 0;
+    const key = monthKey(monthDate);
+
+    rows.forEach((row, rowIndex) => {
+      Array.from(row.querySelectorAll(".scheduler-hero-duty")).forEach((cell, columnIndex) => {
+        const seed = key * 67 + rowIndex * 7 + columnIndex;
+        const jitter = randomFrom(seed);
+        const delay = (rowIndex + columnIndex) * 66 + jitter * 105;
+        finalDelay = Math.max(finalDelay, delay);
+
+        window.setTimeout(() => {
+          if (running && token === cycleToken) {
+            setCell(cell, roster[rowIndex][columnIndex], true);
+          }
+        }, delay);
+      });
+    });
+
+    return finalDelay + 560;
+  }
+
+  function updateCompletedCopy(monthDate) {
+    const label = formatMonth(monthDate);
+    const totalDays = daysInMonth(monthDate);
+
+    monthLabel.textContent = label;
+    stateLabel.textContent = `${totalDays} days scheduled / all 27 rules satisfied`;
+    generateButtonLabel.textContent = "Generate next month";
+    summaryDays.textContent = totalDays;
+    summaryDoctors.textContent = doctorCount;
+    successTitle.textContent = `${monthNames[monthDate.getMonth()]} schedule generated`;
+    successMeta.textContent = `${doctorCount} doctors / leave and rules satisfied`;
+  }
+
+  function moveCursor(target) {
+    const stageRect = stage.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    cursor.style.left = `${targetRect.left - stageRect.left + targetRect.width * 0.56}px`;
+    cursor.style.top = `${targetRect.top - stageRect.top + targetRect.height * 0.58}px`;
+    cursor.classList.add("is-active");
+  }
+
+  async function clickTarget(target, token) {
+    if (!running || token !== cycleToken) {
+      return false;
+    }
+
+    cursor.classList.add("is-pressing");
+    target.classList.add("is-clicked");
+    await wait(170);
+    cursor.classList.remove("is-pressing");
+    target.classList.remove("is-clicked");
+    return running && token === cycleToken;
+  }
+
+  async function generateNextMonth(token) {
+    const targetMonth = nextCalendarMonth(currentMonth);
+    const currentRoster = makeRoster(currentMonth);
+    const targetRoster = makeRoster(targetMonth);
+    const targetLabel = formatMonth(targetMonth);
+    const targetDays = daysInMonth(targetMonth);
+
+    board.classList.remove("is-generating", "is-empty", "is-resetting", "is-generated");
+    const shouldFadeSuccess = success.classList.contains("is-visible");
+    if (shouldFadeSuccess) {
+      success.classList.add("is-fade-ready");
+      void success.offsetWidth;
+      success.classList.add("is-fading");
+    }
+    cursor.classList.remove("is-active", "is-pressing");
+    nextMonth.classList.remove("is-clicked");
+    generateButton.classList.remove("is-clicked");
+    updateCompletedCopy(currentMonth);
+    setRoster(currentMonth, currentRoster, false);
+
+    await wait(320);
+    success.classList.remove("is-visible", "is-fade-ready", "is-fading");
+    await wait(30);
+    if (!running || token !== cycleToken) return;
+
+    moveCursor(nextMonth);
+    await wait(560);
+    if (!await clickTarget(nextMonth, token)) return;
+
+    monthLabel.textContent = targetLabel;
+    stateLabel.textContent = `${monthNames[targetMonth.getMonth()]} selected / ready to generate`;
+    generateButtonLabel.textContent = "Generate schedule";
+    summaryDays.textContent = targetDays;
+    board.classList.add("is-empty");
+    emptyRoster(targetMonth);
+
+    await wait(420);
+    if (!running || token !== cycleToken) return;
+    moveCursor(generateButton);
+    await wait(560);
+    if (!await clickTarget(generateButton, token)) return;
+
+    board.classList.add("is-generating");
+    stateLabel.textContent = `Optimising ${doctorCount} doctors across ${targetDays} days...`;
+    generateButtonLabel.textContent = "Generating...";
+    cursor.classList.remove("is-active");
+
+    await wait(250);
+    if (!running || token !== cycleToken) return;
+
+    const fillDuration = fillRoster(targetMonth, targetRoster, token);
+    await wait(fillDuration);
+    if (!running || token !== cycleToken) return;
+
+    currentMonth = targetMonth;
+    board.classList.remove("is-generating", "is-empty");
+    board.classList.add("is-generated");
+    updateCompletedCopy(currentMonth);
+    success.classList.add("is-visible");
+
+    await wait(1700);
+  }
+
+  async function runTimeline(token) {
+    while (running && token === cycleToken) {
+      await generateNextMonth(token);
+    }
+  }
+
+  function start() {
+    if (running) {
+      return;
+    }
+
+    running = true;
+    cycleToken += 1;
+    runTimeline(cycleToken);
+  }
+
+  function stop() {
+    if (!running) {
+      return;
+    }
+
+    running = false;
+    cycleToken += 1;
+    cursor.classList.remove("is-active", "is-pressing");
+    nextMonth.classList.remove("is-clicked");
+    generateButton.classList.remove("is-clicked");
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    start();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        start();
+      } else {
+        stop();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(board);
+}
+
 function initSchedulerReveals() {
   document.documentElement.setAttribute("data-sched-anim-ready", "");
 
@@ -417,8 +731,10 @@ function initSchedulerReveals() {
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initSchedulerReveals);
+  document.addEventListener("DOMContentLoaded", initSchedulerHeroLoop);
 } else {
   initSchedulerReveals();
+  initSchedulerHeroLoop();
 }
 
 const cta = document.getElementById("CTA");

@@ -2026,12 +2026,43 @@ label {
 
 #press-hero {
   padding-bottom: 90px;
+  overflow: hidden;
 }
 
 #press-hero .graphic {
   height: 75%;
   bottom: 0;
   right: 0;
+}
+
+#press-hero .page_title {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  background-image: url("../assets/press/conference-3.jpeg");
+  background-size: cover;
+  background-position: 50% 32%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.65) 26%, #000 46%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.65) 26%, #000 46%);
+}
+
+@media only screen and (max-width: 1100px) {
+  .hero-photo {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .hero-photo {
+    display: none;
+  }
 }
 
 #press-content {
@@ -4183,6 +4214,30 @@ label {
   border-radius: 0;
   box-shadow: none;
   min-height: auto;
+  max-width: none;
+  margin: 0;
+}
+
+.scheduler-hero .product-shell {
+  grid-template-columns: minmax(430px, 0.78fr) minmax(620px, 1.22fr);
+  column-gap: 48px;
+  row-gap: 30px;
+  align-items: start;
+}
+
+.scheduler-hero-masthead {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.scheduler-hero-masthead .product-name-row {
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.scheduler-hero-masthead .product-name {
+  margin: 0;
+  font-size: clamp(3rem, 5vw, 4.5rem);
 }
 
 .scheduler-browser-frame,
@@ -4205,7 +4260,11 @@ html.js-anim .sched-reveal:not(.is-revealed) .scheduler-toast,
 html.js-anim .sched-reveal:not(.is-revealed) .scheduler-metric-row > span,
 html.js-anim .sched-reveal:not(.is-revealed) .scheduler-hero-step,
 html.js-anim .sched-reveal:not(.is-revealed) .scheduler-fairness-strip i,
-html.js-anim .sched-reveal:not(.is-revealed) .scheduler-toggle-list > div {
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-toggle-list > div,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-flow-steps .flow-num,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-flow-steps .flow-card,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-flow-steps li::before,
+html.js-anim .sched-reveal:not(.is-revealed) .scheduler-flow-steps li::after {
   animation-play-state: paused;
 }
 
@@ -4243,8 +4302,9 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 .scheduler-browser-chrome > span:nth-child(3) { background: #67b569; }
 
 .scheduler-browser-chrome > div {
+  flex: 1 1 230px;
   min-width: 0;
-  max-width: 100%;
+  max-width: 360px;
   margin-left: 6px;
   padding: 5px 10px;
   border: 1px solid var(--scheduler-line);
@@ -4256,6 +4316,17 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.scheduler-browser-chrome::after {
+  content: "RAPPORT AI MEDICAL";
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: var(--scheduler-ink);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .scheduler-status-pill {
@@ -4285,12 +4356,422 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 }
 
 .scheduler-hero-board {
-  max-width: 520px;
+  max-width: 780px;
 }
 
 .scheduler-hero-stage {
-  padding: 18px;
+  position: relative;
+  padding: 18px 20px 16px;
   background: linear-gradient(155deg, var(--scheduler-cream) 0%, #fff 56%, var(--product-soft) 120%);
+}
+
+.scheduler-hero-controls,
+.scheduler-hero-month-picker,
+.scheduler-hero-runline,
+.scheduler-hero-runline > span:first-child,
+.scheduler-hero-summary,
+.scheduler-generate-button,
+.scheduler-hero-success {
+  display: flex;
+  align-items: center;
+}
+
+.scheduler-hero-controls {
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.scheduler-hero-month-picker {
+  gap: 10px;
+  min-width: 0;
+}
+
+.scheduler-hero-month-picker strong {
+  min-width: 138px;
+  color: var(--scheduler-ink);
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.scheduler-hero-month-arrow {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #bfd8f7;
+  border-radius: 8px;
+  color: var(--scheduler-blue);
+  background: #fff;
+  font-size: 0.68rem;
+  box-shadow: 0 4px 10px rgba(11, 95, 214, 0.08);
+}
+
+.scheduler-next-month,
+.scheduler-generate-button {
+  transition: transform 0.14s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scheduler-next-month.is-clicked,
+.scheduler-generate-button.is-clicked {
+  transform: scale(0.92);
+}
+
+.scheduler-generate-button {
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border-radius: 9px;
+  color: #fff;
+  background: #0b5fd6;
+  font-size: 0.73rem;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 7px 16px rgba(11, 95, 214, 0.2);
+}
+
+.scheduler-generate-button .fa-bolt {
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  background: currentColor;
+  clip-path: polygon(50% 0, 64% 36%, 100% 50%, 64% 64%, 50% 100%, 36% 64%, 0 50%, 36% 36%);
+  filter: drop-shadow(5px -5px 0 currentColor) drop-shadow(-4px 5px 0 currentColor);
+  font-size: 0;
+}
+
+.scheduler-generate-button .fa-bolt::before {
+  content: none;
+}
+
+.scheduler-hero-board.is-generating .scheduler-generate-button .fa-bolt {
+  animation: scheduler-ai-sparkle 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes scheduler-ai-sparkle {
+  from { opacity: 0.62; transform: scale(0.86) rotate(-8deg); }
+  to { opacity: 1; transform: scale(1.08) rotate(8deg); }
+}
+
+.scheduler-hero-runline {
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 30px;
+  margin: 11px 0 9px;
+  padding: 6px 10px;
+  border: 1px solid var(--scheduler-line-soft);
+  border-radius: 9px;
+  color: var(--scheduler-muted);
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 0.69rem;
+  font-weight: 720;
+}
+
+.scheduler-hero-runline > span:first-child {
+  gap: 7px;
+  min-width: 0;
+}
+
+.scheduler-hero-runline .fa {
+  color: var(--scheduler-green);
+}
+
+.scheduler-hero-runline-meter {
+  flex: 0 0 82px;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e9e3d7;
+}
+
+.scheduler-hero-runline-meter i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--scheduler-green);
+  transform-origin: left center;
+}
+
+.scheduler-hero-board.is-generating .scheduler-hero-runline .fa {
+  color: var(--scheduler-blue);
+  animation: scheduler-hero-spin 0.8s linear infinite;
+}
+
+.scheduler-hero-board.is-generating .scheduler-hero-runline-meter i {
+  background: var(--scheduler-blue);
+  animation: scheduler-hero-progress 1.15s ease-in-out infinite;
+}
+
+@keyframes scheduler-hero-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scheduler-hero-progress {
+  0% { transform: translateX(-100%) scaleX(0.35); }
+  55% { transform: translateX(15%) scaleX(0.7); }
+  100% { transform: translateX(110%) scaleX(0.28); }
+}
+
+.scheduler-hero-roster {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--scheduler-line);
+  border-radius: 12px;
+  background: #fff;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.scheduler-hero-roster::before,
+.scheduler-hero-roster::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  right: 4px;
+  width: 3px;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.scheduler-hero-roster::before {
+  top: 38px;
+  bottom: 7px;
+  background: rgba(115, 108, 98, 0.1);
+}
+
+.scheduler-hero-roster::after {
+  top: 42px;
+  height: 42px;
+  background: rgba(11, 95, 214, 0.34);
+}
+
+.scheduler-hero-roster-row {
+  display: grid;
+  grid-template-columns: 70px repeat(7, minmax(34px, 1fr));
+  align-items: center;
+  min-height: 33px;
+  border-bottom: 1px solid var(--scheduler-line-soft);
+  background: #fff;
+}
+
+.scheduler-hero-roster-row:last-child {
+  border-bottom: none;
+}
+
+.scheduler-hero-roster-row.is-weekend {
+  background: #f3f7fc;
+}
+
+.scheduler-hero-roster-row > strong,
+.scheduler-hero-roster-row > span {
+  min-width: 0;
+}
+
+.scheduler-hero-roster-row > strong {
+  padding-left: 10px;
+  color: var(--scheduler-muted);
+  font-size: 0.66rem;
+  font-weight: 780;
+  white-space: nowrap;
+}
+
+.scheduler-hero-roster-head {
+  min-height: 31px;
+  background: var(--scheduler-cream-deep);
+  color: var(--scheduler-muted);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.scheduler-hero-roster-head > span {
+  text-align: center;
+}
+
+.scheduler-hero-duty.shift {
+  justify-self: center;
+  box-sizing: border-box;
+  width: 34px;
+  min-width: 34px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  animation: none;
+}
+
+.scheduler-hero-duty.is-filling {
+  animation: scheduler-hero-duty-in 0.46s cubic-bezier(0.25, 0.8, 0.35, 1) both;
+}
+
+@keyframes scheduler-hero-duty-in {
+  from { opacity: 0; filter: blur(2px); transform: translateY(7px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+.scheduler-hero-duty.is-empty {
+  justify-self: center;
+  box-sizing: border-box;
+  width: 34px;
+  min-width: 34px;
+  height: 22px;
+  min-height: 22px;
+  border: 1px dashed #ded8cc;
+  border-radius: 6px;
+  background: #fbfaf7;
+}
+
+.scheduler-hero-summary {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.scheduler-hero-summary::after {
+  content: "Scroll to view full month";
+  margin-left: auto;
+  color: var(--scheduler-faint);
+  font-size: 0.62rem;
+  font-weight: 760;
+  letter-spacing: 0.01em;
+  opacity: 0.68;
+  white-space: nowrap;
+}
+
+.scheduler-hero-board.is-generated .scheduler-hero-summary::after {
+  color: var(--scheduler-blue);
+  opacity: 0.92;
+}
+
+.scheduler-hero-board.is-empty .scheduler-hero-summary {
+  opacity: 0.45;
+}
+
+.scheduler-hero-summary span {
+  padding: 5px 9px;
+  border: 1px solid var(--scheduler-line-soft);
+  border-radius: 999px;
+  color: var(--scheduler-faint);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.64rem;
+  white-space: nowrap;
+}
+
+.scheduler-hero-summary strong {
+  color: var(--scheduler-ink);
+}
+
+.scheduler-hero-success {
+  position: absolute;
+  z-index: 4;
+  top: 106px;
+  left: 50%;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--scheduler-green);
+  box-shadow: 0 16px 34px rgba(46, 158, 107, 0.3);
+  opacity: 0;
+  transform: translate(-50%, 18px) scale(0.96);
+  transition: opacity 0.3s ease, transform 0.34s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.scheduler-hero-success.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  animation: scheduler-hero-success-rise 0.58s cubic-bezier(0.25, 0.8, 0.35, 1) both;
+}
+
+.scheduler-hero-success.is-fade-ready {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+  animation: none;
+}
+
+.scheduler-hero-success.is-fading {
+  opacity: 0;
+  transform: translate(-50%, -7px) scale(0.98);
+  animation: none;
+}
+
+.scheduler-hero-success > i {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--scheduler-green);
+  background: #fff;
+  font-size: 0.72rem;
+}
+
+.scheduler-hero-success strong,
+.scheduler-hero-success small {
+  display: block;
+  white-space: nowrap;
+}
+
+.scheduler-hero-success strong {
+  font-size: 0.76rem;
+  line-height: 1.15;
+}
+
+.scheduler-hero-success small {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.61rem;
+}
+
+@keyframes scheduler-hero-success-rise {
+  from { opacity: 0; transform: translate(-50%, 18px) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.scheduler-demo-cursor {
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--scheduler-ink);
+  font-size: 1.35rem;
+  opacity: 0;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+  transform: translate(-4px, -3px) scale(1);
+  transition: left 0.68s cubic-bezier(0.4, 0, 0.2, 1), top 0.68s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, transform 0.12s ease;
+  pointer-events: none;
+}
+
+.scheduler-demo-cursor.is-active {
+  opacity: 1;
+}
+
+.scheduler-demo-cursor.is-pressing {
+  transform: translate(-4px, -3px) scale(0.78);
+}
+
+.scheduler-demo-cursor.is-pressing::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(11, 95, 214, 0.35);
+  border-radius: 50%;
+  animation: scheduler-cursor-ripple 0.45s ease-out both;
+}
+
+@keyframes scheduler-cursor-ripple {
+  from { opacity: 0.8; transform: scale(0.45); }
+  to { opacity: 0; transform: scale(1.35); }
 }
 
 .scheduler-hero-topline {
@@ -4934,12 +5415,21 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 }
 
 .scheduler-flow-steps li {
+  --step-delay: 0s;
   position: relative;
   display: grid;
   grid-template-columns: var(--flow-dot) minmax(0, 1fr);
   align-items: center;
   gap: 20px;
   padding-bottom: 42px;
+}
+
+.scheduler-flow-steps li:nth-child(2) {
+  --step-delay: 0.62s;
+}
+
+.scheduler-flow-steps li:nth-child(3) {
+  --step-delay: 1.24s;
 }
 
 .scheduler-flow-steps li:last-child {
@@ -4959,6 +5449,18 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   font-weight: 800;
   letter-spacing: 0.02em;
   box-shadow: 0 6px 14px rgba(10, 37, 81, 0.16);
+  animation: scheduler-flow-dot-in 0.48s cubic-bezier(0.25, 0.8, 0.35, 1) both var(--step-delay);
+}
+
+@keyframes scheduler-flow-dot-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* connector line, centred under the number */
@@ -4970,7 +5472,20 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   bottom: 11px;
   width: 2px;
   transform: translateX(-50%);
+  transform-origin: top center;
   background: var(--flow-rail);
+  animation: scheduler-flow-rail-draw 0.3s cubic-bezier(0.4, 0, 0.2, 1) both calc(var(--step-delay) + 0.25s);
+}
+
+@keyframes scheduler-flow-rail-draw {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
 }
 
 /* arrowhead pointing into the next step */
@@ -4985,6 +5500,18 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   border-right: 2px solid var(--flow-rail);
   border-bottom: 2px solid var(--flow-rail);
   border-radius: 1px;
+  animation: scheduler-flow-arrow-in 0.22s ease-out both calc(var(--step-delay) + 0.47s);
+}
+
+@keyframes scheduler-flow-arrow-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px) rotate(45deg) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(45deg) scale(1);
+  }
 }
 
 /* Cards share one width so the column has a clean right edge. */
@@ -4997,6 +5524,18 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   background: #fff;
   border: 1px solid rgba(10, 37, 81, 0.08);
   box-shadow: 0 8px 20px rgba(10, 37, 81, 0.07);
+  animation: scheduler-flow-card-in 0.6s cubic-bezier(0.25, 0.8, 0.35, 1) both calc(var(--step-delay) + 0.09s);
+}
+
+@keyframes scheduler-flow-card-in {
+  from {
+    opacity: 0;
+    transform: translateX(42px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 .scheduler-flow-steps .flow-card i {
@@ -6953,6 +7492,10 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     white-space: nowrap;
   }
 
+  .scheduler-hero-masthead .patent-badge {
+    margin-top: 14px;
+  }
+
   .scheduler-page .social-proof-inline {
     display: grid;
     grid-template-columns: 1fr;
@@ -7036,6 +7579,24 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   .scheduler-leave-body,
   .scheduler-schedule-body {
     padding: 14px;
+  }
+
+  .scheduler-hero-controls {
+    display: grid;
+    gap: 9px;
+  }
+
+  .scheduler-hero-month-picker {
+    justify-content: space-between;
+  }
+
+  .scheduler-generate-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .scheduler-hero-success {
+    top: 151px;
   }
 
   .scheduler-hero-topline,
@@ -7210,6 +7771,55 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     display: block;
   }
 
+  .scheduler-hero-roster-row {
+    grid-template-columns: 52px repeat(4, minmax(0, 1fr));
+    min-height: 32px;
+  }
+
+  .scheduler-hero-roster-row > :nth-child(n + 6) {
+    display: none;
+  }
+
+  .scheduler-hero-duty.shift {
+    width: 28px;
+    min-width: 28px;
+    height: 20px;
+    min-height: 20px;
+    padding: 0;
+    font-size: 0.6rem;
+  }
+
+  .scheduler-hero-duty.is-empty {
+    width: 28px;
+    min-width: 28px;
+    height: 20px;
+    min-height: 20px;
+  }
+
+  .scheduler-browser-chrome::after {
+    content: "RAPPORT AI";
+    font-size: 0.56rem;
+  }
+
+  .scheduler-hero-runline-meter {
+    flex-basis: 52px;
+  }
+
+  .scheduler-hero-summary {
+    gap: 5px;
+  }
+
+  .scheduler-hero-summary span {
+    padding: 5px 7px;
+    font-size: 0.58rem;
+  }
+
+  .scheduler-hero-summary::after {
+    flex-basis: 100%;
+    margin-left: 0;
+    text-align: right;
+  }
+
   .scheduler-mini-row {
     grid-template-columns: 1.25fr repeat(3, minmax(0, 1fr));
   }
@@ -7333,8 +7943,26 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   .scheduler-hero-step,
   .scheduler-fairness-strip i,
   .scheduler-toggle-list > div,
-  .scheduler-schedule-mock .scheduler-status-pill {
+  .scheduler-schedule-mock .scheduler-status-pill,
+  .scheduler-flow-steps .flow-num,
+  .scheduler-flow-steps .flow-card,
+  .scheduler-flow-steps li::before,
+  .scheduler-flow-steps li::after,
+  .scheduler-hero-duty,
+  .scheduler-hero-success.is-visible,
+  .scheduler-hero-runline-meter i,
+  .scheduler-generate-button .fa-bolt,
+  .scheduler-hero-roster::after,
+  .scheduler-demo-cursor::after {
     animation: none;
+  }
+
+  .scheduler-demo-cursor,
+  .scheduler-hero-roster,
+  .scheduler-hero-success,
+  .scheduler-next-month,
+  .scheduler-generate-button {
+    transition: none;
   }
 
   html.js-anim .scheduler-rules-mock .scheduler-toggle.is-on:not(.sched-flip-on) {

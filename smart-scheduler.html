@@ -103,11 +103,14 @@
   <main class="product-page theme-blue scheduler-page">
     <section class="product-hero scheduler-hero">
       <div class="product-shell">
-        <div>
+        <div class="scheduler-hero-masthead">
           <div class="product-name-row">
             <h2 class="product-name"><span>Smart</span> <span>Scheduler</span></h2>
             <span class="patent-badge"><i class="fa fa-shield" aria-hidden="true"></i> Patented Technology</span>
           </div>
+        </div>
+
+        <div class="scheduler-hero-copy">
           <h1>Finally a smarter way to generate hospital rosters!</h1>
           <p class="product-subtitle">Smart Scheduler is a scheduling system that automates complex on-call and A&amp;E
             duty rosters, designed with a focus on efficiency, fairness, rule-compliance, transparency and
@@ -127,51 +130,61 @@
 
         <div class="hero-visual scheduler-visual">
           <div class="scheduler-hero-board sched-reveal" role="img"
-            aria-label="Smart Scheduler preview showing leave entered, rules checked, roster generated, and fairness tracked.">
+            aria-label="Animated Smart Scheduler preview showing a user moving to the next month and generating a complete duty roster.">
             <div class="scheduler-browser-chrome" aria-hidden="true">
               <span></span><span></span><span></span>
               <div>scheduler.rapportaimedical.com/duty-schedule</div>
             </div>
             <div class="scheduler-hero-stage" aria-hidden="true">
-              <div class="scheduler-hero-topline">
-                <span>August 2026 A&amp;E duty roster</span>
-                <span class="scheduler-status-pill"><i class="fa fa-check"></i> Generated in 4 s</span>
+              <div class="scheduler-hero-controls">
+                <div class="scheduler-hero-month-picker">
+                  <span class="scheduler-hero-month-arrow"><i class="fa fa-chevron-left"></i></span>
+                  <strong data-scheduler-month>September 2026</strong>
+                  <span class="scheduler-hero-month-arrow scheduler-next-month"><i class="fa fa-chevron-right"></i></span>
+                </div>
+                <span class="scheduler-generate-button"><i class="fa fa-bolt"></i><span>Generate schedule</span></span>
               </div>
-              <div class="scheduler-hero-flow">
-                <div class="scheduler-hero-step" style="--delay: 0s">
-                  <span class="scheduler-step-dot">1</span>
-                  <strong>CN leave added</strong>
-                  <small>Aug 10-12</small>
+              <div class="scheduler-hero-runline">
+                <span><i class="fa fa-check-circle"></i><span data-scheduler-state>30 days scheduled with all rules satisfied</span></span>
+                <span class="scheduler-hero-runline-meter"><i></i></span>
+              </div>
+              <div class="scheduler-hero-roster">
+                <div class="scheduler-hero-roster-row scheduler-hero-roster-head">
+                  <strong>Date</strong><span>CN</span><span>DC</span><span>EC</span><span>MK</span><span>LD</span><span>EJ</span><span>RA</span>
                 </div>
-                <div class="scheduler-hero-step" style="--delay: .09s">
-                  <span class="scheduler-step-dot">2</span>
-                  <strong>Rules enforced</strong>
-                  <small>No night-after-night</small>
+                <div class="scheduler-hero-roster-row">
+                  <strong>1 Tue</strong><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span>
                 </div>
-                <div class="scheduler-hero-step" style="--delay: .18s">
-                  <span class="scheduler-step-dot">3</span>
-                  <strong>Fairness visible</strong>
-                  <small>Past duties tracked</small>
+                <div class="scheduler-hero-roster-row">
+                  <strong>2 Wed</strong><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-evening">E</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>3 Thu</strong><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-night">N</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>4 Fri</strong><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-day">D</span>
+                </div>
+                <div class="scheduler-hero-roster-row is-weekend">
+                  <strong>5 Sat</strong><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span>
+                </div>
+                <div class="scheduler-hero-roster-row is-weekend">
+                  <strong>6 Sun</strong><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>7 Mon</strong><span class="scheduler-hero-duty shift shift-vl">VL</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>8 Tue</strong><span class="scheduler-hero-duty shift shift-vl">VL</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span>
                 </div>
               </div>
-              <div class="scheduler-mini-roster">
-                <div class="scheduler-mini-row scheduler-mini-head">
-                  <span>Date</span><span>CN</span><span>DC</span><span>MK</span><span>LD</span>
-                </div>
-                <div class="scheduler-mini-row">
-                  <span>10 Mon</span><span class="shift shift-vl">VL</span><span class="shift shift-day">D</span><span class="shift shift-night">N</span><span class="shift shift-off">O</span>
-                </div>
-                <div class="scheduler-mini-row">
-                  <span>11 Tue</span><span class="shift shift-vl">VL</span><span class="shift shift-evening">E</span><span class="shift shift-off">O</span><span class="shift shift-day">D</span>
-                </div>
-                <div class="scheduler-mini-row">
-                  <span>12 Wed</span><span class="shift shift-vl">VL</span><span class="shift shift-off">O</span><span class="shift shift-day">D</span><span class="shift shift-evening">E</span>
-                </div>
+              <div class="scheduler-hero-success is-visible">
+                <i class="fa fa-check"></i>
+                <span><strong>September schedule generated</strong><small>All leave and 27 rules satisfied</small></span>
               </div>
-              <div class="scheduler-fairness-strip">
-                <span>Workload balance</span>
-                <div><i style="width: 24%; --delay: 0s"></i><i style="width: 18%; --delay: .067s"></i><i style="width: 14%; --delay: .134s"></i><i style="width: 20%; --delay: .2s"></i></div>
+              <div class="scheduler-hero-summary">
+                <span><strong>30</strong> days</span><span><strong>42</strong> doctors</span><span><strong>27</strong> rules satisfied</span>
               </div>
+              <span class="scheduler-demo-cursor"><i class="fa fa-mouse-pointer"></i></span>
             </div>
           </div>
         </div>
@@ -291,7 +304,7 @@
 
     <section class="product-section alt">
       <div class="product-shell scheduler-story scheduler-story--reverse">
-        <div class="scheduler-story-copy">
+        <div class="scheduler-story-copy sched-reveal">
           <h2>How does Smart Scheduler work in practice?</h2>
           <ol class="scheduler-flow-steps">
             <li>
