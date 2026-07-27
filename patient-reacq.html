@@ -124,7 +124,7 @@
               <div class="db-avatar">陳</div>
               <div class="db-info">
                 <span class="db-name">陳美玲 · 58F</span>
-                <span class="db-detail">Last visit: 14 months ago</span>
+                <span class="db-detail">Breast Health Screen due</span>
               </div>
               <span class="db-badge db-badge--overdue">Overdue</span>
               <span class="db-value">+$1,320</span>
@@ -133,7 +133,7 @@
               <div class="db-avatar">KT</div>
               <div class="db-info">
                 <span class="db-name">K.T. · 45M</span>
-                <span class="db-detail">Eligible for screening</span>
+                <span class="db-detail">Cardio Health Screen due</span>
               </div>
               <span class="db-badge db-badge--screen">Screening</span>
               <span class="db-value">+$1,180</span>
@@ -142,7 +142,7 @@
               <div class="db-avatar">MR</div>
               <div class="db-info">
                 <span class="db-name">M.R. · 62F</span>
-                <span class="db-detail">Missed follow-up</span>
+                <span class="db-detail">Osteoporosis review due</span>
               </div>
               <span class="db-badge db-badge--overdue">Overdue</span>
               <span class="db-value">+$1,850</span>
@@ -151,7 +151,7 @@
               <div class="db-avatar">JW</div>
               <div class="db-info">
                 <span class="db-name">J.W. · 39F</span>
-                <span class="db-detail">New service opportunity</span>
+                <span class="db-detail">Women's Health Check due</span>
               </div>
               <span class="db-badge db-badge--screen">Screening</span>
               <span class="db-value">+$1,260</span>
@@ -160,7 +160,7 @@
               <div class="db-avatar">吳</div>
               <div class="db-info">
                 <span class="db-name">吳國輝 · 71M</span>
-                <span class="db-detail">No follow-up in 18 months</span>
+                <span class="db-detail">Colorectal Screen due</span>
               </div>
               <span class="db-badge db-badge--overdue">Overdue</span>
               <span class="db-value">+$1,590</span>
@@ -179,28 +179,28 @@
         <p class="section-kicker">Features & Functions</p>
         <h2>Patient ReAcq helps you identify and re-engage patients suitable for new or existing service opportunities
           using an evidence-based and systematic approach.</h2>
-        <div class="feature-grid feature-grid--modules">
-          <div class="feature-card">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+        <ol class="how-steps reacq-module-steps">
+          <li>
+            <i class="fa fa-list-alt module-icon" aria-hidden="true"></i>
             <h3>Define standards</h3>
-          </div>
-          <div class="feature-card">
-            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+          </li>
+          <li>
+            <i class="fa fa-bar-chart module-icon" aria-hidden="true"></i>
             <h3>Analyse patient data</h3>
-          </div>
-          <div class="feature-card">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+          </li>
+          <li>
+            <i class="fa fa-lightbulb-o module-icon" aria-hidden="true"></i>
             <h3>Identify opportunities</h3>
-          </div>
-          <div class="feature-card">
-            <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+          </li>
+          <li>
+            <i class="fa fa-paper-plane-o module-icon" aria-hidden="true"></i>
             <h3>Generate outreach</h3>
-          </div>
-          <div class="feature-card">
-            <i class="fa fa-line-chart" aria-hidden="true"></i>
+          </li>
+          <li>
+            <i class="fa fa-line-chart module-icon" aria-hidden="true"></i>
             <h3>Track engagement</h3>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -264,22 +264,22 @@
   <script>
     (function () {
       var allPatients = [
-        { initials: '陳', name: '陳美玲 · 58F', detail: 'Last visit: 14 months ago',      badge: 'overdue', badgeText: 'Overdue',   val: 1320 },
-        { initials: 'KT', name: 'K.T. · 45M',  detail: 'Eligible for screening',          badge: 'screen',  badgeText: 'Screening', val: 1180 },
-        { initials: 'MR', name: 'M.R. · 62F',  detail: 'Missed follow-up',                badge: 'overdue', badgeText: 'Overdue',   val: 1850 },
-        { initials: 'JW', name: 'J.W. · 39F',  detail: 'New service opportunity',         badge: 'screen',  badgeText: 'Screening', val: 1260 },
-        { initials: '吳', name: '吳國輝 · 71M', detail: 'No follow-up in 18 months',       badge: 'overdue', badgeText: 'Overdue',   val: 1590 },
-        { initials: 'AL', name: 'A.L. · 52F',  detail: 'Cancer screening eligible',       badge: 'screen',  badgeText: 'Screening', val: 1210 },
-        { initials: 'TC', name: 'T.C. · 44M',  detail: 'Lab results not reviewed',        badge: 'overdue', badgeText: 'Overdue',   val: 1290 },
-        { initials: 'RN', name: 'R.N. · 67F',  detail: 'Chronic care follow-up due',      badge: 'overdue', badgeText: 'Overdue',   val: 2120 },
-        { initials: '林', name: '林嘉欣 · 38F', detail: 'Preventive care opportunity',     badge: 'screen',  badgeText: 'Screening', val: 1055 },
-        { initials: 'YP', name: 'Y.P. · 55F',  detail: 'Annual check overdue',            badge: 'overdue', badgeText: 'Overdue',   val: 1340 },
-        { initials: 'CM', name: 'C.M. · 49M',  detail: 'Suitable for health package',     badge: 'screen',  badgeText: 'Screening', val: 1195 },
-        { initials: 'SW', name: 'S.W. · 63F',  detail: 'Post-discharge follow-up missed', badge: 'overdue', badgeText: 'Overdue',   val: 1980 },
+        { initials: '陳', name: '陳美玲 · 58F', detail: 'Breast Health Screen due',        badge: 'overdue', badgeText: 'Overdue',   val: 1320 },
+        { initials: 'KT', name: 'K.T. · 45M',  detail: 'Cardio Health Screen due',        badge: 'screen',  badgeText: 'Screening', val: 1180 },
+        { initials: 'MR', name: 'M.R. · 62F',  detail: 'Osteoporosis review due',         badge: 'overdue', badgeText: 'Overdue',   val: 1850 },
+        { initials: 'JW', name: 'J.W. · 39F',  detail: "Women's Health Check due",        badge: 'screen',  badgeText: 'Screening', val: 1260 },
+        { initials: '吳', name: '吳國輝 · 71M', detail: 'Colorectal Screen due',           badge: 'overdue', badgeText: 'Overdue',   val: 1590 },
+        { initials: 'AL', name: 'A.L. · 52F',  detail: 'Mammogram Screen eligible',       badge: 'screen',  badgeText: 'Screening', val: 1210 },
+        { initials: 'TC', name: 'T.C. · 44M',  detail: 'Lipid Profile review due',        badge: 'overdue', badgeText: 'Overdue',   val: 1290 },
+        { initials: 'RN', name: 'R.N. · 67F',  detail: 'Diabetes Care Plan due',          badge: 'overdue', badgeText: 'Overdue',   val: 2120 },
+        { initials: '林', name: '林嘉欣 · 38F', detail: "Women's Health Check due",        badge: 'screen',  badgeText: 'Screening', val: 1055 },
+        { initials: 'YP', name: 'Y.P. · 55F',  detail: 'Annual Health Check overdue',            badge: 'overdue', badgeText: 'Overdue',   val: 1340 },
+        { initials: 'CM', name: 'C.M. · 49M',  detail: 'Executive Health Check eligible', badge: 'screen',  badgeText: 'Screening', val: 1195 },
+        { initials: 'SW', name: 'S.W. · 63F',  detail: 'Cardiac rehab review due',        badge: 'overdue', badgeText: 'Overdue',   val: 1980 },
         { initials: 'DN', name: 'D.N. · 47M',  detail: 'Diabetic review outstanding',     badge: 'overdue', badgeText: 'Overdue',   val: 1510 },
         { initials: 'FL', name: 'F.L. · 60F',  detail: 'Bone density screening due',      badge: 'screen',  badgeText: 'Screening', val: 1430 },
-        { initials: '李', name: '李志明 · 55M', detail: 'Cardiovascular check overdue',    badge: 'overdue', badgeText: 'Overdue',   val: 1815 },
-        { initials: 'VT', name: 'V.T. · 41F',  detail: 'Postnatal follow-up missed',      badge: 'overdue', badgeText: 'Overdue',   val: 1275 },
+        { initials: '李', name: '李志明 · 55M', detail: 'Cardio Health Screen due',        badge: 'overdue', badgeText: 'Overdue',   val: 1815 },
+        { initials: 'VT', name: 'V.T. · 41F',  detail: 'Postnatal Care Review due',       badge: 'overdue', badgeText: 'Overdue',   val: 1275 },
       ];
 
       var visibleIndices = [0, 1, 2, 3, 4];

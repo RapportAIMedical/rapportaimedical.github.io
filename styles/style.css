@@ -4817,6 +4817,18 @@ label {
   line-height: 1.6;
 }
 
+.reacq-module-steps .module-icon {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 12px;
+  color: var(--product-accent-dark);
+  font-size: 1.35rem;
+}
+
+.reacq-module-steps h3 {
+  text-align: center;
+}
+
 .benefits-panel {
   position: relative;
   padding: 0;
