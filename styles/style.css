@@ -3152,6 +3152,10 @@ label {
   border-radius: 24px;
 }
 
+.event-gallery-header {
+  margin-bottom: 36px;
+}
+
 .event-gallery-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 2fr;
@@ -4978,9 +4982,24 @@ label {
 
 .product-cta-card .cta-button {
   margin-top: 4px;
-  padding: 14px 24px;
-  font-size: 1rem;
+  min-width: 168px;
+  padding: 18px 34px;
+  font-size: 1.125rem;
   align-self: center;
+}
+
+.product-cta-card .cta-button-main {
+  font-size: 1.125rem;
+}
+
+.product-cta-card .cta-button-sub {
+  font-size: 0.88rem;
+}
+
+.product-cta-card .cta-button-rich {
+  align-items: center;
+  min-width: 168px;
+  text-align: center;
 }
 
 .product-proof-cta-grid--solo .product-cta-card h2 {
