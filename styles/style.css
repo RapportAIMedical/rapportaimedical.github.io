@@ -6564,6 +6564,17 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 
 /* One cohesive panel with a two-column checklist — replaces the old
    free-floating, centre-aligned bullet cards. */
+.reacq-module-steps .module-icon {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 12px;
+  color: var(--product-accent-dark);
+  font-size: 1.35rem;
+}
+
+.reacq-module-steps h3 {
+  text-align: center;
+}
 .benefits-panel {
   position: relative;
   padding: 6px 34px;
