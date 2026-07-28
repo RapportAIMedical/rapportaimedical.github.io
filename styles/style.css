@@ -8141,3 +8141,55 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     font-size: 2.1rem;
   }
 }
+
+/* Shared homepage testimonial treatment. */
+.home-testimonial {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.home-testimonial-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.home-testimonial .quote-mark {
+  margin-bottom: 16px;
+  color: var(--coral);
+  font-family: Georgia, serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 0.8;
+}
+
+.home-testimonial blockquote {
+  margin: 0 auto 20px;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.home-testimonial cite {
+  display: block;
+  color: #777;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-style: normal;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1050px) {
+  .home-testimonial {
+    padding: 60px 40px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .home-testimonial {
+    padding: 48px 30px;
+  }
+}
