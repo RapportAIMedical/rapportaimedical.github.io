@@ -8823,3 +8823,254 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     padding: 48px 30px;
   }
 }
+
+/* About page — founding story */
+#about {
+  position: relative;
+  min-height: 580px;
+  box-sizing: border-box;
+  padding: 106px max(60px, calc((100% - 1320px) / 2)) 210px;
+  overflow: hidden;
+  background: var(--green);
+}
+
+#about .about-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+#about .about-hero-content h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.about-hero-statement {
+  margin: 0 0 24px;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 3.55vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.about-hero-lead {
+  margin: 0;
+  color: rgba(40, 40, 40, 0.82);
+  font-family: var(--sans);
+  font-size: 1.14rem;
+  font-weight: 550;
+  line-height: 1.48;
+}
+
+.about-hero-arc {
+  position: absolute;
+  right: -120px;
+  bottom: -190px;
+  width: min(48vw, 720px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--darkgreen);
+}
+
+#about-content.about-story-section {
+  position: relative;
+  z-index: 2;
+  width: min(calc(100% - 96px), 1320px);
+  box-sizing: border-box;
+  margin: -178px auto 18px;
+  padding: 0;
+  background: transparent;
+}
+
+.about-story-panel {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 0;
+  padding: 42px clamp(36px, 4.5vw, 72px) 46px;
+  overflow: hidden;
+  background: var(--offwhite);
+  border: 3px solid var(--coral);
+  border-radius: 34px;
+  box-shadow: 0 18px 34px rgba(31, 89, 89, 0.12);
+}
+
+.about-story-content {
+  position: relative;
+  z-index: 1;
+  max-width: min(900px, calc(100% - 230px));
+}
+
+.about-story-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--coral);
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.about-story-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.about-story-badge img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+#about-content.about-story-section h2 {
+  position: static;
+  width: auto;
+  max-width: none;
+  margin: 26px 0 18px;
+  padding: 0;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(2.35rem, 4vw, 3.75rem);
+  line-height: 1.05;
+}
+
+.about-story-accent {
+  color: var(--coral);
+}
+
+.about-story-divider {
+  width: 130px;
+  height: 3px;
+  margin-bottom: 26px;
+  background: var(--coral);
+}
+
+#about-content.about-story-section blockquote {
+  max-width: 920px;
+  margin: 0 0 30px;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.15vw, 2rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.about-story-copy {
+  max-width: 1020px;
+}
+
+#about-content.about-story-section .about-story-copy p {
+  margin: 0 0 16px;
+  padding: 0;
+  color: #626262;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.48;
+}
+
+.about-story-copy strong {
+  color: var(--black);
+  font-weight: 750;
+}
+
+.about-story-logo {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: min(136px, 13vw);
+  height: auto;
+  opacity: 0.88;
+}
+
+.about-story-arc {
+  display: none;
+}
+
+.about-partners {
+  width: min(calc(100% - 96px), 1320px);
+  margin: 0 auto 60px;
+  padding: 0 0 24px;
+}
+
+@media only screen and (max-width: 780px) {
+  #about-content.about-story-section {
+    width: calc(100% - 36px);
+    margin: -90px auto 18px;
+    padding: 0;
+  }
+
+  .about-story-panel {
+    min-height: auto;
+    padding: 30px 28px 34px;
+    border-radius: 26px;
+  }
+
+  .about-story-content {
+    max-width: none;
+  }
+
+  .about-story-logo {
+    right: -3px;
+    bottom: -3px;
+    width: 88px;
+  }
+
+  #about {
+    min-height: 510px;
+    padding: 82px 30px 132px;
+  }
+
+  #about .about-hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+  }
+
+  .about-hero-statement {
+    font-size: 2.25rem;
+  }
+
+  .about-hero-lead {
+    font-size: 1rem;
+  }
+
+  .about-hero-arc {
+    right: -128px;
+    bottom: -78px;
+    width: 410px;
+  }
+
+  .about-story-eyebrow {
+    font-size: 1rem;
+  }
+
+  #about-content.about-story-section h2 {
+    margin-top: 24px;
+    font-size: clamp(2.35rem, 11vw, 3.3rem);
+  }
+
+  #about-content.about-story-section blockquote {
+    margin-bottom: 34px;
+    font-size: 1.5rem;
+  }
+
+  #about-content.about-story-section .about-story-copy p {
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+
+  .about-partners {
+    width: calc(100% - 60px);
+    margin-bottom: 40px;
+  }
+}
