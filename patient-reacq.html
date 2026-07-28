@@ -124,7 +124,7 @@
               <div class="db-avatar">陳</div>
               <div class="db-info">
                 <span class="db-name">陳美玲 · 58F</span>
-                <span class="db-detail">Breast Health Screen due</span>
+                <span class="db-detail">Eligible for Breast Health Screen</span>
               </div>
               <span class="db-badge db-badge--overdue">Overdue</span>
               <span class="db-value">+$1,320</span>
@@ -133,7 +133,7 @@
               <div class="db-avatar">KT</div>
               <div class="db-info">
                 <span class="db-name">K.T. · 45M</span>
-                <span class="db-detail">Cardio Health Screen due</span>
+                <span class="db-detail">Eligible for Cardio Health Screen</span>
               </div>
               <span class="db-badge db-badge--screen">Screening</span>
               <span class="db-value">+$1,180</span>
@@ -151,7 +151,7 @@
               <div class="db-avatar">JW</div>
               <div class="db-info">
                 <span class="db-name">J.W. · 39F</span>
-                <span class="db-detail">Women's Health Check due</span>
+                <span class="db-detail">Women's Health Check recommended</span>
               </div>
               <span class="db-badge db-badge--screen">Screening</span>
               <span class="db-value">+$1,260</span>
@@ -170,6 +170,21 @@
             <span><strong>36,714</strong> opportunities found</span>
             <span class="db-total">Est. value <strong>$1.2M</strong></span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="human-note">
+      <div class="product-shell">
+        <div class="human-note-card">
+          <h2>Why This Matters</h2>
+          <p>Primary care is moving rapidly towards proactive, preventive models, and governments across the region are
+            pushing for stronger primary care and regular health screening programs. Family medicine and general
+            practice clinics are in a unique position to be the first line of defence: monitoring risk factors, closing
+            follow-up gaps and catching issues early. With Patient ReAcq, our goal is to make it easier for clinics to
+            turn good clinical intentions into systematic, data-driven action. By using AI to surface the right
+            patients at the right time, we can help you deliver better care to more people, while building a more
+            sustainable business.</p>
         </div>
       </div>
     </section>
@@ -281,20 +296,6 @@
       </div>
     </section>
 
-    <section class="human-note">
-      <div class="product-shell">
-        <div class="human-note-card">
-          <h2>Why This Matters</h2>
-          <p>Primary care is moving rapidly towards proactive, preventive models, and governments across the region are
-            pushing for stronger primary care and regular health screening programs. Family medicine and general
-            practice clinics are in a unique position to be the first line of defence: monitoring risk factors, closing
-            follow-up gaps and catching issues early. With Patient ReAcq, our goal is to make it easier for clinics to
-            turn good clinical intentions into systematic, data-driven action. By using AI to surface the right
-            patients at the right time, we can help you deliver better care to more people, while building a more
-            sustainable business.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <section id="CTA" class="coral"></section>
@@ -307,21 +308,21 @@
   <script>
     (function () {
       var allPatients = [
-        { initials: '陳', name: '陳美玲 · 58F', detail: 'Breast Health Screen due',        badge: 'overdue', badgeText: 'Overdue',   val: 1320 },
-        { initials: 'KT', name: 'K.T. · 45M',  detail: 'Cardio Health Screen due',        badge: 'screen',  badgeText: 'Screening', val: 1180 },
+        { initials: '陳', name: '陳美玲 · 58F', detail: 'Eligible for Breast Health Screen', badge: 'overdue', badgeText: 'Overdue',   val: 1320 },
+        { initials: 'KT', name: 'K.T. · 45M',  detail: 'Eligible for Cardio Health Screen', badge: 'screen',  badgeText: 'Screening', val: 1180 },
         { initials: 'MR', name: 'M.R. · 62F',  detail: 'Osteoporosis review due',         badge: 'overdue', badgeText: 'Overdue',   val: 1850 },
-        { initials: 'JW', name: 'J.W. · 39F',  detail: "Women's Health Check due",        badge: 'screen',  badgeText: 'Screening', val: 1260 },
+        { initials: 'JW', name: 'J.W. · 39F',  detail: "Women's Health Check recommended", badge: 'screen',  badgeText: 'Screening', val: 1260 },
         { initials: '吳', name: '吳國輝 · 71M', detail: 'Colorectal Screen due',           badge: 'overdue', badgeText: 'Overdue',   val: 1590 },
-        { initials: 'AL', name: 'A.L. · 52F',  detail: 'Mammogram Screen eligible',       badge: 'screen',  badgeText: 'Screening', val: 1210 },
+        { initials: 'AL', name: 'A.L. · 52F',  detail: 'Eligible for Mammogram Screen',   badge: 'screen',  badgeText: 'Screening', val: 1210 },
         { initials: 'TC', name: 'T.C. · 44M',  detail: 'Lipid Profile review due',        badge: 'overdue', badgeText: 'Overdue',   val: 1290 },
         { initials: 'RN', name: 'R.N. · 67F',  detail: 'Diabetes Care Plan due',          badge: 'overdue', badgeText: 'Overdue',   val: 2120 },
-        { initials: '林', name: '林嘉欣 · 38F', detail: "Women's Health Check due",        badge: 'screen',  badgeText: 'Screening', val: 1055 },
+        { initials: '林', name: '林嘉欣 · 38F', detail: "Women's Health Check recommended", badge: 'screen',  badgeText: 'Screening', val: 1055 },
         { initials: 'YP', name: 'Y.P. · 55F',  detail: 'Annual Health Check overdue',            badge: 'overdue', badgeText: 'Overdue',   val: 1340 },
-        { initials: 'CM', name: 'C.M. · 49M',  detail: 'Executive Health Check eligible', badge: 'screen',  badgeText: 'Screening', val: 1195 },
+        { initials: 'CM', name: 'C.M. · 49M',  detail: 'Eligible for Executive Health Check', badge: 'screen', badgeText: 'Screening', val: 1195 },
         { initials: 'SW', name: 'S.W. · 63F',  detail: 'Cardiac rehab review due',        badge: 'overdue', badgeText: 'Overdue',   val: 1980 },
         { initials: 'DN', name: 'D.N. · 47M',  detail: 'Diabetic review outstanding',     badge: 'overdue', badgeText: 'Overdue',   val: 1510 },
         { initials: 'FL', name: 'F.L. · 60F',  detail: 'Bone density screening due',      badge: 'screen',  badgeText: 'Screening', val: 1430 },
-        { initials: '李', name: '李志明 · 55M', detail: 'Cardio Health Screen due',        badge: 'overdue', badgeText: 'Overdue',   val: 1815 },
+        { initials: '李', name: '李志明 · 55M', detail: 'Eligible for Cardio Health Screen', badge: 'overdue', badgeText: 'Overdue',   val: 1815 },
         { initials: 'VT', name: 'V.T. · 41F',  detail: 'Postnatal Care Review due',       badge: 'overdue', badgeText: 'Overdue',   val: 1275 },
       ];
 

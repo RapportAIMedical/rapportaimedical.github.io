@@ -7029,6 +7029,11 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   margin-top: 32px;
 }
 
+/* Give the AskJune CTA a clear pause after the Benefits section. */
+.product-page--askjune > section.product-proof-cta-band {
+  margin-top: 64px;
+}
+
 .product-proof-cta-grid {
   display: grid;
   grid-template-columns: 1fr;
