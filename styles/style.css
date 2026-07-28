@@ -8444,6 +8444,306 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   }
 }
 
+/* Patient ReAcq benefits — patient data to opportunity flow. */
+.reacq-benefits {
+  padding: 104px 0 112px;
+  background: var(--offwhite);
+}
+
+.reacq-benefits .product-shell > h2 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--black);
+  font-family: var(--serif);
+  font-size: clamp(2.45rem, 4.1vw, 3.8rem);
+  line-height: 1.05;
+  text-align: center;
+}
+
+.reacq-benefits .product-shell > h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: 22px auto 0;
+  border-radius: 999px;
+  background: var(--green);
+}
+
+.reacq-benefits-lead {
+  max-width: 780px;
+  margin: 24px auto 62px;
+  color: #52606e;
+  font-size: clamp(1.05rem, 1.55vw, 1.25rem);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.reacq-opportunity-flow {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 92px minmax(260px, 356px) 92px minmax(200px, 280px);
+  align-items: center;
+  justify-content: center;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.reacq-flow-card {
+  min-height: 310px;
+  box-sizing: border-box;
+  padding: 28px 22px 22px;
+  text-align: center;
+  border: 1px solid rgba(31, 89, 89, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 14px 28px rgba(31, 89, 89, 0.055);
+}
+
+.reacq-flow-label {
+  margin: 0 0 20px;
+  color: var(--darkgreen);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reacq-flow-caption {
+  margin: 18px 0 0;
+  color: #52606e;
+  font-size: 0.96rem;
+}
+
+.reacq-patient-list {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(31, 89, 89, 0.09);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.reacq-patient-list div {
+  display: grid;
+  grid-template-columns: 34px 1fr 10px;
+  align-items: center;
+  gap: 10px;
+}
+
+.reacq-patient-list i {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: var(--darkgreen);
+  font-size: 1.15rem;
+  border-radius: 50%;
+  background: rgba(134, 194, 168, 0.17);
+}
+
+.reacq-patient-list span::before,
+.reacq-patient-list span::after {
+  content: "";
+  display: block;
+  height: 7px;
+  border-radius: 99px;
+  background: #dce3e2;
+}
+
+.reacq-patient-list span::after {
+  width: 62%;
+  margin-top: 5px;
+}
+
+.reacq-patient-list b {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.reacq-ai-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-color: rgba(77, 151, 122, 0.28);
+}
+
+.reacq-ai-mark {
+  display: grid;
+  place-items: center;
+  width: 94px;
+  height: 94px;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: 2.4rem;
+  border: 10px solid rgba(134, 194, 168, 0.2);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #4b987e, var(--darkgreen));
+  box-shadow: 0 0 0 14px rgba(134, 194, 168, 0.08), 0 12px 24px rgba(31, 89, 89, 0.18);
+}
+
+.reacq-ai-core h3 {
+  margin: 0 0 12px;
+  color: var(--darkgreen);
+  font-family: var(--sans);
+  font-size: 1.45rem;
+}
+
+.reacq-ai-core p {
+  max-width: 250px;
+  margin: 0;
+  color: #52606e;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.reacq-flow-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: var(--darkgreen);
+}
+
+.reacq-flow-link::before,
+.reacq-flow-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  border-top: 3px dotted rgba(77, 151, 122, 0.46);
+}
+
+.reacq-flow-link::before { right: calc(50% + 29px); }
+.reacq-flow-link::after { left: calc(50% + 29px); }
+
+.reacq-flow-link i {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 1.35rem;
+  border: 1px solid rgba(31, 89, 89, 0.14);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(31, 89, 89, 0.06);
+}
+
+.reacq-service-opportunities ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid rgba(31, 89, 89, 0.09);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.reacq-service-opportunities li {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  font-size: 0.96rem;
+  border-bottom: 1px solid rgba(31, 89, 89, 0.08);
+}
+
+.reacq-service-opportunities li:last-child { border-bottom: 0; }
+.reacq-service-opportunities li > i { color: var(--darkgreen); }
+.reacq-service-opportunities li > b { color: #aab6b5; font-size: 1.7rem; font-weight: 400; }
+
+.reacq-benefit-grid {
+  position: relative;
+  max-width: 1120px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+  margin: 88px auto 0;
+  padding: 34px 0 0;
+}
+
+.reacq-benefit-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 10%;
+  left: 10%;
+  border-top: 3px dotted rgba(77, 151, 122, 0.42);
+}
+
+.reacq-benefit-tile {
+  position: relative;
+  min-height: 190px;
+  box-sizing: border-box;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px 16px;
+  border: 1px solid rgba(31, 89, 89, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 10px 22px rgba(31, 89, 89, 0.045);
+}
+
+.reacq-benefit-tile::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  height: 40px;
+  border-left: 3px dotted rgba(77, 151, 122, 0.42);
+}
+
+.reacq-benefit-medallion {
+  width: 72px;
+  height: 72px;
+  color: var(--darkgreen);
+  font-size: 1.85rem;
+  background: rgba(134, 194, 168, 0.17);
+  box-shadow: none;
+  animation: none;
+}
+
+.reacq-benefit-medallion::after { display: none; }
+
+.reacq-benefit-tile h3 {
+  max-width: 12rem;
+  color: var(--black);
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+@media only screen and (max-width: 1050px) {
+  .reacq-opportunity-flow {
+    grid-template-columns: minmax(180px, 1fr) 56px minmax(220px, 1.15fr) 56px minmax(180px, 1fr);
+  }
+
+  .reacq-benefit-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 720px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .reacq-benefits { padding: 76px 0 84px; }
+  .reacq-benefits-lead { margin-bottom: 40px; }
+  .reacq-opportunity-flow { grid-template-columns: 1fr; gap: 22px; max-width: 380px; }
+  .reacq-flow-card { min-height: 0; }
+  .reacq-flow-link { height: 44px; }
+  .reacq-flow-link::before,
+  .reacq-flow-link::after { display: none; }
+  .reacq-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 60px; }
+  .reacq-benefit-grid::before { display: none; }
+  .reacq-benefit-tile::before { display: none; }
+}
+
+@media only screen and (max-width: 480px) {
+  .reacq-benefit-grid { grid-template-columns: 1fr; max-width: 300px; }
+}
+
 /* Shared homepage testimonial treatment. */
 .home-testimonial {
   padding: 80px 60px;
