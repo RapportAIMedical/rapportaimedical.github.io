@@ -7343,6 +7343,30 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   margin-right: auto;
 }
 
+/* Keep the practice evidence in its own full-width row before the standalone demo card. */
+.product-proof-cta-grid--proof-only {
+  grid-template-columns: 1fr;
+}
+
+/* AI Course has one practice highlight: keep the evidence row compact and left-aligned. */
+.ai-course-page .product-proof-cta-grid--proof-only {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-course-page .product-proof-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+}
+
+.ai-course-page .product-proof-panel .proof-highlights {
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
 .product-proof-panel,
 .product-cta-panel {
   min-width: 0;
@@ -7533,6 +7557,10 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   }
 
   .product-proof-cta-grid--solo {
+    grid-template-columns: 1fr;
+  }
+
+  .product-proof-cta-grid--proof-only {
     grid-template-columns: 1fr;
   }
 
