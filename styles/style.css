@@ -6562,6 +6562,143 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   line-height: 1.6;
 }
 
+/* Radiology Assistant — connected four-step reporting workflow. */
+.radiology-how-section {
+  padding: 81px 0 93px;
+  background: var(--offwhite);
+}
+
+.radiology-how-shell > .section-kicker {
+  display: table;
+  margin: 0 auto 16px;
+  color: var(--coral);
+  text-align: center;
+}
+
+.radiology-how-shell > .section-kicker::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: var(--coral);
+}
+
+.radiology-how-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 48px 0 0;
+  padding: 0;
+}
+
+.radiology-how-steps li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 278px;
+  margin: 0;
+  padding: 27px 20px 26px;
+  color: var(--black);
+  text-align: center;
+  border: 1px solid rgba(40, 40, 40, 0.08);
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 10px 22px rgba(40, 40, 40, 0.055);
+}
+
+.radiology-how-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: calc(100% + 10px);
+  width: 18px;
+  border-top: 3px dotted var(--coral);
+  transform: translateY(-50%);
+}
+
+.radiology-how-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  margin-bottom: 14px;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffc2b1, var(--coral));
+}
+
+.radiology-how-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 18px;
+  color: var(--coral);
+  font-size: 2.25rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.98), rgba(255, 161, 138, 0.17));
+}
+
+.radiology-how-steps h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.28vw, 1.24rem);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.radiology-how-steps p {
+  margin: 0;
+  color: rgba(40, 40, 40, 0.78);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+@media only screen and (max-width: 1100px) {
+  .radiology-how-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .radiology-how-steps li::after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .radiology-how-section {
+    padding: 64px 0 72px;
+  }
+
+  .radiology-how-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 34px;
+  }
+
+  .radiology-how-steps li {
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .radiology-how-icon {
+    width: 72px;
+    height: 72px;
+    font-size: 1.9rem;
+  }
+}
+
 /* One cohesive panel with a two-column checklist — replaces the old
    free-floating, centre-aligned bullet cards. */
 .reacq-module-steps .module-icon {
