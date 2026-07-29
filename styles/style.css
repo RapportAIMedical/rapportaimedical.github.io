@@ -1113,6 +1113,164 @@ footer {
   }
 }
 
+/* Compact the shared footer on phones: keep related content in short rows
+   rather than letting every footer group become a separate full-width stack. */
+@media only screen and (max-width: 780px) {
+  footer {
+    width: calc(100% - 48px);
+    padding: 34px 24px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 30px;
+  }
+
+  .footer-left {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+    max-width: none;
+  }
+
+  .footer-left img {
+    width: 96px;
+    padding-bottom: 0;
+  }
+
+  .footer-left .desc h6 {
+    width: auto;
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .footer-left .desc {
+    min-width: 0;
+  }
+
+  .desc button,
+  .desc a {
+    font-size: 0.78rem;
+  }
+
+  .footer-right {
+    display: contents;
+    width: auto;
+    padding: 0;
+  }
+
+  .sub {
+    grid-row: 2;
+  }
+
+  .sub h6 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  #subscribe {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #subscribe input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #subscribe button {
+    width: auto;
+    min-width: 74px;
+    padding: 8px 12px;
+  }
+
+  .page-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 20px;
+    padding: 0;
+  }
+
+  .page-links p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 20px;
+    align-items: end;
+  }
+
+  .socials {
+    padding: 0;
+    font-size: 0.72rem;
+  }
+
+  .icons {
+    gap: 16px;
+  }
+
+  .smallprint {
+    min-width: 0;
+    align-items: flex-end;
+    font-size: 0.68rem;
+    text-align: right;
+  }
+
+  .footer-member-logos {
+    justify-content: flex-end;
+    gap: 7px;
+    padding-bottom: 8px;
+  }
+
+  .footer-member-logo {
+    height: 17px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .smallprint,
+  .footer-member-logos {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .footer-left {
+    grid-template-columns: 78px minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .footer-left img {
+    width: 78px;
+  }
+
+  .page-links {
+    gap: 9px 14px;
+  }
+
+}
+
 /* ===== PAGES ===== */
 
 .page {
