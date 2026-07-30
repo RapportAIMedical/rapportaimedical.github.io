@@ -254,7 +254,8 @@ img {
   background: transparent;
   position: fixed;
   top: 0;
-  z-index: 2;
+  /* Keep the opened mobile navigation above overlapping page panels. */
+  z-index: 1000;
   transition: top 0.3s;
 }
 
@@ -2185,17 +2186,20 @@ label {
 #press-hero {
   padding-bottom: 90px;
   overflow: hidden;
+  isolation: isolate;
 }
 
 #press-hero .graphic {
   height: 75%;
   bottom: 0;
-  right: 0;
+  /* Sit against the image edge, leaving the heading area clear. */
+  right: 58%;
+  z-index: 1;
 }
 
 #press-hero .page_title {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-photo {
@@ -2209,6 +2213,7 @@ label {
   background-position: 50% 32%;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.65) 26%, #000 46%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.65) 26%, #000 46%);
+  z-index: 0;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -2218,6 +2223,10 @@ label {
 }
 
 @media only screen and (max-width: 780px) {
+  #press-hero .graphic {
+    right: 0;
+  }
+
   .hero-photo {
     display: none;
   }
@@ -2385,6 +2394,7 @@ label {
 
 @media only screen and (max-width: 780px) {
   #press-hero {
+    min-height: 304px;
     padding-bottom: 0;
   }
 
@@ -2456,6 +2466,10 @@ label {
 
 #customers {
   padding-bottom: 90px;
+}
+
+#customers .page_title {
+  padding-left: 60px;
 }
 
 #customers .graphic {
@@ -2788,6 +2802,10 @@ label {
 @media only screen and (max-width: 780px) {
   #customers {
     padding-bottom: 0;
+  }
+
+  #customers .page_title {
+    padding-left: 30px;
   }
 
   .customers-intro {
@@ -3397,12 +3415,14 @@ label {
 }
 
 .linkedin-section .linkedin-embed-container {
-  width: fit-content;
+  width: min(500px, 100%);
+  max-width: 100%;
 }
 
 .linkedin-section .linkedin-embed-container iframe {
-  width: 500px;
-  min-height: 800px;
+  width: 100%;
+  height: 880px;
+  min-height: 0;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: block;
@@ -3615,11 +3635,25 @@ label {
   }
 
   .linkedin-section {
-    width: calc(100% - 60px);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 12px;
   }
 
   .linkedin-section .linkedin-embed-container {
-    padding: 16px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .linkedin-section .linkedin-embed-container iframe {
+    width: 100%;
+    min-width: 350px;
+    height: 880px;
+  }
+
+  .linkedin-section .linkedin-embed-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .lsc-photos-group {
@@ -3663,6 +3697,13 @@ label {
 
   .lsc-photos-caption {
     font-size: 0.875rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .linkedin-section {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -7482,11 +7523,6 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 
 .product-proof-cta-band + section {
   margin-top: 32px;
-}
-
-/* Give the AskJune CTA a clear pause after the Benefits section. */
-.product-page--askjune > section.product-proof-cta-band {
-  margin-top: 64px;
 }
 
 .product-proof-cta-grid {
