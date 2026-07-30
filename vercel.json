@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/ai-course", "destination": "/ai-course.html" },
+    { "source": "/ai-typist", "destination": "/radiology-assistant.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/customers", "destination": "/customers.html" },
+    { "source": "/others", "destination": "/others.html" },
+    { "source": "/patient-reacq", "destination": "/patient-reacq.html" },
+    { "source": "/press", "destination": "/press.html" },
+    { "source": "/product", "destination": "/product.html" },
+    { "source": "/radiology-assistant", "destination": "/radiology-assistant.html" },
+    { "source": "/smart-scheduler", "destination": "/smart-scheduler.html" }
+  ]
+}
