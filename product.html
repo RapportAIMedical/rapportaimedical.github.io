@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Caveat:wght@600;700&family=Platypi:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
   <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
   <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
@@ -218,27 +219,98 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-auto-rows: 1fr;
       align-items: stretch;
-      gap: 26px;
-      margin-top: 8px;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .askjune-how-title {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-width: 0;
+    }
+
+    .askjune-how-title-mark {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255, 161, 138, 0.24);
+    }
+
+    .askjune-how-title-mark img {
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+    }
+
+    #how-it-works .askjune-how-title h2 {
+      flex: 1 1 0;
+      min-width: 0;
+      margin: 0;
+      color: var(--black);
+      font-family: var(--serif);
+      font-size: clamp(1.58rem, 2vw, 2rem);
+      font-weight: 500;
+      line-height: 1.14;
+    }
+
+    .askjune-how-title h2 strong {
+      position: relative;
+      display: inline-block;
+      color: var(--black);
+      font-family: 'Caveat', cursive;
+      font-size: 1.18em;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 0.85;
+    }
+
+    .askjune-how-title h2 strong::after {
+      content: '';
+      position: absolute;
+      bottom: -13px;
+      left: -2%;
+      width: 106%;
+      height: 12px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M2 7 C15 1 24 11 37 6 S59 2 72 7 S94 11 118 4' fill='none' stroke='%23ffa18a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+      transform: rotate(-2deg);
     }
 
     .askjune-how-card {
       display: flex;
       flex-direction: column;
       height: 100%;
+      min-width: 0;
       box-sizing: border-box;
-      gap: 20px;
-      padding: 30px;
+      gap: 18px;
+      padding: 26px 28px;
       background: #fff;
-      border-radius: 26px;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(10, 37, 81, 0.06);
+      border-radius: 22px;
+      box-shadow: none;
+      border: 1px solid rgba(40, 40, 40, 0.06);
     }
 
     .askjune-how-head {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+    }
+
+    .askjune-how-head > div {
+      display: flex;
+      flex: 1;
+      min-width: 0;
+      align-items: center;
       gap: 16px;
+      position: relative;
+      z-index: 0;
+      margin-left: -70px;
+      padding: 0;
     }
 
     .askjune-how-num {
@@ -246,44 +318,51 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 46px;
-      height: 46px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: var(--product-soft);
-      color: var(--product-accent-dark);
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      border: 4px solid var(--coral);
+      color: var(--black);
       font-family: var(--sans);
       font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
     }
 
     .askjune-how-head h3 {
       font-family: var(--sans);
-      font-size: 1.28rem;
-      font-weight: 700;
-      color: var(--product-accent-dark);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--black);
       margin: 0;
-      padding: 4px 0 0;
+      padding: 14px 20px 14px 64px;
+      border-radius: 999px;
+      background: rgba(255, 161, 138, 0.24);
+      white-space: nowrap;
     }
 
     .askjune-how-tag {
-      margin: 5px 0 0;
+      margin: 0;
       font-size: 0.98rem;
-      line-height: 1.5;
-      color: rgba(40, 40, 40, 0.72);
+      line-height: 1.32;
+      color: var(--black);
     }
 
     /* 1 — Converse: framed conversation screenshot fills the card foot */
     .askjune-how-body {
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      line-height: 1.45;
       margin: 0;
     }
 
     /* Converse — head + copy stacked on the left, phone pinned to the far-right of the whole card */
     .askjune-how-card--converse {
-      flex-direction: row;
-      align-items: center;
-      gap: 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 18px;
     }
 
     .askjune-converse-main {
@@ -291,15 +370,16 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      align-self: start;
     }
 
     .askjune-phone {
       flex: 0 0 auto;
-      width: 168px;
+      width: 142px;
       margin-left: auto;
-      align-self: center;
+      align-self: start;
       background: #222b36;
-      border-radius: 26px;
+      border-radius: 22px;
       padding: 9px 9px 11px;
       box-shadow: 0 18px 34px rgba(10, 37, 81, 0.18);
     }
@@ -395,32 +475,66 @@
       30% { transform: translateY(-3px); opacity: 1; }
     }
 
-    /* 2 — Think: icon + factor checklist */
+    /* 2 — Think: a connected decision graphic + factor checklist */
     .askjune-how-think {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 14px;
       margin-block: auto;
     }
 
-    .askjune-how-brain {
+    .askjune-think-brain {
+      position: relative;
       flex: 0 0 auto;
-      width: 76px;
-      height: 76px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 32% 30%,
-          color-mix(in srgb, var(--product-accent) 45%, white), var(--product-soft));
-      color: var(--product-accent-dark);
-      font-size: 1.9rem;
-      animation: askjune-think-pulse 3.4s ease-in-out infinite;
+      width: 78px;
+      height: 70px;
+      color: var(--coral);
     }
 
-    @keyframes askjune-think-pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(177, 156, 217, 0.45); }
-      50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(177, 156, 217, 0); }
+    .askjune-think-brain svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .askjune-think-trail {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 0 0 auto;
+    }
+
+    .askjune-think-trail i {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    .askjune-think-trail i:nth-child(2) { width: 7px; height: 7px; }
+    .askjune-think-trail i:nth-child(3) { width: 9px; height: 9px; }
+
+    .askjune-think-bubble {
+      position: relative;
+      flex: 0 0 auto;
+      width: 56px;
+      height: 42px;
+      color: var(--coral);
+    }
+
+    .askjune-think-bubble::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -17px;
+      width: 16px;
+      border-top: 1.5px solid var(--coral);
+    }
+
+    .askjune-think-bubble svg {
+      width: 100%;
+      height: 100%;
     }
 
     .askjune-how-factors {
@@ -428,32 +542,23 @@
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 9px;
+      flex: 1 1 0;
+      min-width: 0;
+      gap: 10px;
     }
 
     .askjune-how-factors li {
       position: relative;
-      padding-left: 18px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-    }
-
-    .askjune-how-factors li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--product-accent);
+      padding-left: 0;
+      font-size: 0.84rem;
+      line-height: 1.35;
     }
 
     /* 3 — Recommend: three outcome chips */
     .askjune-how-recs {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      gap: 9px;
       margin-block: auto;
     }
 
@@ -463,15 +568,16 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 10px;
-      padding: 22px 10px;
-      border-radius: 16px;
-      background: var(--product-soft);
-      border: 1px solid rgba(10, 37, 81, 0.06);
+      gap: 8px;
+      min-height: 112px;
+      padding: 16px 8px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid rgba(255, 126, 94, 0.85);
       font-family: var(--sans);
       font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--product-accent-dark);
+      font-size: 1rem;
+      color: var(--black);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -481,44 +587,101 @@
     }
 
     .askjune-how-rec i {
-      font-size: 1.55rem;
+      color: #6e9ff0;
+      font-size: 1.8rem;
     }
 
-    /* 4 — Data: icon + three intelligence columns */
+    /* 4 — Data: connected 2 × 2 intelligence grid */
     .askjune-how-data {
-      display: flex;
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(120px, 0.82fr) minmax(180px, 1.18fr);
+      grid-template-rows: repeat(2, minmax(68px, 1fr));
       align-items: center;
-      gap: 22px;
+      gap: 12px 32px;
+      min-height: 160px;
       margin-block: auto;
+    }
+
+    .askjune-data-connectors {
+      position: absolute;
+      inset: 10px 4px;
+      z-index: 0;
+      width: calc(100% - 8px);
+      height: calc(100% - 20px);
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .askjune-data-connectors path {
+      fill: none;
+      stroke: rgba(255, 161, 138, 0.78);
+      stroke-width: 1.3;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .askjune-data-connectors circle {
+      fill: #fff;
+      stroke: var(--coral);
+      stroke-width: 1.5;
+      vector-effect: non-scaling-stroke;
     }
 
     .askjune-how-db {
       flex: 0 0 auto;
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
+      width: 88px;
+      height: 88px;
+      border-radius: 18px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: var(--product-soft);
-      color: var(--product-accent-dark);
-      font-size: 1.7rem;
+      background: rgba(110, 159, 240, 0.12);
+      color: #6e9ff0;
+      font-size: 2.35rem;
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
+      z-index: 1;
+      transform: translate(-16px, -4px);
     }
 
     .askjune-how-data-cols {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
-      gap: 16px 18px;
-      flex: 1;
-      width: 100%;
-      text-align: center;
+      display: contents;
     }
+
+    .askjune-how-data-cols > div:first-child {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .askjune-how-data-cols > div {
+      position: relative;
+      z-index: 1;
+      align-self: center;
+      width: 100%;
+      transform: translateX(100px);
+    }
+
+    .askjune-how-data-cols > div:first-child {
+      justify-self: center;
+      width: min(154px, 100%);
+    }
+
+    .askjune-how-data-cols > div:nth-child(2),
+    .askjune-how-data-cols > div:nth-child(3) {
+      padding-left: 18px;
+      transform: translateX(112px);
+    }
+
+    .askjune-how-data-cols > div:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .askjune-how-data-cols > div:nth-child(3) { grid-column: 2; grid-row: 2; }
 
     .askjune-how-data-cols h4 {
       font-family: var(--sans);
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      color: var(--product-accent-dark);
+      color: var(--black);
       margin: 0 0 6px;
     }
 
@@ -529,8 +692,8 @@
     }
 
     .askjune-how-data-cols li {
-      font-size: 0.86rem;
-      line-height: 1.4;
+      font-size: 0.76rem;
+      line-height: 1.3;
       color: rgba(40, 40, 40, 0.75);
       padding: 2px 0;
     }
@@ -544,12 +707,43 @@
     }
 
     @media (max-width: 560px) {
-      .askjune-how-card { padding: 24px; }
+      #how-it-works {
+        overflow: hidden;
+      }
+
+      #how-it-works .product-shell {
+        width: calc(100vw - 60px);
+        max-width: calc(100vw - 60px);
+        min-width: 0;
+      }
+
+      .askjune-how-grid {
+        max-width: 100%;
+      }
+
+      .askjune-how-card { padding: 22px; }
+
+      .askjune-how-title {
+        display: grid;
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 14px;
+      }
+      .askjune-how-title-mark { width: 52px; height: 52px; }
+      .askjune-how-title-mark img { width: 33px; height: 33px; }
+      #how-it-works .askjune-how-title h2 { overflow-wrap: anywhere; }
 
       /* Narrow screens — stack: text on top, phone centred underneath */
       .askjune-how-card--converse {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .askjune-how-head > div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+        margin-left: -40px;
       }
 
       .askjune-phone {
@@ -557,8 +751,24 @@
       }
 
       .askjune-how-data {
-        flex-direction: column;
-        gap: 18px;
+        grid-template-columns: minmax(100px, 0.8fr) minmax(0, 1.2fr);
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .askjune-how-think {
+        align-items: flex-start;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .askjune-how-data-cols {
+        display: contents;
+      }
+
+      .askjune-how-factors {
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .askjune-how-recs {
@@ -574,7 +784,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .askjune-how-brain { animation: none; }
       .askjune-how-rec { transition: none; }
       .askjune-bubble--typing span { animation: none; }
     }
@@ -795,10 +1004,10 @@
 
     <section class="product-section" id="how-it-works">
       <div class="product-shell">
-        <p class="section-kicker">How It Works</p>
-        <h2>How does AskJune work?</h2>
-        <p class="section-intro">From a patient's first question to a booked consultation — here's what happens behind
-          the scenes, at every step.</p>
+        <div class="askjune-how-title">
+          <span class="askjune-how-title-mark" aria-hidden="true"><img src="assets/Rapport-logo-RGB_symbol_black.png" alt=""></span>
+          <h2>How does <strong>AskJune</strong> work?</h2>
+        </div>
 
         <div class="askjune-how-grid">
           <!-- 1 — Converse -->
@@ -843,12 +1052,23 @@
               </div>
             </div>
             <div class="askjune-how-think">
-              <span class="askjune-how-brain"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span>
+              <span class="askjune-think-brain" aria-hidden="true">
+                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M59 87c-8 5-21 2-25-8-13 2-23-8-20-20-11-7-10-24 2-29-1-15 16-23 28-14 7-10 23-10 30 1 14-4 26 8 23 21 11 9 7 27-7 30-2 13-17 20-29 12-1 3-1 5-2 7Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M60 19v61M43 27c8 5 8 15 0 20 10 4 10 15 0 20M77 27c-8 5-8 15 0 20-10 4-10 15 0 20M30 42c9 0 13 6 13 13M90 42c-9 0-13 6-13 13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="askjune-think-trail" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="askjune-think-bubble" aria-hidden="true">
+                <svg viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 38c-8 0-13-5-13-12 0-7 5-12 12-13 2-7 9-11 16-8 6-5 16-2 18 6 8 0 14 6 14 13 0 8-6 14-15 14H15Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
               <ul class="askjune-how-factors">
                 <li><strong>Patient profile &amp; needs</strong> — age, gender, pregnancy status, symptoms</li>
                 <li><strong>Clinical relevance</strong> of specialty / packages</li>
                 <li><strong>Clinic capacity</strong> &amp; internal protocols</li>
-                <li>Location &amp; accessibility</li>
+                <li><strong>Location &amp; accessibility</strong></li>
               </ul>
             </div>
           </article>
@@ -888,12 +1108,17 @@
               </div>
             </div>
             <div class="askjune-how-data">
+              <svg class="askjune-data-connectors" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M26 25 H65 V10"></path>
+                <path d="M26 25 H28 V50"></path>
+                <path d="M26 25 H65 V68"></path>
+              </svg>
               <span class="askjune-how-db"><i class="fa fa-database" aria-hidden="true"></i></span>
               <div class="askjune-how-data-cols">
                 <div>
                   <h4>Patient Insights</h4>
                   <ul>
-                    <li>Health needs and interests</li>
+                    <li>Patient needs and interests</li>
                     <li>Health concerns raised</li>
                   </ul>
                 </div>
