@@ -9496,6 +9496,20 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   margin-bottom: 66px;
 }
 
+.about-partner-marquee-track {
+  display: flex;
+}
+
+.about-partner-marquee-set {
+  flex: 1;
+}
+
+@media only screen and (min-width: 781px) {
+  .about-partner-marquee-set[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 980px) {
   .about-values-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9603,6 +9617,43 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     padding-bottom: 42px;
   }
 
+  .about-partners {
+    width: 100%;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+
+  .about-partners .member-of {
+    padding: 0;
+  }
+
+  .about-partner-marquee {
+    overflow: hidden;
+  }
+
+  .about-partner-marquee-track {
+    width: max-content;
+    animation: about-partner-marquee 24s linear infinite;
+  }
+
+  .about-partner-marquee-set {
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 34px;
+    padding-right: 34px;
+  }
+
+  .about-partner-marquee-set .member-logo {
+    height: 44px;
+    max-width: 130px;
+  }
+
+  .about-partner-marquee:hover .about-partner-marquee-track {
+    animation-play-state: paused;
+  }
+
   .about-values-grid {
     grid-template-columns: 1fr;
     gap: 0;
@@ -9644,3 +9695,13 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     border-bottom: 0;
   }
 }
+
+@keyframes about-partner-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-partner-marquee-track {
+    animation: none;
