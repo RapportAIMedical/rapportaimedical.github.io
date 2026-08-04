@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,9 +19,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon/android-chrome-256x256.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#ffa18a">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#EB9476">
+  <meta name="msapplication-TileColor" content="#EB9476">
+  <meta name="theme-color" content="#F7F4EE">
   <script src="styles/float-panel.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -53,7 +54,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI Radiology Report Solution</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -77,7 +78,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI Radiology Report Solution</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -90,58 +91,59 @@
     </div>
   </header>
 
-  <section id="contact" class="page">
-    <div class="page_title cyan">
-      <div class="half-screen">
-        <h1>Contact us</h1>
-        <div class="socials">
-          <h6>Follow us</h6>
-          <div class="icons">
-            <a href="https://www.twitter.com/RapportAiMed" target="_blank">
-              <svg class="icon icon-x">
-                <symbol id="icon-x" viewBox="0 0 32 32">
-                  <path
-                    d="M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z">
-                  </path>
-                </symbol>
-                <use xlink:href="#icon-x"></use>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/rapport-ai-medical/" target="_blank">
-              <svg class="icon icon-linkedin">
-                <symbol id="icon-linkedin" viewBox="0 0 32 32">
-                  <path
-                    d="M29 0h-26c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 26h-4v-14h4v14zM10 10c-1.106 0-2-0.894-2-2s0.894-2 2-2c1.106 0 2 0.894 2 2s-0.894 2-2 2zM26 26h-4v-8c0-1.106-0.894-2-2-2s-2 0.894-2 2v8h-4v-14h4v2.481c0.825-1.131 2.087-2.481 3.5-2.481 2.488 0 4.5 2.238 4.5 5v9z">
-                  </path>
-                </symbol>
-                <use xlink:href="#icon-linkedin"></use>
-              </svg>
-            </a>
-          </div>
+  <main class="contact-page">
+    <section id="contact" class="contact-page-layout" aria-labelledby="contact-title">
+      <div class="contact-decoration contact-decoration-dots" aria-hidden="true"></div>
+      <div class="contact-decoration contact-decoration-arc" aria-hidden="true"></div>
+      <div class="contact-decoration contact-decoration-corner" aria-hidden="true"></div>
+
+      <div class="contact-shell">
+        <div class="contact-intro">
+          <h1 id="contact-title">Contact us</h1>
+          <span class="contact-title-rule" aria-hidden="true"></span>
+          <p class="contact-lead">If you are interested in partnering with us, testing our platform features or have
+            any questions, please do not hesitate to reach out. Your feedback is what keeps us working hard to make
+            healthcare better each step along the way.</p>
         </div>
-      </div>
-      <div class="graphic darkblue desktop">
-        <div class="quadrant cyan round_BL"></div>
-      </div>
-      <div class="graphic darkblue mobile">
-        <div class="quadrant cyan round_BR"></div>
-      </div>
-    </div>
 
-    <div class="form">
-      <div class="half-screen">
-        <div class="form-text">
-          <p>If you are interested in partnering with us, testing our platform features or have any questions, please do
-            not hesitate to reach out. Your feedback is what keeps us working hard to make healthcare better each step
-            along the way.</p>
+        <div class="contact-info-cards">
+          <article class="contact-info-card">
+            <span class="contact-info-icon" aria-hidden="true"><i class="fa fa-envelope-o"></i></span>
+            <h2>Email us</h2>
+            <p>For general enquiries, partnerships or product questions, email our team.</p>
+            <a class="contact-card-link" href="mailto:hello@rapportaimedical.com">hello@rapportaimedical.com</a>
+          </article>
 
-          <h6>Email</h6>
-          <p><a href="mailto:hello@rapportaimedical.com" class="email-link">hello@rapportaimedical.com</a></p>
+          <article class="contact-info-card">
+            <span class="contact-info-icon" aria-hidden="true"><i class="fa fa-share-alt"></i></span>
+            <h2>Let’s connect</h2>
+            <p>Follow us for the latest product updates and company news.</p>
+            <div class="contact-social-links" aria-label="Rapport AI Medical social links">
+              <a href="https://www.twitter.com/RapportAiMed" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow Rapport AI Medical on X">
+                <svg viewBox="0 0 32 32" aria-hidden="true"><path
+                    d="M24.325 3h4.411l-9.636 11.013 11.336 14.987h-8.876l-6.952-9.089-7.955 9.089h-4.413l10.307-11.78-10.875-14.22h9.101l6.284 8.308zM22.777 26.36h2.444l-15.776-20.859h-2.623z"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/rapport-ai-medical/" target="_blank" rel="noopener noreferrer"
+                aria-label="Follow Rapport AI Medical on LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            </div>
+          </article>
 
+          <article class="contact-info-card">
+            <span class="contact-info-icon" aria-hidden="true"><i class="fa fa-users"></i></span>
+            <h2>Partnerships &amp; collaboration</h2>
+            <p>Interested in partnering with us or exploring how our solutions can support your organisation?</p>
+            <a class="contact-card-link" href="mailto:hello@rapportaimedical.com">Start a conversation</a>
+          </article>
         </div>
+
+        <aside class="contact-response-banner" aria-label="Contact information">
+          <span class="contact-banner-icon" aria-hidden="true"><i class="fa fa-envelope-open-o"></i></span>
+          <p><strong>We care about your time</strong>Our team will get back to you as soon as possible.</p>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <div id="footer"></div>
