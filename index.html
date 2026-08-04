@@ -18,9 +18,9 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon/android-chrome-256x256.png">
   <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#ffa18a">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#EB9476">
+  <meta name="msapplication-TileColor" content="#EB9476">
+  <meta name="theme-color" content="#F7F4EE">
   <script src="styles/float-panel.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -53,7 +53,7 @@
     }
 
     .home-photo-placeholder {
-      background: #ece7df;
+      background: var(--color-bg-secondary);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,7 +62,7 @@
       font-family: var(--sans);
       font-size: 11px;
       font-weight: 500;
-      color: #9a938a;
+      color: var(--color-text-secondary);
       letter-spacing: 0.08em;
       text-transform: uppercase;
       position: relative;
@@ -126,7 +126,7 @@
       font-family: var(--sans);
       font-size: 1rem;
       line-height: 1.8;
-      color: #555;
+      color: var(--color-text-secondary);
       max-width: 460px;
       margin-bottom: 32px;
     }
@@ -138,28 +138,81 @@
     }
 
     .home-hero-split .hero-photo-col {
+      position: relative;
       min-height: 650px;
-      box-sizing: border-box;
-      padding-top: 86px;
-      background-image: url('assets/home-hero-offwhite.png');
-      background-size: contain;
-      background-position: center top;
+      overflow: hidden;
+    }
+
+    /* Blend the photo into the offwhite text column on the left */
+    .home-hero-split .hero-photo-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(to right,
+        var(--color-bg-primary) 0%,
+        color-mix(in srgb, var(--color-bg-primary) 85%, transparent) 12%,
+        transparent 45%);
+    }
+
+    .home-hero-split .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
-      background-origin: content-box;
+      opacity: 0;
+      animation: heroFade 35s infinite;
+      will-change: opacity;
+    }
+
+    .home-hero-split .hero-slide:nth-child(1) {
+      background-image: url('design-reference/ai-typist-home-draft.png');
+      animation-delay: -2s;
+    }
+    .home-hero-split .hero-slide:nth-child(2) {
+      background-image: url('assets/hero-nurse-tablet.jpg');
+      animation-delay: 5s;
+    }
+    .home-hero-split .hero-slide:nth-child(3) {
+      background-image: url('assets/hero-walking-consult.jpg');
+      animation-delay: 12s;
+    }
+    .home-hero-split .hero-slide:nth-child(4) {
+      background-image: url('assets/hero-consultation-woman.png');
+      animation-delay: 19s;
+    }
+    .home-hero-split .hero-slide:nth-child(5) {
+      background-image: url('assets/hero-consultation-senior.png');
+      animation-delay: 26s;
+    }
+
+    @keyframes heroFade {
+      0%   { opacity: 0; }
+      3.2%  { opacity: 1; }
+      16.8% { opacity: 1; }
+      23.2% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .home-hero-split .hero-slide { animation: none; opacity: 0; }
+      .home-hero-split .hero-slide:nth-child(1) { opacity: 1; }
     }
 
     /* STATS */
     .home-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(40, 40, 40, 0.08);
-      border-bottom: 1px solid rgba(40, 40, 40, 0.08);
-      background: #fff;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface);
     }
 
     .home-stats .stat {
       padding: 36px 40px;
-      border-right: 1px solid rgba(40, 40, 40, 0.08);
+      border-right: 1px solid var(--color-border);
     }
 
     .home-stats .stat:last-child {
@@ -178,7 +231,7 @@
     .home-stats .stat-lbl {
       font-family: var(--sans);
       font-size: 0.8rem;
-      color: #666;
+      color: var(--color-text-secondary);
       margin-top: 10px;
       letter-spacing: 0.02em;
       line-height: 1.5;
@@ -187,7 +240,7 @@
     /* SOLUTIONS */
     .home-solutions {
       padding: 80px 60px;
-      background: #fff;
+      background: var(--color-surface);
     }
 
     .home-section-head {
@@ -201,6 +254,7 @@
       font-weight: 700;
       letter-spacing: -0.015em;
       line-height: 1.2;
+      white-space: nowrap;
     }
 
     .home-cards {
@@ -210,10 +264,10 @@
     }
 
     .home-card {
-      border: 1px solid rgba(40, 40, 40, 0.08);
+      border: 1px solid var(--color-border);
       border-radius: 16px;
       overflow: hidden;
-      background: #fff;
+      background: var(--color-surface);
       transition: box-shadow 0.25s ease, transform 0.25s ease;
       display: flex;
       flex-direction: column;
@@ -245,12 +299,12 @@
       background-repeat: no-repeat;
     }
 
-    .card-photo-ai-typist {
-      background-image: url('assets/ai-typist-radiology-reporting.png');
+    .card-photo-radiology-assistant {
+      background-image: url('assets/radiology-assistant-reporting.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #f9f5ef;
+      background-color: var(--color-bg-primary);
     }
 
     .home-card .home-reacq-visual {
@@ -445,8 +499,8 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: #ffffff;
-      border: 1px solid rgba(40, 40, 40, 0.07);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
       display: flex;
       align-items: center;
@@ -522,7 +576,7 @@
     .home-card .card-desc {
       font-family: var(--sans);
       font-size: 0.9rem;
-      color: #5a5a5a;
+      color: var(--color-text-secondary);
       line-height: 1.65;
       flex: 1;
     }
@@ -572,7 +626,7 @@
       font-family: var(--sans);
       font-size: 0.95rem;
       line-height: 1.85;
-      color: #555;
+      color: var(--color-text-secondary);
       margin-bottom: 28px;
     }
 
@@ -608,14 +662,12 @@
     /* TESTIMONIAL */
     .home-testimonial {
       padding: 80px 60px;
-      background: #fff;
-      border-top: 1px solid rgba(40, 40, 40, 0.08);
+      background: var(--color-surface);
     }
 
     .home-testimonial-inner {
       max-width: 760px;
       margin: 0 auto;
-      text-align: center;
     }
 
     .home-testimonial .quote-mark {
@@ -629,18 +681,21 @@
 
     .home-testimonial blockquote {
       font-family: var(--serif);
-      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      font-size: clamp(1.25rem, 1.8vw, 1.5rem);
       line-height: 1.6;
       color: var(--black);
-      font-weight: 500;
-      margin-bottom: 20px;
+      font-weight: 700;
+      margin: 0 0 20px;
+      text-align: left;
     }
 
     .home-testimonial cite {
+      display: block;
       font-family: var(--sans);
       font-size: 0.9rem;
-      color: #777;
+      color: var(--color-text-secondary);
       font-style: normal;
+      text-align: center;
     }
 
     /* CTA BANNER */
@@ -760,6 +815,10 @@
         grid-template-columns: 1fr;
       }
 
+      .home-section-head h2 {
+        white-space: normal;
+      }
+
       .home-solutions,
       .home-testimonial {
         padding: 48px 30px;
@@ -790,7 +849,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI Radiology Report Solution</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -814,7 +873,7 @@
               <li><a href="patient-reacq">Patient ReAcq</a></li>
               <li><a href="product">AskJune</a></li>
               <li><a href="smart-scheduler">Smart Scheduler</a></li>
-              <li><a href="ai-typist">AI Typist</a></li>
+              <li><a href="radiology-assistant">AI Radiology Report Solution</a></li>
               <li><a href="ai-course">AI Course</a></li>
               <li><a href="others">Others</a></li>
             </ul>
@@ -830,16 +889,22 @@
   <!-- HERO: editorial split -->
   <section class="home-hero-split">
     <div class="hero-text-col">
-      <div class="home-pill">Healthcare Intelligence Platform</div>
-      <h1>Your Partner in<br>Healthcare<br><span class="accent">Intelligence.</span></h1>
-      <p class="lead">Leverage the power of AI to improve the efficiency, capacity and quality of healthcare operations
+      <div class="home-pill">HealthTech Solutions Platform</div>
+      <h1>Your Partner in<br><span class="accent">Building Better Healthcare</span></h1>
+      <p class="lead">We help Healthcare Providers leverage the power of AI to improve the efficiency, capacity and quality of healthcare operations
         and services — so you can care for and connect with your patients better.</p>
       <div class="hero-ctas">
         <button type="button" class="button coral"><a href="#solutions">Explore solutions &rarr;</a></button>
         <button type="button" class="button outlined"><a href="contact">Book a demo</a></button>
       </div>
     </div>
-    <div class="hero-photo-col"></div>
+    <div class="hero-photo-col" aria-hidden="true">
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
   </section>
 
   <!-- SOLUTIONS -->
@@ -919,10 +984,10 @@
         </div>
       </a>
 
-      <a class="home-card" href="ai-typist" style="text-decoration:none;color:inherit;">
-        <div class="card-photo card-photo-ai-typist" style="height:195px;" role="img" aria-label="AI Typist radiology reporting illustration"></div>
+      <a class="home-card" href="radiology-assistant" style="text-decoration:none;color:inherit;">
+        <div class="card-photo card-photo-radiology-assistant" style="height:195px;" role="img" aria-label="AI Radiology Report Solution illustration"></div>
         <div class="card-body">
-          <div class="card-title">AI Typist</div>
+          <div class="card-title">AI Radiology Report Solution</div>
           <div class="card-desc">Automated clinical documentation — less time on notes, more time for in-depth
             consultation and meaningful patient care.</div>
           <span class="card-link">Learn more &rarr;</span>
@@ -1002,7 +1067,7 @@
     <div class="about-photo-col" style="background:url('assets/event_photos/1748342386678.jfif') center/cover no-repeat;min-height:440px;"></div>
     <div class="about-text-col">
       <div class="home-pill">About us</div>
-      <h2>Revolutionising healthcare, one provider at a time.</h2>
+      <h2>Empowering providers to revolutionise healthcare</h2>
       <p>Founded in 2023 by two friends — one a doctor, one a patient — who witnessed first-hand the systemic issues in
         our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to build
         better healthcare for all by empowering providers with specialised AI-driven solutions that connect patients,
