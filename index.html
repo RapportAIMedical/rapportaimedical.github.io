@@ -163,7 +163,7 @@
       background-position: center;
       background-repeat: no-repeat;
       opacity: 0;
-      animation: heroFade 28s infinite;
+      animation: heroFade 35s infinite;
       will-change: opacity;
     }
 
@@ -183,12 +183,16 @@
       background-image: url('assets/hero-consultation-woman.png');
       animation-delay: 19s;
     }
+    .home-hero-split .hero-slide:nth-child(5) {
+      background-image: url('assets/hero-consultation-senior.png');
+      animation-delay: 26s;
+    }
 
     @keyframes heroFade {
       0%   { opacity: 0; }
-      4%   { opacity: 1; }
-      21%  { opacity: 1; }
-      29%  { opacity: 0; }
+      3.2%  { opacity: 1; }
+      16.8% { opacity: 1; }
+      23.2% { opacity: 0; }
       100% { opacity: 0; }
     }
 
@@ -895,6 +899,7 @@
       </div>
     </div>
     <div class="hero-photo-col" aria-hidden="true">
+      <div class="hero-slide"></div>
       <div class="hero-slide"></div>
       <div class="hero-slide"></div>
       <div class="hero-slide"></div>
