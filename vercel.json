@@ -10,6 +10,17 @@
     { "source": "/press", "destination": "/press.html" },
     { "source": "/product", "destination": "/product.html" },
     { "source": "/radiology-assistant", "destination": "/radiology-assistant.html" },
-    { "source": "/smart-scheduler", "destination": "/smart-scheduler.html" }
+    { "source": "/smart-scheduler", "destination": "/smart-scheduler.html" },
+    { "source": "/zh/about", "destination": "/zh/about.html" },
+    { "source": "/zh/ai-course", "destination": "/zh/ai-course.html" },
+    { "source": "/zh/ai-typist", "destination": "/zh/radiology-assistant.html" },
+    { "source": "/zh/contact", "destination": "/zh/contact.html" },
+    { "source": "/zh/customers", "destination": "/zh/customers.html" },
+    { "source": "/zh/others", "destination": "/zh/others.html" },
+    { "source": "/zh/patient-reacq", "destination": "/zh/patient-reacq.html" },
+    { "source": "/zh/press", "destination": "/zh/press.html" },
+    { "source": "/zh/product", "destination": "/zh/product.html" },
+    { "source": "/zh/radiology-assistant", "destination": "/zh/radiology-assistant.html" },
+    { "source": "/zh/smart-scheduler", "destination": "/zh/smart-scheduler.html" }
   ]
 }

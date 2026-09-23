@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Platypi:ital,wght@0,300..800;1,300..800&family=Noto+Sans+HK:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon/android-chrome-256x256.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#EB9476">
+  <meta name="msapplication-TileColor" content="#EB9476">
+  <meta name="theme-color" content="#F7F4EE">
+  <script src="/styles/float-panel.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Smart Scheduler - Rapport AI Medical</title>
+  <link rel="alternate" hreflang="en" href="https://rapportaimedical.com/smart-scheduler">
+  <link rel="alternate" hreflang="zh-HK" href="https://rapportaimedical.com/zh/smart-scheduler">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZV0L8LGV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+
+    gtag("config", "G-BGZV0L8LGV");
+  </script>
+  <script>
+    document.documentElement.className += " js-anim";
+    window.addEventListener("error", function () {
+      document.documentElement.classList.remove("js-anim");
+    });
+    setTimeout(function () {
+      if (!document.documentElement.hasAttribute("data-sched-anim-ready")) {
+        document.documentElement.classList.remove("js-anim");
+      }
+    }, 2500);
+  </script>
+</head>
+
+<body>
+  <header id="nav">
+    <div class="blur"></div>
+    <div class="nav-content">
+      <a href="/zh/"><img src="/assets/Rapport-logo-RGB_full_black.png" class="logo" alt="Rapport AI Medical logo"></a>
+      <div class="menu">
+        <ul>
+          <li><a href="/zh/about">關於我們</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-parent" aria-expanded="false">
+              我們的方案 <span class="nav-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="submenu">
+              <li><a href="/zh/patient-reacq">Patient ReAcq</a></li>
+              <li><a href="/zh/product">AskJune</a></li>
+              <li><a href="/zh/smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="/zh/radiology-assistant">AI 放射科報告方案</a></li>
+              <li><a href="/zh/ai-course">AI 課程</a></li>
+              <li><a href="/zh/others">其他方案</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/customers">我們的客戶</a></li>
+          <li><a href="/zh/press">媒體報道</a></li>
+        </ul>
+        <button type="button" class="button coral"><a href="/zh/contact">聯絡我們</a></button>
+        <a class="lang-switch" href="/smart-scheduler" hreflang="en" lang="en">EN</a>
+      </div>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div id="dropdown" class="dropdown">
+        <ul>
+          <li><a href="/zh/about">關於我們</a></li>
+          <li class="mobile-group">
+            <span>我們的方案</span>
+            <ul class="mobile-submenu">
+              <li><a href="/zh/patient-reacq">Patient ReAcq</a></li>
+              <li><a href="/zh/product">AskJune</a></li>
+              <li><a href="/zh/smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="/zh/radiology-assistant">AI 放射科報告方案</a></li>
+              <li><a href="/zh/ai-course">AI 課程</a></li>
+              <li><a href="/zh/others">其他方案</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/customers">我們的客戶</a></li>
+          <li><a href="/zh/press">媒體報道</a></li>
+          <li><a href="/zh/contact">聯絡我們</a></li>
+          <li><a class="lang-switch" href="/smart-scheduler" hreflang="en" lang="en">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page theme-blue scheduler-page">
+    <section class="product-hero scheduler-hero">
+      <div class="product-shell">
+        <div class="scheduler-hero-masthead">
+          <div class="product-name-row">
+            <h2 class="product-name"><span>Smart</span> <span>Scheduler</span></h2>
+            <span class="patent-badge"><i class="fa fa-shield" aria-hidden="true"></i> 專利技術</span>
+          </div>
+        </div>
+
+        <div class="scheduler-hero-copy">
+          <h1>終於有更聰明的方法編排醫院更表！</h1>
+          <p class="product-subtitle">Smart Scheduler 是一套自動編排複雜候召及急症室值班更表的排班系統，設計上著重效率、公平、合規、透明度及可定制性。</p>
+          <ul class="social-proof-inline">
+            <li>專為應對複雜的醫院排班限制及政策而設。</li>
+            <li>深受醫院管理層及員工信賴。</li>
+          </ul>
+          <div class="hero-cta-row">
+            <a class="cta-button cta-button-hero-rich"
+              href="mailto:hello@rapportaimedical.com?subject=Smart%20Scheduler%20demo%20request">
+              <span class="cta-button-main">預約 Smart Scheduler 示範</span>
+              <span class="cta-button-sub">聯絡我們預約示範</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual scheduler-visual">
+          <div class="scheduler-hero-board sched-reveal" role="img"
+            aria-label="Animated Smart Scheduler preview showing a user moving to the next month and generating a complete duty roster.">
+            <div class="scheduler-browser-chrome" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <div>scheduler.rapportaimedical.com/duty-schedule</div>
+            </div>
+            <div class="scheduler-hero-stage" aria-hidden="true">
+              <div class="scheduler-hero-controls">
+                <div class="scheduler-hero-month-picker">
+                  <span class="scheduler-hero-month-arrow"><i class="fa fa-chevron-left"></i></span>
+                  <strong data-scheduler-month>2026年9月</strong>
+                  <span class="scheduler-hero-month-arrow scheduler-next-month"><i class="fa fa-chevron-right"></i></span>
+                </div>
+                <span class="scheduler-generate-button"><i class="fa fa-bolt"></i><span>生成更表</span></span>
+              </div>
+              <div class="scheduler-hero-runline">
+                <span><i class="fa fa-check-circle"></i><span data-scheduler-state>已編排 30 天，符合所有規則</span></span>
+                <span class="scheduler-hero-runline-meter"><i></i></span>
+              </div>
+              <div class="scheduler-hero-roster">
+                <div class="scheduler-hero-roster-row scheduler-hero-roster-head">
+                  <strong>日期</strong><span>CN</span><span>DC</span><span>EC</span><span>MK</span><span>LD</span><span>EJ</span><span>RA</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>1 週二</strong><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>2 週三</strong><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-evening">E</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>3 週四</strong><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-night">N</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>4 週五</strong><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-day">D</span>
+                </div>
+                <div class="scheduler-hero-roster-row is-weekend">
+                  <strong>5 週六</strong><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span>
+                </div>
+                <div class="scheduler-hero-roster-row is-weekend">
+                  <strong>6 週日</strong><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-evening">E</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>7 週一</strong><span class="scheduler-hero-duty shift shift-vl">VL</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span>
+                </div>
+                <div class="scheduler-hero-roster-row">
+                  <strong>8 週二</strong><span class="scheduler-hero-duty shift shift-vl">VL</span><span class="scheduler-hero-duty shift shift-evening">E</span><span class="scheduler-hero-duty shift shift-off">O</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-night">N</span><span class="scheduler-hero-duty shift shift-day">D</span><span class="scheduler-hero-duty shift shift-off">O</span>
+                </div>
+              </div>
+              <div class="scheduler-hero-success is-visible">
+                <i class="fa fa-check"></i>
+                <span><strong>9月更表已生成</strong><small>已符合所有假期安排及 27 條規則</small></span>
+              </div>
+              <div class="scheduler-hero-summary">
+                <span><strong>30</strong> 天</span><span><strong>42</strong> 位醫生</span><span><strong>27</strong> 條規則已符合</span>
+              </div>
+              <span class="scheduler-demo-cursor"><i class="fa fa-mouse-pointer"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section alt scheduler-problem-section">
+      <div class="product-shell">
+        <p class="section-kicker">問題與方案</p>
+        <h2>我們明白編排候召表的痛點。</h2>
+        <div class="scheduler-pain-layout">
+          <article class="scheduler-pain-card">
+            <h3>浪費無數時間</h3>
+            <p>員工要同時處理複雜的試算表、請假申請及訊息群組，行政負擔沉重。</p>
+          </article>
+          <article class="scheduler-pain-card">
+            <h3>感覺不公平</h3>
+            <p>醫生可能覺得自己總是被編到不理想的更份，導致不滿及身心俱疲。</p>
+          </article>
+          <figure class="scheduler-pain-image">
+            <img src="/assets/scheduler-pain-doctor.png" alt="Clinician overwhelmed by on-call scheduling changes">
+          </figure>
+          <article class="scheduler-pain-card">
+            <h3>錯綜複雜的規則與政策</h3>
+            <p>休息時間、年資、週末、假日及部門政策都需要兼顧平衡。</p>
+          </article>
+          <article class="scheduler-pain-card">
+            <h3>臨時變動引致混亂</h3>
+            <p>一次病假或調更，便可能打亂整個月的更表。</p>
+          </article>
+        </div>
+        <div class="solution-card-panel scheduler-solution-compact">
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+            <h3>Smart Scheduler 將混亂轉化為符合規則的更表。</h3>
+            <p>我們將您部門的各項限制納入引擎，再生成候召或急症室值班更表：編排更快、更易解釋、更公平。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section scheduler-story-section">
+      <div class="product-shell scheduler-story">
+        <div class="scheduler-story-copy">
+          <p class="section-kicker">應用案例</p>
+          <h2>請假申請成為排班條件，而不再是另一個試算表難題。</h2>
+          <p class="section-intro">從日常營運的一刻開始：醫生新增假期後，申請會記錄在該月份，系統編排急症室值班更表時會將其視為硬性條件。</p>
+          <div class="feature-grid feature-grid--modules">
+            <div class="feature-card">
+              <i class="fa fa-balance-scale" aria-hidden="true"></i>
+              <h3>公平度追蹤與透明度</h3>
+              <p>過往值班記錄及清晰可見的工作量，令最終更表更易解釋。</p>
+            </div>
+            <div class="feature-card">
+              <i class="fa fa-bolt" aria-hidden="true"></i>
+              <h3>輕鬆高效</h3>
+              <p>團隊毋須再人手反覆調動，只需點擊幾下即可生成更表。</p>
+            </div>
+            <div class="feature-card">
+              <i class="fa fa-shield" aria-hidden="true"></i>
+              <h3>定制合規設定及靈活規則引擎</h3>
+              <p>在生成更表前，已預先設定部門專屬政策。</p>
+            </div>
+            <div class="feature-card">
+              <i class="fa fa-sliders" aria-hidden="true"></i>
+              <h3>設定簡單</h3>
+              <p>員工、假期類別及各項限制一目了然，方便管理人員查閱。</p>
+            </div>
+          </div>
+        </div>
+        <figure class="scheduler-story-media">
+          <div class="scheduler-browser-frame scheduler-leave-mock sched-reveal" role="img"
+            aria-label="Leave entry mockup for CN showing selected August leave and an Add Leave action.">
+            <div class="scheduler-browser-chrome" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <div>scheduler.rapportaimedical.com/leave</div>
+            </div>
+            <div class="scheduler-leave-body" aria-hidden="true">
+              <div class="scheduler-roster-chips">
+                <span>AB</span><span class="is-active">CN</span><span>DC</span><span>EC</span><span>MK</span><span>LD</span><span>EJ</span>
+              </div>
+              <h3>CN 的假期表</h3>
+              <div class="scheduler-calendar-pair">
+                <div class="scheduler-month">
+                  <div class="scheduler-month-title"><i class="fa fa-chevron-left"></i> 2026年8月 <i class="fa fa-chevron-right"></i></div>
+                  <div class="scheduler-weekdays"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+                  <div class="scheduler-calendar-days">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span>1</span>
+                    <span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+                    <span>9</span><span class="is-selected" style="--delay: 0s">10</span><span class="is-selected" style="--delay: .037s">11</span><span class="is-selected" style="--delay: .074s">12</span><span>13</span><span>14</span><span>15</span>
+                    <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span>
+                    <span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span>
+                    <span>30</span><span>31</span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <span class="scheduler-toast"><i class="fa fa-check"></i> 已新增假期</span>
+                </div>
+                <div class="scheduler-month scheduler-month--secondary">
+                  <div class="scheduler-month-title">2026年9月</div>
+                  <div class="scheduler-weekdays"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+                  <div class="scheduler-calendar-days">
+                    <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                    <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                    <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+                    <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+                    <span>27</span><span>28</span><span>29</span><span>30</span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+              <div class="scheduler-leave-footer">
+                <span class="scheduler-select">年假 <i class="fa fa-chevron-down"></i></span>
+                <span class="scheduler-add-button">新增假期</span>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="product-section alt">
+      <div class="product-shell scheduler-story scheduler-story--reverse">
+        <div class="scheduler-story-copy sched-reveal">
+          <h2>Smart Scheduler 實際如何運作？</h2>
+          <ol class="scheduler-flow-steps">
+            <li>
+              <span class="flow-num">01</span>
+              <div class="flow-card">
+                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                <h3>新增假期</h3>
+              </div>
+            </li>
+            <li>
+              <span class="flow-num">02</span>
+              <div class="flow-card">
+                <i class="fa fa-bolt" aria-hidden="true"></i>
+                <h3>生成更表</h3>
+              </div>
+            </li>
+            <li>
+              <span class="flow-num">03</span>
+              <div class="flow-card">
+                <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                <h3>分享並追蹤公平度</h3>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <figure class="scheduler-story-media">
+          <div class="scheduler-rules-mock sched-reveal" role="img"
+            aria-label="Rules management mockup with duty spacing, senior night caps, off days and policy toggles enabled.">
+            <div class="scheduler-rules-header" aria-hidden="true">
+              <h3>規則管理</h3>
+              <p>管理團隊的規則和政策，引擎會自動執行。</p>
+            </div>
+            <div class="scheduler-rules-grid" aria-hidden="true">
+              <div class="scheduler-slider-list">
+                <div class="scheduler-slider-row" style="--value: 100%" data-count-from="0" data-count-to="2" data-count-unit-one="天" data-count-unit-many="天">
+                  <div><span class="scheduler-toggle is-on"></span><strong>值班間隔</strong><i class="fa fa-lock"></i></div>
+                  <em>2 天</em>
+                  <span class="scheduler-slider-track"><i></i></span>
+                </div>
+                <div class="scheduler-slider-row" style="--value: 14%" data-count-from="1" data-count-to="3" data-count-unit-one="次" data-count-unit-many="次">
+                  <div><span class="scheduler-toggle is-on"></span><strong>高級醫生夜更上限</strong><i class="fa fa-lock"></i></div>
+                  <em>3 次</em>
+                  <span class="scheduler-slider-track"><i></i></span>
+                </div>
+                <div class="scheduler-slider-row" style="--value: 23%" data-count-from="1" data-count-to="8" data-count-unit-one="天" data-count-unit-many="天">
+                  <div><span class="scheduler-toggle is-on"></span><strong>每月休息日數</strong><i class="fa fa-lock"></i></div>
+                  <em>8 天</em>
+                  <span class="scheduler-slider-track"><i></i></span>
+                </div>
+                <p class="scheduler-rules-note"><i class="fa fa-lightbulb-o"></i> 初級醫生值班次序、高級醫生配額、兼職及替假醫生規則，均以相同方式設定。</p>
+              </div>
+              <div class="scheduler-toggle-list">
+                <div style="--delay: 0s"><span><strong>每個長假期只當值一次</strong><small>聖誕及農曆新年受保障</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .133s"><span><strong>高級醫生當值日</strong><small>週五、六、日及公眾假期不設當值</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .266s"><span><strong>按比例計算每月上限</strong><small>按工作日調整上限</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .399s"><span><strong>夜更後不接日更</strong><small>硬性次序規則</small></span><span class="scheduler-toggle is-on"></span></div>
+                <div style="--delay: .532s"><span><strong>夜更後不接晚更</strong><small>硬性次序規則</small></span><span class="scheduler-toggle is-on"></span></div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="product-section scheduler-outcome-section">
+      <div class="product-shell">
+        <div class="scheduler-outcome-header">
+          <p class="section-kicker">生成結果</p>
+          <h2>完成的更表可隨時審閱、分享及解釋。</h2>
+          <p class="section-intro">更表不只是填滿格子：假期得到保障，規則全部符合，整個團隊亦能清楚看到工作量的分佈。</p>
+        </div>
+        <div class="scheduler-outcome-grid">
+          <div class="scheduler-browser-frame scheduler-schedule-mock sched-reveal" role="img"
+            aria-label="Generated August 2026 duty schedule mockup with leave, day, evening, night and off-duty cells.">
+            <div class="scheduler-browser-chrome" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <div>scheduler.rapportaimedical.com/duty-schedule</div>
+            </div>
+            <div class="scheduler-schedule-body" aria-hidden="true">
+              <div class="scheduler-schedule-toolbar">
+                <div>
+                  <h3>值班表 - 2026年8月</h3>
+                  <span class="scheduler-status-pill"><i class="fa fa-check"></i> 4 秒內生成，符合所有規則</span>
+                </div>
+                <div class="scheduler-actions">
+                  <span>清除更表</span><span>編輯更表</span><span>重新生成更表</span>
+                </div>
+              </div>
+              <div class="scheduler-roster-scroll">
+                <table class="scheduler-roster-table">
+                  <thead>
+                    <tr>
+                      <th>日期</th><th>CN</th><th>DC</th><th>EC</th><th>MK</th><th>LD</th><th>EJ</th><th>RA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>1 週六</th><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-time">8:00-17:00</span></td></tr>
+                    <tr><th>2 週日</th><td><span class="shift shift-off">O</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-time">9:00-18:00</span></td></tr>
+                    <tr><th>3 週一</th><td><span class="shift shift-day">D</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-time">8:00-17:00</span></td></tr>
+                    <tr><th>4 週二</th><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">-</span></td></tr>
+                    <tr><th>5 週三</th><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-time">9:00-18:00</span></td><td><span class="shift shift-day">D</span></td></tr>
+                    <tr><th>10 週一</th><td><span class="shift shift-vl">VL</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-time">8:00-17:00</span></td></tr>
+                    <tr><th>11 週二</th><td><span class="shift shift-vl">VL</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-off">-</span></td></tr>
+                    <tr><th>12 週三</th><td><span class="shift shift-vl">VL</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-day">D</span></td><td><span class="shift shift-evening">E</span></td><td><span class="shift shift-off">O</span></td><td><span class="shift shift-night">N</span></td><td><span class="shift shift-time">9:00-18:00</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <aside class="scheduler-metrics-mock sched-reveal" role="img"
+            aria-label="Fairness metrics mockup showing balanced day, evening, night and off-day workload bars.">
+            <div class="scheduler-metrics-head" aria-hidden="true">
+              <h3>指標：公平與透明</h3>
+              <p>按過往編更記錄追蹤日數及時數。</p>
+            </div>
+            <div class="scheduler-metric-legend" aria-hidden="true">
+              <span><i class="metric-day"></i>日更</span>
+              <span><i class="metric-evening"></i>晚更</span>
+              <span><i class="metric-night"></i>夜更</span>
+              <span><i class="metric-off"></i>休息日</span>
+            </div>
+            <div class="scheduler-metric-list" aria-hidden="true">
+              <div class="scheduler-metric-row" style="--delay: 0s"><strong>CN</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 25%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 21%"></i></span><em>52 (416.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .067s"><strong>DC</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .134s"><strong>EC</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 20%"></i></span><em>51 (408.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .2s"><strong>MK</strong><span><i class="metric-day" style="width: 28%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 22%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .268s"><strong>LD</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 21%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 22%"></i></span><em>49 (392.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .335s"><strong>EJ</strong><span><i class="metric-day" style="width: 30%"></i><i class="metric-evening" style="width: 23%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 21%"></i></span><em>51 (408.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .402s"><strong>RA</strong><span><i class="metric-day" style="width: 29%"></i><i class="metric-evening" style="width: 24%"></i><i class="metric-night" style="width: 13%"></i><i class="metric-off" style="width: 21%"></i></span><em>50 (400.0)</em></div>
+              <div class="scheduler-metric-row" style="--delay: .469s"><strong>AB</strong><span><i class="metric-day" style="width: 31%"></i><i class="metric-evening" style="width: 22%"></i><i class="metric-night" style="width: 12%"></i><i class="metric-off" style="width: 20%"></i></span><em>52 (416.0)</em></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="scheduler-outcome-band">
+          <div>
+            <i class="fa fa-balance-scale" aria-hidden="true"></i>
+            <strong>不再質疑公平性。</strong>
+            <span>編更安排清晰可見、可作比較、易於解釋。</span>
+          </div>
+          <div>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            <strong>臨時變動亦可從容應對。</strong>
+            <span>毋須人手重新編排整個月，即可處理請假及調更。</span>
+          </div>
+          <div>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <strong>把時間還給臨床工作或休息。</strong>
+            <span>管理人員只需審閱已生成的更表，毋須再與試算表搏鬥。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-proof-cta-band" id="cta">
+      <div class="product-shell product-proof-cta-grid product-proof-cta-grid--solo">
+        <div class="product-cta-panel">
+          <div class="product-cta-card">
+            <span class="product-cta-chip"><i class="fa fa-calendar-check-o"></i></span>
+            <h2>立即為您的部門體驗輕鬆排更。</h2>
+            <a class="cta-button cta-button-rich"
+              href="mailto:hello@rapportaimedical.com?subject=Smart%20Scheduler%20demo%20request">
+              <span class="cta-button-main">聯絡我們</span>
+              <span class="cta-button-sub">預約示範</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="CTA" class="coral"></section>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <script src="/styles/script.js" defer></script>
+</body>
+
+</html>

@@ -1,3 +1,13 @@
+// Chinese pages live under /zh/ with <html lang="zh-HK">. They use root-absolute
+// paths so links and assets resolve whether the URL has a trailing slash or not.
+const IS_ZH = (document.documentElement.lang || "").toLowerCase().startsWith("zh");
+const ASSET_BASE = IS_ZH ? "/" : "";
+const PAGE_BASE = IS_ZH ? "/zh/" : "";
+
+function t(en, zh) {
+  return IS_ZH ? zh : en;
+}
+
 const navBar = document.getElementById("nav");
 
 if (navBar) {
@@ -100,15 +110,19 @@ function initReacqDatabaseVisuals() {
   }
 
   const patients = [
-    { initials: "AL", name: "A.L. - 52F", detail: "Cancer screening eligible", badge: "screen", badgeText: "Screening", val: 1210 },
-    { initials: "MR", name: "M.R. - 62F", detail: "Missed follow-up", badge: "overdue", badgeText: "Overdue", val: 1850 },
-    { initials: "KT", name: "K.T. - 45M", detail: "Eligible for screening", badge: "screen", badgeText: "Screening", val: 1180 },
-    { initials: "RN", name: "R.N. - 67F", detail: "Chronic care follow-up due", badge: "overdue", badgeText: "Overdue", val: 2120 },
-    { initials: "TC", name: "T.C. - 44M", detail: "Lab results not reviewed", badge: "overdue", badgeText: "Overdue", val: 1290 },
-    { initials: "CM", name: "C.M. - 49M", detail: "Suitable for health package", badge: "screen", badgeText: "Screening", val: 1195 },
-    { initials: "SW", name: "S.W. - 63F", detail: "Post-discharge follow-up missed", badge: "overdue", badgeText: "Overdue", val: 1980 },
-    { initials: "FL", name: "F.L. - 60F", detail: "Bone density screening due", badge: "screen", badgeText: "Screening", val: 1430 },
+    { initials: "AL", name: "A.L. - 52F", detail: t("Cancer screening eligible", "符合癌症篩查資格"), badge: "screen", val: 1210 },
+    { initials: "MR", name: "M.R. - 62F", detail: t("Missed follow-up", "錯過覆診"), badge: "overdue", val: 1850 },
+    { initials: "KT", name: "K.T. - 45M", detail: t("Eligible for screening", "符合篩查資格"), badge: "screen", val: 1180 },
+    { initials: "RN", name: "R.N. - 67F", detail: t("Chronic care follow-up due", "慢性病跟進到期"), badge: "overdue", val: 2120 },
+    { initials: "TC", name: "T.C. - 44M", detail: t("Lab results not reviewed", "化驗結果尚未覆閱"), badge: "overdue", val: 1290 },
+    { initials: "CM", name: "C.M. - 49M", detail: t("Suitable for health package", "適合健康檢查套餐"), badge: "screen", val: 1195 },
+    { initials: "SW", name: "S.W. - 63F", detail: t("Post-discharge follow-up missed", "錯過出院後覆診"), badge: "overdue", val: 1980 },
+    { initials: "FL", name: "F.L. - 60F", detail: t("Bone density screening due", "骨質密度檢查到期"), badge: "screen", val: 1430 },
   ];
+  const badgeTexts = {
+    screen: t("Screening", "篩查"),
+    overdue: t("Overdue", "逾期"),
+  };
 
   function burstDollars(widget, el) {
     const elRect = el.getBoundingClientRect();
@@ -224,7 +238,7 @@ function initReacqDatabaseVisuals() {
           row.querySelector(".db-name").textContent = patient.name;
           row.querySelector(".db-detail").textContent = patient.detail;
           const badge = row.querySelector(".db-badge");
-          badge.textContent = patient.badgeText;
+          badge.textContent = badgeTexts[patient.badge];
           badge.className = `db-badge db-badge--${patient.badge}`;
           const value = row.querySelector(".db-value");
           value.textContent = `+$${patient.val.toLocaleString()}`;
@@ -388,11 +402,15 @@ function initSchedulerHeroLoop() {
     return;
   }
 
-  const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-  ];
-  const weekdayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const monthNames = IS_ZH
+    ? ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+    : [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December",
+    ];
+  const weekdayNames = IS_ZH
+    ? ["週日", "週一", "週二", "週三", "週四", "週五", "週六"]
+    : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const shiftPool = ["D", "O", "E", "N", "D", "O", "E", "D", "O"];
   const doctorCount = 42;
   const kindClasses = {
@@ -416,7 +434,9 @@ function initSchedulerHeroLoop() {
   }
 
   function formatMonth(monthDate) {
-    return `${monthNames[monthDate.getMonth()]} ${monthDate.getFullYear()}`;
+    return IS_ZH
+      ? `${monthDate.getFullYear()}年${monthNames[monthDate.getMonth()]}`
+      : `${monthNames[monthDate.getMonth()]} ${monthDate.getFullYear()}`;
   }
 
   function daysInMonth(monthDate) {
@@ -534,12 +554,21 @@ function initSchedulerHeroLoop() {
     const totalDays = daysInMonth(monthDate);
 
     monthLabel.textContent = label;
-    stateLabel.textContent = `${totalDays} days scheduled / all 27 rules satisfied`;
-    generateButtonLabel.textContent = "Generate next month";
+    stateLabel.textContent = t(
+      `${totalDays} days scheduled / all 27 rules satisfied`,
+      `已編排 ${totalDays} 天，符合全部 27 條規則`
+    );
+    generateButtonLabel.textContent = t("Generate next month", "生成下月更表");
     summaryDays.textContent = totalDays;
     summaryDoctors.textContent = doctorCount;
-    successTitle.textContent = `${monthNames[monthDate.getMonth()]} schedule generated`;
-    successMeta.textContent = `${doctorCount} doctors / leave and rules satisfied`;
+    successTitle.textContent = t(
+      `${monthNames[monthDate.getMonth()]} schedule generated`,
+      `${monthNames[monthDate.getMonth()]}更表已生成`
+    );
+    successMeta.textContent = t(
+      `${doctorCount} doctors / leave and rules satisfied`,
+      `${doctorCount} 位醫生，已符合假期安排及所有規則`
+    );
   }
 
   function moveCursor(target) {
@@ -593,8 +622,11 @@ function initSchedulerHeroLoop() {
     if (!await clickTarget(nextMonth, token)) return;
 
     monthLabel.textContent = targetLabel;
-    stateLabel.textContent = `${monthNames[targetMonth.getMonth()]} selected / ready to generate`;
-    generateButtonLabel.textContent = "Generate schedule";
+    stateLabel.textContent = t(
+      `${monthNames[targetMonth.getMonth()]} selected / ready to generate`,
+      `已選擇${monthNames[targetMonth.getMonth()]}，準備生成`
+    );
+    generateButtonLabel.textContent = t("Generate schedule", "生成更表");
     summaryDays.textContent = targetDays;
     board.classList.add("is-empty");
     emptyRoster(targetMonth);
@@ -606,8 +638,11 @@ function initSchedulerHeroLoop() {
     if (!await clickTarget(generateButton, token)) return;
 
     board.classList.add("is-generating");
-    stateLabel.textContent = `Optimising ${doctorCount} doctors across ${targetDays} days...`;
-    generateButtonLabel.textContent = "Generating...";
+    stateLabel.textContent = t(
+      `Optimising ${doctorCount} doctors across ${targetDays} days...`,
+      `正在為 ${doctorCount} 位醫生優化 ${targetDays} 天的更表...`
+    );
+    generateButtonLabel.textContent = t("Generating...", "生成中...");
     cursor.classList.remove("is-active");
 
     await wait(250);
@@ -748,19 +783,23 @@ if (cta) {
     ctaText.className = "CTA-text";
 
     const ctaTextHeading = document.createElement("h4");
-    ctaTextHeading.textContent =
-      "Our goal is to provide our clients with a customised solution tailored to their needs.";
+    ctaTextHeading.textContent = t(
+      "Our goal is to provide our clients with a customised solution tailored to their needs.",
+      "我們的目標是為客戶提供切合其需要、度身定制的方案。"
+    );
 
     const ctaTextParagraph = document.createElement("p");
-    ctaTextParagraph.textContent =
-      "Connect with our medical and tech experts to discuss your preferences";
+    ctaTextParagraph.textContent = t(
+      "Connect with our medical and tech experts to discuss your preferences",
+      "與我們的醫療及科技專家聯絡，商討您的需要"
+    );
 
     const ctaTextButton = document.createElement("button");
     ctaTextButton.className = "button darkgreen";
 
     const ctaButtonLink = document.createElement("a");
-    ctaButtonLink.href = "contact";
-    ctaButtonLink.textContent = "Chat with us";
+    ctaButtonLink.href = PAGE_BASE + "contact";
+    ctaButtonLink.textContent = t("Chat with us", "與我們傾談");
 
     ctaTextButton.appendChild(ctaButtonLink);
     ctaText.appendChild(ctaTextHeading);
@@ -804,7 +843,7 @@ function footerTemplate() {
   footerLogo.className = "logo";
 
   const logoImage = document.createElement("img");
-  logoImage.src = "assets/Rapport-logo-RGB_symbol_black.png";
+  logoImage.src = ASSET_BASE + "assets/Rapport-logo-RGB_symbol_black.png";
   logoImage.alt = "Rapport AI Medical logo";
   footerLogo.appendChild(logoImage);
 
@@ -812,15 +851,17 @@ function footerTemplate() {
   footerTextContainer.className = "desc";
 
   const footerText = document.createElement("h6");
-  footerText.textContent =
-    "Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.";
+  footerText.textContent = t(
+    "Rapport AI Medical is a healthcare technology solutions platform with a mission to address the inefficiencies of our healthcare industry and improve patient experience by leveraging AI and technology.",
+    "Rapport AI Medical 是一個醫療科技方案平台，致力善用 AI 及科技，解決醫療行業的低效問題，並改善病人體驗。"
+  );
 
   const footerCallToAction = document.createElement("button");
   footerCallToAction.className = "button";
 
   const footerCallToActionLink = document.createElement("a");
-  footerCallToActionLink.href = "contact";
-  footerCallToActionLink.textContent = "Chat with us";
+  footerCallToActionLink.href = PAGE_BASE + "contact";
+  footerCallToActionLink.textContent = t("Chat with us", "與我們傾談");
 
   footerCallToAction.appendChild(footerCallToActionLink);
   footerTextContainer.appendChild(footerText);
@@ -836,7 +877,7 @@ function footerTemplate() {
   footerSub.className = "sub";
 
   const subText = document.createElement("h6");
-  subText.textContent = "Stay in touch";
+  subText.textContent = t("Stay in touch", "保持聯繫");
 
   const subForm = document.createElement("form");
   subForm.id = "subscribe";
@@ -853,7 +894,7 @@ function footerTemplate() {
   const subButton = document.createElement("button");
   subButton.type = "submit";
   subButton.className = "button outlined";
-  subButton.textContent = "Submit";
+  subButton.textContent = t("Submit", "提交");
 
   subForm.appendChild(subInput);
   subForm.appendChild(subButton);
@@ -865,22 +906,22 @@ function footerTemplate() {
   footerLinks.className = "page-links";
 
   const pageLinks = [
-    { link: "about", name: "About us" },
+    { link: "about", name: t("About us", "關於我們") },
     { link: "product", name: "AskJune" },
     { link: "patient-reacq", name: "Patient ReAcq" },
     { link: "smart-scheduler", name: "Smart Scheduler" },
-    { link: "radiology-assistant", name: "AI Radiology Report Solution" },
-    { link: "ai-course", name: "AI Course" },
-    { link: "others", name: "Others" },
-    { link: "customers", name: "Our Customers" },
-    { link: "press", name: "Press" },
-    { link: "contact", name: "Contact us" },
+    { link: "radiology-assistant", name: t("AI Radiology Report Solution", "AI 放射科報告方案") },
+    { link: "ai-course", name: t("AI Course", "AI 課程") },
+    { link: "others", name: t("Others", "其他方案") },
+    { link: "customers", name: t("Our Customers", "我們的客戶") },
+    { link: "press", name: t("Press", "媒體報道") },
+    { link: "contact", name: t("Contact us", "聯絡我們") },
   ];
 
   pageLinks.forEach(({ link, name }) => {
     const paragraph = document.createElement("p");
     const anchor = document.createElement("a");
-    anchor.href = link;
+    anchor.href = PAGE_BASE + link;
     anchor.textContent = name;
     paragraph.appendChild(anchor);
     footerLinks.appendChild(paragraph);
@@ -965,7 +1006,7 @@ function footerTemplate() {
     a.rel = "noopener noreferrer";
     a.className = "member-link";
     const img = document.createElement("img");
-    img.src = src;
+    img.src = ASSET_BASE + src;
     img.alt = alt;
     img.className = "footer-member-logo";
     a.appendChild(img);
@@ -974,7 +1015,7 @@ function footerTemplate() {
 
   const smallPrintText = document.createElement("p");
   smallPrintText.textContent =
-    "\u00A9 " + new Date().getFullYear() + " Rapport AI Medical. All rights reserved.";
+    "\u00A9 " + new Date().getFullYear() + " Rapport AI Medical. " + t("All rights reserved.", "\u7248\u6B0A\u6240\u6709\u3002");
 
   smallPrint.appendChild(footerMemberLogos);
   smallPrint.appendChild(smallPrintText);

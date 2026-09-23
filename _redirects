@@ -1,3 +1,5 @@
 # Netlify redirects (staging). GitHub Pages production relies on the ai-typist.html stub instead.
 /ai-typist   /radiology-assistant   301
 /ai-typist/  /radiology-assistant   301
+/zh/ai-typist   /zh/radiology-assistant   301
+/zh/ai-typist/  /zh/radiology-assistant   301

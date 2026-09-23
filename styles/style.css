@@ -10444,3 +10444,30 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     left: -195px;
   }
 }
+
+/* ––– LANGUAGE SWITCH / CHINESE PAGES ––– */
+
+.lang-switch {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.lang-switch:hover {
+  background: var(--black);
+  color: var(--coral);
+}
+
+/* Latin glyphs keep the brand fonts; CJK glyphs fall through to Noto Sans HK. */
+html[lang="zh-HK"] {
+  --serif: "Platypi", "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", sans-serif;
+  --sans: "Albert Sans", "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", Verdana, sans-serif;
+}
+
+html[lang="zh-HK"] .scheduler-hero-summary::after {
+  content: "捲動查看整個月";
+}
