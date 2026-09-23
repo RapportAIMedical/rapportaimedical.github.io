@@ -240,6 +240,12 @@ T["press"] = [
      'ThinkCol 深入剖析 Rapport AI Medical 如何以 AI 方案革新醫療服務的案例研究。'),
     ('>Read case study →<', '>閱讀案例研究 →<'),
     ('<h2>Invited to Exhibit Locally and Overseas</h2>', '<h2>獲邀參與本地及海外展覽</h2>'),
+    ('>MedTech Asia Awards 2026 Nominee<', '>MedTech Asia Awards 2026 提名<'),
+    ('We have been nominated MedTech World Asia Awards 2026 - "AI-Driven Healthcare Innovation of the Year Award"! '
+     'Incredibly honoured to be named alongside some prominent leaders in the space, and a true testament to the '
+     'team’s dedication and exceptional work over the past year!',
+     '我們獲提名 MedTech World Asia Awards 2026「年度 AI 驅動醫療創新大獎」！能與業界多位傑出領袖一同獲提名，我們深感榮幸，'
+     '這亦充分肯定了團隊過去一年的努力與卓越成果！'),
 ]
 
 T["ai-course"] = [
