@@ -185,6 +185,16 @@ T["customers"] = [
     ('<h1>Our Customers</h1>', '<h1>我們的客戶</h1>'),
     ("We provide a range of customised solutions and implementation options tailored to our clients' specific needs.",
      '我們提供一系列度身定制的方案及實施選項，切合客戶的具體需要。'),
+    # Clients & solutions graphic labels
+    ('sl-kiosk">Kiosk<', 'sl-kiosk">自助服務機<'),
+    ('sl-database">Database<', 'sl-database">數據庫<'),
+    ('sl-webapp">Web app<', 'sl-webapp">網頁應用程式<'),
+    ('sl-mobile">Mobile app<', 'sl-mobile">手機應用程式<'),
+    ('sl-hospital">Hospital departments<', 'sl-hospital">醫院部門<'),
+    ('sl-chain">Chain medical clinics<', 'sl-chain">連鎖醫療診所<'),
+    ('sl-health">Health-check &amp;<br>wellness centres<', 'sl-health">體檢及健康中心<'),
+    ('sl-insurance">Insurance companies<', 'sl-insurance">保險公司<'),
+    ('sl-corporate">Corporate benefits &amp;<br>wellness programs<', 'sl-corporate">企業福利及<br>健康計劃<'),
     ('We work with leading medical clinics, hospitals, medical colleges, and health centres. '
      '<a href="contact">Reach out to our team</a> for a chat to explore a solution for you.',
      '我們與領先的醫療診所、醫院、醫學院及健康中心合作。歡迎<a href="contact">聯絡我們的團隊</a>，一同探討適合您的方案。'),
