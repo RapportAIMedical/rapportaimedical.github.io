@@ -785,7 +785,7 @@ if (cta) {
     const ctaTextHeading = document.createElement("h4");
     ctaTextHeading.textContent = t(
       "Our goal is to provide our clients with a customised solution tailored to their needs.",
-      "我們的目標是為客戶提供切合其需要、度身定制的方案。"
+      "我們的目標是為客戶提供切合需要、度身定制的方案。"
     );
 
     const ctaTextParagraph = document.createElement("p");

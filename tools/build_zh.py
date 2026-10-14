@@ -52,7 +52,7 @@ COMMON = [
     # Patient ReAcq database widget (home page card + ReAcq hero)
     ('<span>Patient Database</span>', '<span>病人數據庫</span>'),
     ('64,831 records', '64,831 條記錄'),
-    ('db-badge--screen">Screening<', 'db-badge--screen">篩查<'),
+    ('db-badge--screen">Screening<', 'db-badge--screen">體檢<'),
     ('db-badge--overdue">Overdue<', 'db-badge--overdue">逾期<'),
     # AI Course module cards (home page card + course hero)
     ('Module 01</span>', '單元 01</span>'),
@@ -72,11 +72,11 @@ T["index"] = [
      '<h1>與您攜手<br><span class="accent">建構更好的醫療服務</span></h1>'),
     ('We help Healthcare Providers leverage the power of AI to improve the efficiency, capacity and quality of '
      'healthcare operations and services — so you can care for and connect with your patients better.',
-     '我們協助醫療服務提供者善用 AI 的力量，提升醫療營運及服務的效率、容量與質素，讓您更好地照顧病人，與病人建立更緊密的聯繫。'),
+     '我們協助醫療服務機構善用 AI 的力量，提升醫療營運及服務的效率、容量與質素，讓您更好地照顧病人，與病人建立更緊密的聯繫。'),
     ('Explore solutions &rarr;', '探索方案 &rarr;'),
     ('<a href="contact">Book a demo</a>', '<a href="contact">預約示範</a>'),
     ('<div class="home-pill">Our Solutions</div>', '<div class="home-pill">我們的方案</div>'),
-    ('<h2>AI-powered tools built for healthcare providers.</h2>', '<h2>專為醫療服務提供者打造的 AI 工具。</h2>'),
+    ('<h2>AI-powered tools built for healthcare providers.</h2>', '<h2>專為醫療服務機構打造的 AI 工具。</h2>'),
     ('>Cancer screening eligible<', '>符合癌症篩查資格<'),
     ('>Missed follow-up<', '>錯過覆診<'),
     ('>Eligible for screening<', '>符合篩查資格<'),
@@ -99,19 +99,19 @@ T["index"] = [
     ('>Responsible AI<', '>負責任的 AI<'),
     ('<div class="card-title">AI Course</div>', '<div class="card-title">AI 課程</div>'),
     ('Upskill your healthcare team with hands-on AI training programs designed by medical and AI professionals.',
-     '由醫療及 AI 專業人士設計的實踐型 AI 培訓課程，助您的醫療團隊提升技能。'),
+     '由醫療及 AI 專家設計的實踐型醫療 AI 培訓課程，助您的醫療團隊提升認知及技能。'),
     ('<div class="card-title">Others</div>', '<div class="card-title">其他方案</div>'),
     ("Not every healthcare workflow fits a standard product. We design custom tools and solutions tailored to our "
      "clients' specific challenges.",
      '並非所有醫療工作流程都適用標準產品。我們因應客戶的具體挑戰，度身設計專屬工具及方案。'),
     ('<div class="home-pill">About us</div>', '<div class="home-pill">關於我們</div>'),
-    ('<h2>Empowering providers to revolutionise healthcare</h2>', '<h2>助醫療服務提供者革新醫療</h2>'),
+    ('<h2>Empowering providers to revolutionise healthcare</h2>', '<h2>助醫療服務機構革新醫療</h2>'),
     ('Founded in 2023 by two friends — one a doctor, one a patient — who witnessed first-hand the systemic issues '
      'in our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to '
      'build better healthcare for all by empowering providers with specialised AI-driven solutions that connect '
      'patients, streamline operations, and deliver powerful data insights.',
-     'Rapport AI Medical 由兩位朋友於 2023 年創立：一位是醫生，一位是病人。他們親身見證了醫療體系中的系統性問題，'
-     '以及 AI 可以帶來的機遇。我們的使命是透過專門的 AI 方案賦能醫療服務提供者，連繫病人、精簡營運、提供有力的數據洞察，'
+     'Rapport AI Medical 由兩位始創人於 2023 年創立：一位是醫生，一位是病人。他們親身見證了醫療體系中的系統性問題，'
+     '以及 AI 可以帶來的機遇。我們的使命是透過專門的 AI 方案賦能醫療服務機構，連繫病人、精簡營運、提供有力的數據洞察，'
      '為所有人建構更好的醫療服務。'),
     ('Learn more about us &rarr;', '進一步了解我們 &rarr;'),
     ("<h3>Let's make healthcare better together</h3>", '<h3>攜手讓醫療服務變得更好</h3>'),
@@ -134,14 +134,14 @@ T["about"] = [
      '「作為病人及醫護人員，我們都曾親身經歷醫療體系的低效之處。」'),
     ('Founded in 2023, Rapport AI Medical has been on a <strong>mission</strong> to help make healthcare better for '
      'both providers and patients.',
-     'Rapport AI Medical 於 2023 年成立，<strong>使命</strong>是為醫療服務提供者和病人帶來更好的醫療體驗。'),
+     'Rapport AI Medical 於 2023 年成立，<strong>使命</strong>是為醫療服務機構和病人帶來更好的醫療體驗。'),
     ('We work with healthcare and insurance providers to build <strong>customisable, AI-powered integration '
      'solutions</strong> that digitalise, streamline and enhance the medical care process at every level.',
      '我們與醫療及保險機構合作，打造<strong>可度身定制、由 AI 驅動的整合方案</strong>，在每個層面將醫療流程數碼化、精簡化並加以提升。'),
     ('By leveraging AI and technology, we aim to <strong>empower healthcare providers</strong> to improve capacity, '
      'quality and efficiency&mdash;while giving patients better access, experiences and outcomes. We believe '
      'healthcare can be intuitive, accessible and efficient.',
-     '我們善用 AI 及科技，<strong>賦能醫療服務提供者</strong>提升服務容量、質素和效率，同時讓病人獲得更便捷的服務、'
+     '我們善用 AI 及科技，<strong>賦能醫療服務機構</strong>提升服務容量、質素和效率，同時讓病人獲得更便捷的服務、'
      '更好的體驗及治療成果。我們相信，醫療服務可以直觀、容易獲得且高效。'),
     ('<h2>Our Values</h2>', '<h2>我們的價值觀</h2>'),
     ('<h3>Safety and Security</h3>', '<h3>安全與保障</h3>'),
@@ -151,7 +151,7 @@ T["about"] = [
     ('<h3>Integrity</h3>', '<h3>誠信</h3>'),
     ('We act with honesty, transparency and accountability.', '我們以誠實、透明和負責任的態度行事。'),
     ('<h3>Innovation</h3>', '<h3>創新</h3>'),
-    ('We embrace AI and technology to solve real-world problems.', '我們擁抱 AI 及科技，解決現實世界的問題。'),
+    ('We embrace AI and technology to solve real-world problems.', '我們接納 AI 及科技，解決現實世界的問題。'),
     ('<h3>Partnership</h3>', '<h3>夥伴關係</h3>'),
     ('We grow together with our customers and community.', '我們與客戶及社區共同成長。'),
     ('Our mission is to create a healthcare ecosystem that is <strong>smarter, more connected and human.</strong>',
@@ -228,7 +228,7 @@ T["others"] = [
     ('<h3>You have specific operational challenges</h3>', '<h3>您面對特定的營運挑戰</h3>'),
     ('<h3>You need integration across multiple systems</h3>', '<h3>您需要整合多個系統</h3>'),
     ('<h3>You are exploring new AI-enabled workflows</h3>', '<h3>您正在探索新的 AI 工作流程</h3>'),
-    ('<h2>Built with healthcare providers.</h2>', '<h2>與醫療服務提供者攜手打造。</h2>'),
+    ('<h2>Built with healthcare providers.</h2>', '<h2>與醫療服務機構攜手打造。</h2>'),
     ('<p>Designed around real clinical workflows.</p>', '<p>圍繞真實臨床工作流程設計。</p>'),
     ('<p>Built with flexibility for different systems and environments.</p>', '<p>靈活適應不同系統和環境。</p>'),
     ('<p>Focused on practical, deployable solutions.</p>', '<p>專注於實用、可部署的方案。</p>'),
@@ -296,7 +296,7 @@ T["ai-course"] = [
     ('<h3>Case-based</h3>', '<h3>個案為本</h3>'),
     ('<h3>Customisable</h3>', '<h3>可度身定制</h3>'),
     ('<p class="section-kicker">Audience</p>', '<p class="section-kicker">對象</p>'),
-    ('<h2>Designed specifically for healthcare providers and their teams.</h2>', '<h2>專為醫療服務提供者及其團隊而設。</h2>'),
+    ('<h2>Designed specifically for healthcare providers and their teams.</h2>', '<h2>專為醫療服務機構及其團隊而設。</h2>'),
     ('<h3>Doctors and clinicians</h3>', '<h3>醫生及臨床人員</h3>'),
     ('<h3>Executives and decision-makers</h3>', '<h3>管理層及決策者</h3>'),
     ('<h3>Support staff</h3>', '<h3>支援人員</h3>'),
@@ -337,7 +337,7 @@ T["patient-reacq"] = [
     ('Bone density screening due', '骨質密度檢查到期'),
     ('Postnatal Care Review due', '產後護理覆診到期'),
     ("badgeText: 'Overdue'", "badgeText: '逾期'"),
-    ("badgeText: 'Screening'", "badgeText: '篩查'"),
+    ("badgeText: 'Screening'", "badgeText: '體檢'"),
     ('<span><strong>36,714</strong> opportunities found</span>', '<span>已找到 <strong>36,714</strong> 個機會</span>'),
     ('Est. value <strong>$1.2M</strong>', '估計價值 <strong>$1.2M</strong>'),
     ('<h2>Why This Matters</h2>', '<h2>為何重要</h2>'),
@@ -587,10 +587,10 @@ T["product"] = [
     ('AskJune is an AI Health Concierge that handles patient health enquiries/engagement 24/7, intelligently routes '
      'patients to the doctors/providers and services in your clinic network, handles booking and conducts '
      'pre-consultation evaluation and analytics to provide diagnostic and clinical support for doctors.',
-     'AskJune 是一位 AI 健康禮賓助理，全天候處理病人的健康查詢及互動，智能地將病人轉介至您診所網絡內合適的醫生／服務提供者及服務，'
+     'AskJune 是一位 AI 健康禮賓助理，全天候處理病人的健康查詢及互動，智能地將病人轉介至您診所網絡內合適的醫生／服務機構及服務，'
      '處理預約，並進行診前評估及分析，為醫生提供診斷及臨床支援。'),
     ('<li>Converts online health queries into bookings.</li>', '<li>將網上健康查詢轉化為預約。</li>'),
-    ('<li>Routes patients to suitable services and providers intelligently.</li>', '<li>智能轉介病人至合適的服務及服務提供者。</li>'),
+    ('<li>Routes patients to suitable services and providers intelligently.</li>', '<li>智能轉介病人至合適的服務及服務團隊。</li>'),
     ('<li>Captures valuable data and generates recommendations and insights.</li>', '<li>收集有價值的數據，並生成建議及洞察。</li>'),
     ('<li>Provides AI-powered clinical and diagnostic support for clinicians.</li>', '<li>為臨床人員提供 AI 驅動的臨床及診斷支援。</li>'),
     ('Explore how AskJune can transform your ecosystem', '探索 AskJune 如何革新您的醫療生態系統'),
