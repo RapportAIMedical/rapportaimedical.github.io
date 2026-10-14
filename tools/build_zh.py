@@ -239,6 +239,21 @@ T["others"] = [
 
 T["press"] = [
     ('<h1>Press</h1>', '<h1>媒體報道</h1>'),
+    ('alt="Assure Medical Imaging"', 'alt="真諾醫學掃描 Assure Medical Imaging"'),
+    ('>shorter typical reporting time<', '>縮減常規報告處理時間<'),
+    ('>Client Spotlight<', '>客戶專區<'),
+    ('<h2 class="client-spotlight-title">Faster Results, Smarter Care</h2>',
+     '<h2 class="client-spotlight-title">更快出報告，更優質醫護</h2>'),
+    ('Assure Medical has partnered with Rapport AI Medical to bring AI-powered radiology reporting into its '
+     'workflow, cutting typical reporting time by over 40%. Every report is still reviewed by their radiologists '
+     'before it reaches the patient.',
+     '真諾醫學掃描與 Rapport AI Medical 合作，將 AI 放射科報告技術引入診斷流程，可縮減超過 40% 的常規報告處理時間。'
+     '所有報告在交付給病人之前，均會經由中心放射科醫生審核把關。'),
+    ('>Assure Medical Imaging<', '>真諾醫學掃描<'),
+    ('>2026<', '>2026年<'),
+    ('href="https://assuremedical.com.hk/ai-driven-operational-enhancement/?lang=en"',
+     'href="https://assuremedical.com.hk/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e6%8e%a8%e5%8b%95%e6%b5%81%e7%a8%8b%e5%84%aa%e5%8c%96/"'),
+    ('>Read on Assure Medical →<', '>閱讀真諾醫學原文 →<'),
     ('<h6>In The Press</h6>', '<h6>媒體報道</h6>'),
     ('<h2>Featured In</h2>', '<h2>曾獲報道</h2>'),
     ('Rapport AI Medical featured in Hong Kong Economic Times, showcasing our innovative healthcare AI solutions.',
