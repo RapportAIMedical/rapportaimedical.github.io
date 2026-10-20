@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Caveat:wght@600;700&family=Platypi:ital,wght@0,300..800;1,300..800&family=Noto+Sans+HK:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon/android-chrome-256x256.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#EB9476">
+  <meta name="msapplication-TileColor" content="#EB9476">
+  <meta name="theme-color" content="#F7F4EE">
+  <script src="/styles/float-panel.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>AskJune - Rapport AI Medical</title>
+  <link rel="alternate" hreflang="en" href="https://rapportaimedical.com/product">
+  <link rel="alternate" hreflang="zh-HK" href="https://rapportaimedical.com/zh/product">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGZV0L8LGV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+
+    gtag("config", "G-BGZV0L8LGV");
+  </script>
+
+  <style>
+    /* ===== AskJune page — photos bleed into the original sections, no new copy added (scoped to product.html) ===== */
+
+    /* ----- Hero — lifestyle photo bleeds full-height off the right edge ----- */
+    .product-page--askjune .product-hero {
+      padding: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      background: linear-gradient(110deg, var(--offwhite) 0%, var(--offwhite) 46%, #e6d2bf 56%, #d8bda6 100%);
+      min-height: 640px;
+      overflow: hidden;
+    }
+
+    .askjune-hero-text {
+      padding: 132px clamp(28px, 4vw, 56px) 80px clamp(36px, 6vw, 96px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 760px;
+    }
+
+    .askjune-hero-photo {
+      background-image: url('/assets/AskJune_iphone.png');
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
+      position: relative;
+      min-height: 520px;
+    }
+
+    .askjune-hero-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(247, 244, 238, 0.85) 0%, rgba(247, 244, 238, 0) 22%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 900px) {
+      .product-page--askjune .product-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        background: linear-gradient(180deg, var(--offwhite) 0%, var(--offwhite) 60%, #e6d2bf 100%);
+      }
+
+      .askjune-hero-text {
+        padding: 124px 30px 24px;
+      }
+
+      .askjune-hero-photo {
+        min-height: 300px;
+        background-position: center 30%;
+      }
+
+      .askjune-hero-photo::before {
+        background: linear-gradient(180deg, rgba(247, 244, 238, 0.6) 0%, rgba(247, 244, 238, 0) 25%);
+      }
+    }
+
+    /* ----- Split sections — narrow photo column (~30%) fills edge-to-edge, no box, no padding ----- */
+    .product-page--askjune .product-section.askjune-split {
+      display: grid;
+      align-items: stretch;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .product-page--askjune .askjune-split.askjune-split--photo-left {
+      grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+    }
+
+    .product-page--askjune .askjune-split.askjune-split--photo-right {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr);
+    }
+
+    .product-page--askjune .askjune-split .product-shell {
+      width: auto;
+      max-width: none;
+      margin: 0;
+      padding: 88px clamp(36px, 5vw, 88px);
+      align-self: center;
+      box-sizing: border-box;
+    }
+
+    /* Photo column — image covers the whole column, edge to edge, no decorative box */
+    .askjune-photo-col {
+      position: relative;
+      overflow: hidden;
+      align-self: stretch;
+      min-height: 480px;
+      background: #efe2d4;
+    }
+
+    .askjune-photo-col img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Per-image focal points (object-fit: cover crops the rest) */
+    .askjune-photo-col img[src*="AskJune_screen"] { object-position: center; }
+    .askjune-photo-col img[src*="AskJune_convo"] { object-position: center; }
+    .askjune-photo-col img[src*="AskJune_EvaluationReport"] { object-position: 50% 32%; }
+    .askjune-photo-col img[src*="AskJune_trained"] { object-position: center; }
+
+    /* Features section — photo sits inside the shell, next to the four feature cards (not bleeding to viewport edge) */
+    .askjune-features-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.5fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .askjune-features-layout .askjune-photo-col {
+      min-height: auto;
+      border-radius: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .askjune-features-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .askjune-features-layout .askjune-photo-col {
+        min-height: 280px;
+        height: 280px;
+      }
+    }
+
+    /* Two-image cross-fade — image 2 fades in on top of image 1, then back. Starts after 3s so image 1 is the entry visual. */
+    .askjune-photo-col--fade img:nth-child(2) {
+      opacity: 0;
+      animation: askjune-photo-fade 10s ease-in-out 3s infinite;
+    }
+
+    @keyframes askjune-photo-fade {
+      0%, 40% { opacity: 0; }
+      50%, 90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .askjune-photo-col--fade img:nth-child(2) {
+        animation: none;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .product-page--askjune .askjune-split.askjune-split--photo-left,
+      .product-page--askjune .askjune-split.askjune-split--photo-right {
+        grid-template-columns: 1fr;
+      }
+
+      .product-page--askjune .askjune-split.askjune-split--photo-right .product-shell {
+        order: 2;
+      }
+
+      .product-page--askjune .askjune-split.askjune-split--photo-right .askjune-photo-col {
+        order: 1;
+      }
+
+      .product-page--askjune .askjune-split .product-shell {
+        padding: 56px 30px 64px;
+      }
+
+      .askjune-photo-col {
+        min-height: 280px;
+        height: 280px;
+      }
+    }
+
+    /* ----- Why this matters — full-bleed background photo with dark gradient overlay ----- */
+    .askjune-why {
+      position: relative;
+      padding: 0;
+      min-height: 520px;
+      background-image: url('/assets/AskJune_matching.jpg');
+      background-size: cover;
+      background-position: center 32%;
+      background-repeat: no-repeat;
+      overflow: hidden;
+    }
+
+    .askjune-why::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, rgba(20, 14, 12, 0.86) 0%, rgba(20, 14, 12, 0.62) 50%, rgba(20, 14, 12, 0.28) 100%);
+      pointer-events: none;
+    }
+
+    .askjune-why-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin-left: clamp(36px, 6vw, 96px);
+      padding: 112px 0;
+    }
+
+    .askjune-why-inner h2 {
+      color: #fff;
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.18;
+      margin: 0 0 20px;
+    }
+
+    .askjune-why-inner p {
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 1.06rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .askjune-why {
+        min-height: auto;
+        background-position: center 25%;
+      }
+
+      .askjune-why-inner {
+        padding: 80px 0;
+        width: calc(100% - 60px);
+        margin: 0 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header id="nav">
+    <div class="blur"></div>
+    <div class="nav-content">
+      <a href="/zh/"><img src="/assets/Rapport-logo-RGB_full_black.png" class="logo" alt="Rapport AI Medical logo"></a>
+      <div class="menu">
+        <ul>
+          <li><a href="/zh/about">關於我們</a></li>
+          <li class="has-dropdown">
+            <button type="button" class="nav-parent" aria-expanded="false">
+              我們的方案 <span class="nav-caret" aria-hidden="true">&#9662;</span>
+            </button>
+            <ul class="submenu">
+              <li><a href="/zh/patient-reacq">Patient ReAcq</a></li>
+              <li><a href="/zh/product">AskJune</a></li>
+              <li><a href="/zh/smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="/zh/radiology-assistant">AI 放射科報告方案</a></li>
+              <li><a href="/zh/ai-course">AI 課程</a></li>
+              <li><a href="/zh/others">其他方案</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/customers">我們的客戶</a></li>
+          <li><a href="/zh/press">媒體報道</a></li>
+        </ul>
+        <button type="button" class="button coral"><a href="/zh/contact">聯絡我們</a></button>
+        <a class="lang-switch" href="/product" hreflang="en" lang="en">EN</a>
+      </div>
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div id="dropdown" class="dropdown">
+        <ul>
+          <li><a href="/zh/about">關於我們</a></li>
+          <li class="mobile-group">
+            <span>我們的方案</span>
+            <ul class="mobile-submenu">
+              <li><a href="/zh/patient-reacq">Patient ReAcq</a></li>
+              <li><a href="/zh/product">AskJune</a></li>
+              <li><a href="/zh/smart-scheduler">Smart Scheduler</a></li>
+              <li><a href="/zh/radiology-assistant">AI 放射科報告方案</a></li>
+              <li><a href="/zh/ai-course">AI 課程</a></li>
+              <li><a href="/zh/others">其他方案</a></li>
+            </ul>
+          </li>
+          <li><a href="/zh/customers">我們的客戶</a></li>
+          <li><a href="/zh/press">媒體報道</a></li>
+          <li><a href="/zh/contact">聯絡我們</a></li>
+          <li><a class="lang-switch" href="/product" hreflang="en" lang="en">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page product-page--askjune theme-purple">
+    <section class="product-hero">
+      <div class="askjune-hero-text">
+        <h2 class="product-name">AskJune</h2>
+        <h1>您的全新 AI 健康助理。</h1>
+        <p class="product-subtitle">AskJune 是一位 AI 健康禮賓助理，全天候處理病人的健康查詢及互動，智能地將病人轉介至您診所網絡內合適的醫生／服務機構及服務，處理預約，並進行診前評估及分析，為醫生提供診斷及臨床支援。</p>
+        <ul class="social-proof-inline">
+          <li>將網上健康查詢轉化為預約。</li>
+          <li>智能轉介病人至合適的服務及服務團隊。</li>
+          <li>收集有價值的數據，並生成建議及洞察。</li>
+          <li>為臨床人員提供 AI 驅動的臨床及診斷支援。</li>
+        </ul>
+        <div class="hero-cta-row">
+          <a class="cta-button cta-button-hero-rich"
+            href="mailto:hello@rapportaimedical.com?subject=AskJune%20demo%20request">
+            <span class="cta-button-main">探索 AskJune 如何革新您的醫療生態系統</span>
+            <span class="cta-button-sub">為您的診所預約示範</span>
+          </a>
+        </div>
+      </div>
+      <div class="askjune-hero-photo" role="img" aria-label="A patient using AskJune on their phone"></div>
+    </section>
+
+    <section class="product-section alt">
+      <div class="product-shell">
+        <p class="section-kicker">功能特點</p>
+        <h2>AskJune 為您的診所提供一個對話式、全天候的服務入口。</h2>
+        <p class="section-intro">讓病人以自己的話表達健康疑慮，再將其轉化為結構化資料、分流及預約。</p>
+
+        <div class="askjune-features-layout">
+          <div class="askjune-photo-col askjune-photo-col--fade">
+            <img src="/assets/AskJune_screen.png" alt="AskJune greeting a patient on a phone">
+            <img src="/assets/AskJune_convo.png" alt="AskJune holding a clinical conversation with a patient">
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-card">
+              <i class="fa fa-comments-o" aria-hidden="true"></i>
+              <h3>理解病人以自由文字表達的疑慮</h3>
+              <ul class="detail-list">
+                <li>感覺就像真實對話，而非固定問卷。</li>
+                <li>提出智能追問，建立具臨床參考價值的全面了解。</li>
+                <li>理解本地語言及俚語，將自由對話轉化為臨床人員可使用的結構化醫療數據。</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <i class="fa fa-random" aria-hidden="true"></i>
+              <h3>轉介至最合適的醫生／服務</h3>
+              <ul class="detail-list">
+                <li>將病人直接連接至您的預約流程及合適的醫生／服務。</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <i class="fa fa-file-text-o" aria-hidden="true"></i>
+              <h3>將對話轉化為結構化臨床數據</h3>
+              <ul class="detail-list">
+                <li>為應診醫生製作評估摘要，列明下一步建議並標示警號徵狀。</li>
+                <li>根據您的輸入及專有模型，提示可能相關的健康問題及緊急程度，支援決策及病人教育。</li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <i class="fa fa-plug" aria-hidden="true"></i>
+              <h3>融入您現有的系統生態</h3>
+              <ul class="detail-list">
+                <li>配合您的網站、預約系統及內部工作流程運作。</li>
+                <li>AskJune 建基於您現有的系統之上，不會造成任何干擾。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="use-cases" class="product-use-cases">
+      <h6>應用場景及部署選項</h6>
+      <div id="case-tabs">
+        <div class="case-content">
+          <img src="/assets/UseCase_kiosk.png" alt="AskJune use case in a kiosk environment">
+          <h3>現場自助服務機及平板電腦</h3>
+        </div>
+        <div class="case-content">
+          <img src="/assets/UseCase_database.png" alt="AskJune use case connected to a patient database">
+          <h3>數據庫</h3>
+        </div>
+        <div class="case-content">
+          <img src="/assets/UseCase_webapp.png" alt="AskJune web application use case">
+          <h3>網頁應用程式</h3>
+        </div>
+        <div class="case-content">
+          <img src="/assets/UseCase_mobileapp.png" alt="AskJune mobile application use case">
+          <h3>流動應用程式</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section alt askjune-benefits">
+      <div class="product-shell">
+        <h2>為您的診所帶來的好處</h2>
+        <div class="benefits-panel">
+          <ul class="benefit-list">
+            <li><span class="askjune-benefit-icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span><span>更多合適的預約。</span></li>
+            <li><span class="askjune-benefit-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span><span>更早與病人互動。</span></li>
+            <li><span class="askjune-benefit-icon"><i class="fa fa-shield" aria-hidden="true"></i></span><span>提升病人信任。</span></li>
+            <li><span class="askjune-benefit-icon"><i class="fa fa-cogs" aria-hidden="true"></i></span><span>減輕行政及前台負擔。</span></li>
+            <li><span class="askjune-benefit-icon"><i class="fa fa-bolt" aria-hidden="true"></i></span><span>提升臨床效率。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-proof-cta-band" id="cta">
+      <div class="product-shell product-proof-cta-grid product-proof-cta-grid--solo">
+        <div class="product-cta-panel">
+          <div class="product-cta-card">
+            <span class="product-cta-chip"><i class="fa fa-comments"></i></span>
+            <h2>了解 AskJune 如何提升您的客戶體驗及診所工作流程</h2>
+            <a class="cta-button cta-button-rich" href="mailto:hello@rapportaimedical.com?subject=AskJune%20demo%20request">
+              <span class="cta-button-main">聯絡我們</span>
+              <span class="cta-button-sub">預約示範</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="askjune-why">
+      <div class="askjune-why-inner">
+        <h2>在病人所在之處與他們接觸。</h2>
+        <p>病人早已在網上尋找答案。AskJune 為診所提供一個安全、符合臨床標準的方式，在網上與病人接觸，以可靠資訊引導他們，並將他們連接至您醫療網絡內的合適護理服務。</p>
+      </div>
+    </section>
+  </main>
+
+  <section id="CTA" class="coral"></section>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <script src="/styles/script.js" defer></script>
+</body>
+
+</html>
