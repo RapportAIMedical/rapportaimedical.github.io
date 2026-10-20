@@ -2554,9 +2554,11 @@ label {
 }
 
 .solutions-graphic {
+  position: relative;
   width: min(100%, 980px);
   max-width: none;
   margin: 0;
+  container-type: inline-size;
 }
 
 .solutions-image {
@@ -2565,6 +2567,32 @@ label {
   height: auto;
   object-fit: contain;
 }
+
+/* Labels sit on top of the text-free graphic so they can be translated.
+   Positions are the label centres as a % of the image; sizes scale with its width. */
+.solutions-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 1.7cqw;
+  line-height: 1.28;
+  color: #282828;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.solutions-label--channel {
+  font-size: 1.41cqw;
+}
+
+.sl-kiosk { left: 37.09%; top: 35.05%; }
+.sl-database { left: 44.16%; top: 47.57%; }
+.sl-webapp { left: 53.96%; top: 47.85%; }
+.sl-mobile { left: 62.25%; top: 34.39%; }
+.sl-hospital { left: 11.5%; top: 65.33%; }
+.sl-chain { left: 28.28%; top: 91.12%; }
+.sl-health { left: 49.72%; top: 91.4%; }
+.sl-insurance { left: 72.57%; top: 85.14%; }
+.sl-corporate { left: 88.36%; top: 69.07%; }
 
 /* Section 2: Healthcare Providers */
 .healthcare-section {
@@ -10397,4 +10425,31 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
     bottom: -195px;
     left: -195px;
   }
+}
+
+/* ––– LANGUAGE SWITCH / CHINESE PAGES ––– */
+
+.lang-switch {
+  display: inline-block;
+  padding: 7px 14px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.lang-switch:hover {
+  background: var(--black);
+  color: var(--coral);
+}
+
+/* Latin glyphs keep the brand fonts; CJK glyphs fall through to Noto Sans HK. */
+html[lang="zh-HK"] {
+  --serif: "Platypi", "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", sans-serif;
+  --sans: "Albert Sans", "Noto Sans HK", "PingFang HK", "Microsoft JhengHei", Verdana, sans-serif;
+}
+
+html[lang="zh-HK"] .scheduler-hero-summary::after {
+  content: "捲動查看整個月";
 }
