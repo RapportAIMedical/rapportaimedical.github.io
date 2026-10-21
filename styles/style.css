@@ -3708,6 +3708,21 @@ label {
   flex-grow: 0.75;
 }
 
+/* Let the Smart Health Asia portraits set their own height, so no part of
+   either photo is cropped on wider screens. */
+.smart-health-photos-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.smart-health-photos-row .gallery-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .press-photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3901,6 +3916,10 @@ label {
     flex: none;
     width: 100%;
     height: auto;
+  }
+
+  .smart-health-photos-row {
+    grid-template-columns: 1fr;
   }
 
   .press-photos-grid {
