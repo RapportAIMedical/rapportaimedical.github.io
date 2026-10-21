@@ -3703,6 +3703,11 @@ label {
   flex-grow: 0.667;
 }
 
+.conference-photos-row .conf-photo-5,
+.conference-photos-row .conf-photo-6 {
+  flex-grow: 0.75;
+}
+
 .press-photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
