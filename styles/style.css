@@ -3703,17 +3703,20 @@ label {
   flex-grow: 0.667;
 }
 
-/* The two source photos share a 3:4 ratio, so equal columns keep them at an
-   equal height while showing each image in full inside the gallery card. */
+/* Equal-height, aspect-ratio-preserving (justified) photo row. The portrait
+   and landscape source images keep their full proportions, so they need
+   different widths while sharing one height. */
 .smart-health-photos-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
   align-items: start;
+  container-type: inline-size;
 }
 
 .smart-health-photos-row .gallery-photo {
-  width: 100%;
-  height: auto;
+  flex: 0 0 auto;
+  width: auto;
+  /* (portrait 3:4 + landscape 4:3) = 25:12; account for the 20px gap. */
+  height: calc(48cqw - 9.6px);
   min-height: 0;
   aspect-ratio: auto;
   object-fit: contain;
@@ -3916,6 +3919,7 @@ label {
 
   .smart-health-photos-row {
     display: block;
+    container-type: normal;
   }
 
   .smart-health-photos-row .gallery-photo {
