@@ -3319,6 +3319,10 @@ label {
   margin: 0 auto;
 }
 
+.client-spotlight-section--compact {
+  padding-top: 32px;
+}
+
 .client-spotlight {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -3338,6 +3342,17 @@ label {
   justify-content: center;
   text-align: center;
   gap: 8px;
+}
+
+.client-spotlight-stat--otp {
+  background: linear-gradient(145deg, #143e5a 0%, #1f7181 100%);
+}
+
+.client-spotlight-logo--otp {
+  width: min(280px, 90%);
+  background: white;
+  padding: 18px 22px;
+  margin-bottom: 16px;
 }
 
 .client-spotlight-logo {
@@ -3792,6 +3807,10 @@ label {
   .client-spotlight-stat,
   .client-spotlight-info {
     padding: 28px 24px;
+  }
+
+  .client-spotlight-section--compact {
+    padding-top: 24px;
   }
 
   .client-spotlight-number {
