@@ -3312,6 +3312,110 @@ label {
   transform: scale(1.02);
 }
 
+/* Client spotlight (press page) */
+.client-spotlight-section {
+  width: calc(100% - 120px);
+  padding: 80px 60px 0;
+  margin: 0 auto;
+}
+
+.client-spotlight-section--compact {
+  padding-top: 32px;
+}
+
+.client-spotlight {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  background: var(--color-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.client-spotlight-stat {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--cyan) 100%);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.client-spotlight-stat--otp {
+  background: linear-gradient(145deg, #143e5a 0%, #1f7181 100%);
+}
+
+.client-spotlight-logo--otp {
+  width: min(280px, 90%);
+  background: white;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+
+.client-spotlight-logo {
+  width: 220px;
+  max-width: 100%;
+  background: var(--color-surface);
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.client-spotlight-number {
+  font-family: var(--serif);
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.client-spotlight-number-label {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.client-spotlight-info {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.client-spotlight-title {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  line-height: 1.3;
+  color: var(--black);
+}
+
+.client-spotlight-quote {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  border-left: 4px solid var(--coral);
+  padding-left: 20px;
+  margin: 0;
+}
+
+.client-spotlight-attribution {
+  margin: 0;
+  color: var(--black);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.client-spotlight-project-note {
+  margin: 4px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
 /* Articles Section */
 .articles-section {
   width: calc(100% - 120px);
@@ -3473,27 +3577,71 @@ label {
   min-height: 350px;
 }
 
-/* LinkedIn Section (standalone) */
+/* Social and recognition */
 /* Note: LinkedIn embeds have a minimum width of ~350px enforced by LinkedIn */
-.linkedin-section {
-  margin: 0 auto 60px auto;
-  display: flex;
-  justify-content: center;
+.media-recognition-section {
+  width: calc(100% - 120px);
+  max-width: 1040px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: start;
 }
 
-.linkedin-section .linkedin-embed-container {
-  width: min(500px, 100%);
+.media-recognition-section .linkedin-embed-container {
+  width: 100%;
   max-width: 100%;
 }
 
-.linkedin-section .linkedin-embed-container iframe {
+.media-recognition-section .linkedin-embed-container iframe {
   width: 100%;
-  height: 880px;
+  height: 680px;
   min-height: 0;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: block;
   margin: 0 auto;
+}
+
+.media-recognition-card {
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.media-recognition-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.media-recognition-image {
+  display: block;
+  width: 100%;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+.media-recognition-info {
+  padding: 20px 4px 4px;
+}
+
+.media-recognition-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--coral);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.media-recognition-info p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 /* LSC Photos in Gallery */
@@ -3586,6 +3734,25 @@ label {
   flex-grow: 0.667;
 }
 
+/* Equal-height, aspect-ratio-preserving (justified) photo row. The portrait
+   and landscape source images keep their full proportions, so they need
+   different widths while sharing one height. */
+.smart-health-photos-row {
+  display: flex;
+  align-items: start;
+  container-type: inline-size;
+}
+
+.smart-health-photos-row .gallery-photo {
+  flex: 0 0 auto;
+  width: auto;
+  /* (portrait 3:4 + landscape 4:3) = 25:12; account for the 20px gap. */
+  height: calc(48cqw - 9.6px);
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
 .press-photos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3642,6 +3809,32 @@ label {
 
   .lsc-panel .lsc-photo {
     border-radius: 8px;
+  }
+
+  .client-spotlight-section {
+    width: calc(100% - 60px);
+    padding: 60px 30px 0;
+  }
+
+  .client-spotlight {
+    grid-template-columns: 1fr;
+  }
+
+  .client-spotlight-stat,
+  .client-spotlight-info {
+    padding: 28px 24px;
+  }
+
+  .client-spotlight-section--compact {
+    padding-top: 24px;
+  }
+
+  .client-spotlight-number {
+    font-size: 3.75rem;
+  }
+
+  .client-spotlight-title {
+    font-size: 1.4rem;
   }
 
   .articles-section {
@@ -3701,24 +3894,26 @@ label {
     min-height: 150px;
   }
 
-  .linkedin-section {
+  .media-recognition-section {
     width: 100%;
     box-sizing: border-box;
     padding: 0 12px;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-  .linkedin-section .linkedin-embed-container {
+  .media-recognition-section .linkedin-embed-container {
     width: 100%;
     padding: 0;
   }
 
-  .linkedin-section .linkedin-embed-container iframe {
+  .media-recognition-section .linkedin-embed-container iframe {
     width: 100%;
     min-width: 350px;
     height: 880px;
   }
 
-  .linkedin-section .linkedin-embed-container {
+  .media-recognition-section .linkedin-embed-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -3755,6 +3950,21 @@ label {
     flex: none;
     width: 100%;
     height: auto;
+  }
+
+  .smart-health-photos-row {
+    display: block;
+    container-type: normal;
+  }
+
+  .smart-health-photos-row .gallery-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .smart-health-photos-row .gallery-photo + .gallery-photo {
+    margin-top: 10px;
   }
 
   .press-photos-grid {
