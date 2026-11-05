@@ -239,6 +239,34 @@ T["others"] = [
 
 T["press"] = [
     ('<h1>Press</h1>', '<h1>媒體報道</h1>'),
+    ('alt="Assure Medical Imaging"', 'alt="真諾醫學掃描 Assure Medical Imaging"'),
+    ('>shorter typical reporting time<', '>縮減常規報告處理時間<'),
+    ('>Client Spotlight<', '>客戶專區<'),
+    ('<h2 class="client-spotlight-title">Faster Results, Smarter Care</h2>',
+     '<h2 class="client-spotlight-title">更快出報告，更優質醫護</h2>'),
+    ('Assure Medical has partnered with Rapport AI Medical to bring AI-powered radiology reporting into its '
+     'workflow, cutting typical reporting time by over 40%. Every report is still reviewed by their radiologists '
+     'before it reaches the patient.',
+     '真諾醫學掃描與 Rapport AI Medical 合作，將 AI 放射科報告技術引入診斷流程，可縮減超過 40% 的常規報告處理時間。'
+     '所有報告在交付給病人之前，均會經由中心放射科醫生審核把關。'),
+    ('>Assure Medical Imaging<', '>真諾醫學掃描<'),
+    ('>2026<', '>2026年<'),
+    ('href="https://assuremedical.com.hk/ai-driven-operational-enhancement/?lang=en"',
+     'href="https://assuremedical.com.hk/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e6%8e%a8%e5%8b%95%e6%b5%81%e7%a8%8b%e5%84%aa%e5%8c%96/"'),
+    ('>Read on Assure Medical →<', '>閱讀真諾醫學原文 →<'),
+    ('>Hong Kong healthcare provider<br>established in 1994<', '>香港醫療服務機構<br>成立於 1994 年<'),
+    ('>Partner Perspective<', '>合作夥伴觀點<'),
+    ('<h2 class="client-spotlight-title">Customer Testimonial</h2>',
+     '<h2 class="client-spotlight-title">客戶推薦</h2>'),
+    ('“Rapport AI Medical has been a responsive and collaborative partner throughout the OT&amp;P Recall Project.\n'
+     '          Their team demonstrated strong professionalism, practical problem-solving, and a good understanding of our\n'
+     '          operational needs. The delivered AI tools have provided valuable support to our recall workflow, and the\n'
+     '          overall experience has been positive.”',
+     '「在 OT&amp;P Recall Project 的整個合作過程中，Rapport AI Medical 一直是反應迅速、樂於協作的夥伴。團隊展現出高度專業、務實的解難能力，並充分理解我們的營運需要。所交付的 AI 工具為我們的病人召回流程提供了寶貴支援，整體合作體驗十分正面。」'),
+    ('>— IT Director, OT&amp;P Healthcare<', '>— 資訊科技總監，OT&amp;P Healthcare<'),
+    ('Rapport AI Medical partnered with leading medical clinic group OT&amp;P Healthcare to develop an AI-powered, evidence-based patient follow-up system.',
+     'Rapport AI Medical 與領先的醫療服務機構 OT&amp;P Healthcare 合作，開發由 AI 驅動、以實證為本的病人跟進系統。'),
+    ('>Learn about OT&amp;P Healthcare →<', '>了解 OT&amp;P Healthcare →<'),
     ('<h6>In The Press</h6>', '<h6>媒體報道</h6>'),
     ('<h2>Featured In</h2>', '<h2>曾獲報道</h2>'),
     ('Rapport AI Medical featured in Hong Kong Economic Times, showcasing our innovative healthcare AI solutions.',
@@ -250,6 +278,12 @@ T["press"] = [
      'ThinkCol 深入剖析 Rapport AI Medical 如何以 AI 方案革新醫療服務的案例研究。'),
     ('>Read case study →<', '>閱讀案例研究 →<'),
     ('<h2>Invited to Exhibit Locally and Overseas</h2>', '<h2>獲邀參與本地及海外展覽</h2>'),
+    ('>MedTech Asia Awards 2026 Nominee<', '>MedTech Asia Awards 2026 提名<'),
+    ('We have been nominated MedTech World Asia Awards 2026 - "AI-Driven Healthcare Innovation of the Year Award"! '
+     'Incredibly honoured to be named alongside some prominent leaders in the space, and a true testament to the '
+     'team’s dedication and exceptional work over the past year!',
+     '我們獲提名 MedTech World Asia Awards 2026「年度 AI 驅動醫療創新大獎」！能與業界多位傑出領袖一同獲提名，我們深感榮幸，'
+     '這亦充分肯定了團隊過去一年的努力與卓越成果！'),
 ]
 
 T["ai-course"] = [
