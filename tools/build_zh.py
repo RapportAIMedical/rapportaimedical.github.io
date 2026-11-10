@@ -48,6 +48,8 @@ COMMON = [
     ('It helped us systematically identify patients due for follow up, with an evidence based approach. '
      "It easily unlocked revenue that we didn't even realise we were missing.",
      '它以實證為本的方法，幫助我們有系統地找出需要跟進的病人，輕鬆釋放了我們從未察覺的收入。'),
+    ('<small>[name undisclosed]</small>', '<small>[名稱不便透露]</small>'),
+    ('<span>Private Hospital in Hong Kong<small>', '<span>香港私家醫院<small>'),
     ('&mdash; Leading Medical Clinic Chain, Hong Kong', '&mdash; 香港領先連鎖醫療診所'),
     # Patient ReAcq database widget (home page card + ReAcq hero)
     ('<span>Patient Database</span>', '<span>病人數據庫</span>'),
@@ -106,11 +108,11 @@ T["index"] = [
      '並非所有醫療工作流程都適用標準產品。我們因應客戶的具體挑戰，度身設計專屬工具及方案。'),
     ('<div class="home-pill">About us</div>', '<div class="home-pill">關於我們</div>'),
     ('<h2>Empowering providers to revolutionise healthcare</h2>', '<h2>助醫療服務機構革新醫療</h2>'),
-    ('Founded in 2023 by two friends — one a doctor, one a patient — who witnessed first-hand the systemic issues '
+    ('Founded in 2023 by a doctor and a lawyer — who witnessed first-hand the systemic issues '
      'in our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to '
      'build better healthcare for all by empowering providers with specialised AI-driven solutions that connect '
      'patients, streamline operations, and deliver powerful data insights.',
-     'Rapport AI Medical 由兩位始創人於 2023 年創立：一位是醫生，一位是病人。他們親身見證了醫療體系中的系統性問題，'
+     'Rapport AI Medical 由一位醫生和一位律師於 2023 年創立。他們親身見證了醫療體系中的系統性問題，'
      '以及 AI 可以帶來的機遇。我們的使命是透過專門的 AI 方案賦能醫療服務機構，連繫病人、精簡營運、提供有力的數據洞察，'
      '為所有人建構更好的醫療服務。'),
     ('Learn more about us &rarr;', '進一步了解我們 &rarr;'),
@@ -132,9 +134,9 @@ T["about"] = [
     ('&ldquo;As patients and practitioners, we have all personally experienced the inefficiencies of our '
      'healthcare system.&rdquo;',
      '「作為病人及醫護人員，我們都曾親身經歷醫療體系的低效之處。」'),
-    ('Founded in 2023, Rapport AI Medical has been on a <strong>mission</strong> to help make healthcare better for '
+    ('Founded in 2023 by a doctor and a lawyer, Rapport AI Medical has been on a <strong>mission</strong> to help make healthcare better for '
      'both providers and patients.',
-     'Rapport AI Medical 於 2023 年成立，<strong>使命</strong>是為醫療服務機構和病人帶來更好的醫療體驗。'),
+     'Rapport AI Medical 由一位醫生和一位律師於 2023 年創立，<strong>使命</strong>是為醫療服務機構和病人帶來更好的醫療體驗。'),
     ('We work with healthcare and insurance providers to build <strong>customisable, AI-powered integration '
      'solutions</strong> that digitalise, streamline and enhance the medical care process at every level.',
      '我們與醫療及保險機構合作，打造<strong>可度身定制、由 AI 驅動的整合方案</strong>，在每個層面將醫療流程數碼化、精簡化並加以提升。'),
