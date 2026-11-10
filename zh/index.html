@@ -676,23 +676,15 @@
       align-items: center;
       justify-content: center;
       height: 72px;
-      padding: 0 22px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0);
-      box-shadow: 0 0 0 rgba(17, 24, 39, 0);
+      padding: 0 12px;
       transform: translateY(0) scale(1);
-      transition:
-        transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.4s ease,
-        background-color 0.4s ease;
+      transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
       cursor: default;
     }
 
     .home-logo-item:hover {
       z-index: 2;
-      background: #fff;
-      box-shadow: 0 14px 32px rgba(17, 24, 39, 0.12), 0 2px 6px rgba(17, 24, 39, 0.06);
-      transform: translateY(-6px) scale(1.18);
+      transform: translateY(-6px) scale(1.2);
     }
 
     .home-logo-item img {
@@ -719,8 +711,6 @@
       white-space: nowrap;
       transition:
         transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.4s ease,
-        background-color 0.4s ease,
         color 0.4s ease;
     }
 
@@ -730,7 +720,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .home-logo-rotator { overflow-x: auto; }
-      .home-logo-item, .home-logo-item--text { transition: box-shadow 0.3s ease, background-color 0.3s ease; }
+      .home-logo-item, .home-logo-item--text { transition: color 0.3s ease; }
       .home-logo-item:hover { transform: none; }
     }
 
