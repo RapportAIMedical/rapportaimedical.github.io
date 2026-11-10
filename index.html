@@ -646,12 +646,19 @@
     }
 
     /* PARTNER LOGO ROTATOR (driven by the inline script at the bottom of the page) */
+    .home-partners-rotator {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 12px 0;
+    }
+
     .home-logo-rotator {
       position: relative;
       overflow: hidden;
       max-width: 1080px;
-      margin: 0 auto 36px;
-      padding: 28px 0 36px;
+      margin: 0 auto;
+      padding: 16px 0;
       -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
       mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
     }
@@ -980,6 +987,47 @@
     </div>
   </section>
 
+  <!-- PARTNER LOGO ROTATOR -->
+  <section class="home-partners-rotator">
+  <div class="home-logo-rotator" aria-label="Our partners and customers">
+      <div class="home-logo-track">
+        <div class="home-logo-set">
+          <div class="home-logo-item"><img src="assets/press/assure-logo.png" alt="Assure Medical Imaging"></div>
+          <div class="home-logo-item"><img src="assets/hkcog-logo.jpg" alt="Hong Kong College of Obstetricians and Gynaecologists"></div>
+          <div class="home-logo-item"><img src="assets/otp-logo.svg" alt="OT&amp;P Healthcare"></div>
+          <div class="home-logo-item home-logo-item--text"><span>Private Hospital in Hong Kong<small>[name undisclosed]</small></span></div>
+          <div class="home-logo-item"><img src="assets/HKSTP_PartnerLogo_EN_Black_RGB.png" alt="HKSTP"></div>
+          <div class="home-logo-item"><img src="assets/google-for-startups.png" alt="Google for Startups"></div>
+          <div class="home-logo-item"><img src="assets/Press_investhk.png" alt="InvestHK"></div>
+          <div class="home-logo-item"><img src="assets/aws-startup.png" alt="AWS"></div>
+          <div class="home-logo-item"><img src="assets/hkmta_logo.png" alt="Hong Kong MedTech Association"></div>
+        </div>
+        <div class="home-logo-set" aria-hidden="true">
+          <div class="home-logo-item"><img src="assets/press/assure-logo.png" alt=""></div>
+          <div class="home-logo-item"><img src="assets/hkcog-logo.jpg" alt=""></div>
+          <div class="home-logo-item"><img src="assets/otp-logo.svg" alt=""></div>
+          <div class="home-logo-item home-logo-item--text"><span>Private Hospital in Hong Kong<small>[name undisclosed]</small></span></div>
+          <div class="home-logo-item"><img src="assets/HKSTP_PartnerLogo_EN_Black_RGB.png" alt=""></div>
+          <div class="home-logo-item"><img src="assets/google-for-startups.png" alt=""></div>
+          <div class="home-logo-item"><img src="assets/Press_investhk.png" alt=""></div>
+          <div class="home-logo-item"><img src="assets/aws-startup.png" alt=""></div>
+          <div class="home-logo-item"><img src="assets/hkmta_logo.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SPLIT -->
+  <section class="home-about">
+    <div class="about-photo-col" style="background:url('assets/event_photos/1748342386678.jfif') center/cover no-repeat;min-height:440px;"></div>
+    <div class="about-text-col">
+      <div class="home-pill">About us</div>
+      <h2>Empowering providers to revolutionise healthcare</h2>
+      <p>Founded in 2023 by a doctor and a lawyer — who witnessed first-hand the systemic issues in our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to build better healthcare for all by empowering providers with specialised AI-driven solutions that connect patients, streamline operations, and deliver powerful data insights.</p>
+      <a class="about-link" href="about">Learn more about us &rarr;</a>
+    </div>
+  </section>
+
   <!-- SOLUTIONS -->
   <section class="home-solutions" id="solutions">
     <div class="home-section-head">
@@ -1135,45 +1183,8 @@
     </div>
   </section>
 
-  <!-- ABOUT SPLIT -->
-  <section class="home-about">
-    <div class="about-photo-col" style="background:url('assets/event_photos/1748342386678.jfif') center/cover no-repeat;min-height:440px;"></div>
-    <div class="about-text-col">
-      <div class="home-pill">About us</div>
-      <h2>Empowering providers to revolutionise healthcare</h2>
-      <p>Founded in 2023 by a doctor and a lawyer — who witnessed first-hand the systemic issues in our healthcare system and the opportunities that AI could bring. At Rapport AI Medical, our mission is to build better healthcare for all by empowering providers with specialised AI-driven solutions that connect patients, streamline operations, and deliver powerful data insights.</p>
-      <a class="about-link" href="about">Learn more about us &rarr;</a>
-    </div>
-  </section>
-
   <!-- TESTIMONIAL -->
   <section class="home-testimonial">
-    <div class="home-logo-rotator" aria-label="Our partners and customers">
-      <div class="home-logo-track">
-        <div class="home-logo-set">
-          <div class="home-logo-item"><img src="assets/press/assure-logo.png" alt="Assure Medical Imaging"></div>
-          <div class="home-logo-item"><img src="assets/hkcog-logo.jpg" alt="Hong Kong College of Obstetricians and Gynaecologists"></div>
-          <div class="home-logo-item"><img src="assets/otp-logo.svg" alt="OT&amp;P Healthcare"></div>
-          <div class="home-logo-item home-logo-item--text"><span>Private Hospital in Hong Kong<small>[name undisclosed]</small></span></div>
-          <div class="home-logo-item"><img src="assets/HKSTP_PartnerLogo_EN_Black_RGB.png" alt="HKSTP"></div>
-          <div class="home-logo-item"><img src="assets/google-for-startups.png" alt="Google for Startups"></div>
-          <div class="home-logo-item"><img src="assets/Press_investhk.png" alt="InvestHK"></div>
-          <div class="home-logo-item"><img src="assets/aws-startup.png" alt="AWS"></div>
-          <div class="home-logo-item"><img src="assets/hkmta_logo.png" alt="Hong Kong MedTech Association"></div>
-        </div>
-        <div class="home-logo-set" aria-hidden="true">
-          <div class="home-logo-item"><img src="assets/press/assure-logo.png" alt=""></div>
-          <div class="home-logo-item"><img src="assets/hkcog-logo.jpg" alt=""></div>
-          <div class="home-logo-item"><img src="assets/otp-logo.svg" alt=""></div>
-          <div class="home-logo-item home-logo-item--text"><span>Private Hospital in Hong Kong<small>[name undisclosed]</small></span></div>
-          <div class="home-logo-item"><img src="assets/HKSTP_PartnerLogo_EN_Black_RGB.png" alt=""></div>
-          <div class="home-logo-item"><img src="assets/google-for-startups.png" alt=""></div>
-          <div class="home-logo-item"><img src="assets/Press_investhk.png" alt=""></div>
-          <div class="home-logo-item"><img src="assets/aws-startup.png" alt=""></div>
-          <div class="home-logo-item"><img src="assets/hkmta_logo.png" alt=""></div>
-        </div>
-      </div>
-    </div>
     <div class="home-testimonial-inner">
       <div class="quote-mark">&ldquo;</div>
       <blockquote>It helped us systematically identify patients due for follow up, with an evidence based approach. It easily unlocked revenue that we didn't even realise we were missing.</blockquote>
