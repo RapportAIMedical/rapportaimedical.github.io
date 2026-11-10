@@ -50,6 +50,7 @@ COMMON = [
      '它以實證為本的方法，幫助我們有系統地找出需要跟進的病人，輕鬆釋放了我們從未察覺的收入。'),
     ('<small>[name undisclosed]</small>', '<small>[名稱不便透露]</small>'),
     ('<span>Private Hospital in Hong Kong<small>', '<span>香港私家醫院<small>'),
+    ('<span>Department at Major Public Hospital in Hong Kong</span>', '<span>香港公立醫院專科部門</span>'),
     ('&mdash; Leading Medical Clinic Chain, Hong Kong', '&mdash; 香港領先連鎖醫療診所'),
     # Patient ReAcq database widget (home page card + ReAcq hero)
     ('<span>Patient Database</span>', '<span>病人數據庫</span>'),
