@@ -117,8 +117,8 @@ T["index"] = [
      '為所有人建構更好的醫療服務。'),
     ('Learn more about us &rarr;', '進一步了解我們 &rarr;'),
     ("<h3>Let's make healthcare better together</h3>", '<h3>攜手讓醫療服務變得更好</h3>'),
-    ('Preview our solutions using your own patient data — no commitment required.',
-     '以您自己的病人數據預覽我們的方案，無需任何承諾。'),
+    ('Experience our solutions using your own data and workflow today.',
+     '立即以您自己的數據和工作流程體驗我們的方案。'),
     ('Contact us for a demo &rarr;', '聯絡我們預約示範 &rarr;'),
 ]
 
