@@ -258,6 +258,19 @@ T["press"] = [
     ('href="https://assuremedical.com.hk/ai-driven-operational-enhancement/?lang=en"',
      'href="https://assuremedical.com.hk/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e6%8e%a8%e5%8b%95%e6%b5%81%e7%a8%8b%e5%84%aa%e5%8c%96/"'),
     ('>Read on Assure Medical →<', '>閱讀真諾醫學原文 →<'),
+    ('>Hong Kong healthcare provider<br>established in 1994<', '>香港醫療服務機構<br>成立於 1994 年<'),
+    ('>Partner Perspective<', '>合作夥伴觀點<'),
+    ('<h2 class="client-spotlight-title">Customer Testimonial</h2>',
+     '<h2 class="client-spotlight-title">客戶推薦</h2>'),
+    ('“Rapport AI Medical has been a responsive and collaborative partner throughout the OT&amp;P Recall Project. '
+     'Their team demonstrated strong professionalism, practical problem-solving, and a good understanding of our '
+     'operational needs. The delivered AI tools have provided valuable support to our recall workflow, and the '
+     'overall experience has been positive.”',
+     '「在 OT&amp;P Recall Project 的整個合作過程中，Rapport AI Medical 一直是反應迅速、樂於協作的夥伴。團隊展現出高度專業、務實的解難能力，並充分理解我們的營運需要。所交付的 AI 工具為我們的病人召回流程提供了寶貴支援，整體合作體驗十分正面。」'),
+    ('— IT Director, OT&amp;P Healthcare', '— 資訊科技總監，OT&amp;P Healthcare'),
+    ('Rapport AI Medical partnered with leading medical clinic group OT&amp;P Healthcare to develop an AI-powered, evidence-based patient follow-up system.',
+     'Rapport AI Medical 與領先的醫療服務機構 OT&amp;P Healthcare 合作，開發由 AI 驅動、以實證為本的病人跟進系統。'),
+    ('>Learn about OT&amp;P Healthcare →<', '>了解 OT&amp;P Healthcare →<'),
     ('<h6>In The Press</h6>', '<h6>媒體報道</h6>'),
     ('<h2>Featured In</h2>', '<h2>曾獲報道</h2>'),
     ('Rapport AI Medical featured in Hong Kong Economic Times, showcasing our innovative healthcare AI solutions.',
@@ -524,6 +537,12 @@ T["smart-scheduler"] = [
     ('<span>Administrators review a generated roster instead of wrestling spreadsheets.</span>',
      '<span>管理人員只需審閱已生成的更表，毋須再與試算表搏鬥。</span>'),
     ('<h2>Experience effortless rostering for your department now.</h2>', '<h2>立即為您的部門體驗輕鬆排更。</h2>'),
+    ("<blockquote>Preparing our call list used to take a lot of back-and-forth to balance everyone's "
+     "availability. Since adopting Rapport AI Medical's Smart Scheduler in 2025, the list is generated "
+     "in a fraction of the time, and the tool has run reliably, taking everyone's preference and "
+     "fairness into account.</blockquote>",
+     '<blockquote>以往準備我們的候召更表需要反覆協調以平衡每個人的時間。自 2025 年採用 Rapport AI Medical 的 Smart Scheduler 後，更表只需原本一小部分的時間便能生成，而且工具一直穩定運行，兼顧每個人的意願與公平性。</blockquote>'),
+    ('&mdash; Department at Major Public Hospital in Hong Kong', '&mdash; 香港主要公立醫院專科部門'),
 ]
 
 T["radiology-assistant"] = [
