@@ -9254,11 +9254,14 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 
 /* Shared homepage testimonial treatment. */
 .home-testimonial {
+  box-sizing: border-box;
   padding: 80px 60px;
   background: #fff;
 }
 
 .home-testimonial-inner {
+  box-sizing: border-box;
+  width: 100%;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -9326,6 +9329,28 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
 @media only screen and (max-width: 780px) {
   .home-testimonial {
     padding: 48px 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home-testimonial {
+    padding: 40px 20px;
+  }
+
+  .home-testimonial .quote-mark {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .home-testimonial blockquote {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .home-testimonial cite {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 
