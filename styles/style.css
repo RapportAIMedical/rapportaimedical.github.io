@@ -9354,6 +9354,45 @@ html.js-anim .scheduler-rules-mock .scheduler-toggle-list > div:not(.sched-row-o
   }
 }
 
+/* Page-specific testimonial customisations */
+.scheduler-hero .scheduler-testimonial-section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px 30px 8px;
+  background: transparent;
+  margin-top: 16px;
+}
+
+.scheduler-testimonial-section blockquote,
+.ai-course-testimonial-section blockquote {
+  font-weight: 400;
+  font-size: clamp(1.12rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+}
+
+.scheduler-testimonial-section .quote-mark,
+.ai-course-testimonial-section .quote-mark {
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.ai-course-testimonial-section {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 60px 40px;
+}
+
+@media only screen and (max-width: 480px) {
+  .scheduler-hero .scheduler-testimonial-section {
+    padding: 16px 20px 4px;
+    margin-top: 12px;
+  }
+
+  .ai-course-testimonial-section {
+    padding: 36px 20px;
+  }
+}
+
 /* About page — founding story */
 #about {
   position: relative;

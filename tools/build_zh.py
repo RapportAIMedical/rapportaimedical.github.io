@@ -336,6 +336,17 @@ T["ai-course"] = [
     ('<p>Developed by experts across medicine, AI and healthcare regulation.</p>',
      '<p>由醫學、AI 及醫療規管領域的專家共同開發。</p>'),
     ("<h2>Upgrade your organisation's AI capability.</h2>", '<h2>提升您機構的 AI 能力。</h2>'),
+    ("<blockquote>As Junior Vice President of HKCOG, I initiated and completed this Healthcare AI course. "
+     "My sincere thanks to Jason and his team for their highly professional delivery. The course is practical "
+     "and insightful, enabling doctors to grasp advanced AI concepts in an accessible way, stay updated on the "
+     "latest developments, understand the legal and oversight principles, and apply them through a hands-on "
+     "project in obstetrics and gynaecology. I strongly recommend that other specialties enrol in this "
+     "well-designed, tailor-made programme.</blockquote>",
+     '<blockquote>作為香港婦產科學院副院長，我發起並完成了這個醫療 AI 課程。衷心感謝 Jason 及其團隊高度專業的授課。'
+     '課程實用且具洞察力，讓醫生能以深入淺出的方式掌握先進的 AI 概念，掌握最新發展動態，理解法律與監管原則，'
+     '並透過婦產科的實戰項目學以致用。我強烈推薦其他專科報讀這個設計周詳、量身定制的培訓課程。</blockquote>'),
+    ('&mdash; Junior Vice President, Hong Kong College of Obstetricians and Gynaecologists',
+     '&mdash; 香港婦產科學院副院長'),
 ]
 
 T["patient-reacq"] = [
