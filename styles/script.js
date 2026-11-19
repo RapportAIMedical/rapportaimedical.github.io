@@ -4,6 +4,14 @@ const IS_ZH = (document.documentElement.lang || "").toLowerCase().startsWith("zh
 const ASSET_BASE = IS_ZH ? "/" : "";
 const PAGE_BASE = IS_ZH ? "/zh/" : "";
 
+// The Lauren easter egg is exclusive to the staging hostname.
+if (window.location.hostname === "staging-rapportaimedical.netlify.app") {
+  const laurenRain = document.createElement("script");
+  laurenRain.src = "/styles/lauren-rain.js";
+  laurenRain.defer = true;
+  document.head.appendChild(laurenRain);
+}
+
 function t(en, zh) {
   return IS_ZH ? zh : en;
 }
