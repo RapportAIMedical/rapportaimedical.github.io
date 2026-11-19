@@ -1,9 +1,10 @@
 (() => {
   const trigger = "lauren";
+  const imageUrl = "/assets/lauren-head-cutout.png";
   let typed = "";
   let lastKeyAt = 0;
   let rain = null;
-  let cleanupTimer = null;
+  let spawnTimer = null;
 
   const style = document.createElement("style");
   style.textContent = `
@@ -19,11 +20,8 @@
       top: 0;
       left: 0;
       width: var(--size);
-      height: var(--size);
-      border: 3px solid white;
-      border-radius: 50%;
-      background: #eee url('/assets/lauren-prank.png') center 37% / 265% no-repeat;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
+      height: auto;
+      max-width: none;
       animation: lauren-fall var(--duration) linear var(--delay) both;
       will-change: transform;
     }
@@ -41,35 +39,53 @@
   `;
   document.head.appendChild(style);
 
-  function makeItRain() {
-    if (rain) rain.remove();
-    clearTimeout(cleanupTimer);
+  function spawnFace(initial = false) {
+    if (!rain) return;
 
+    // Keep a fixed upper bound even if a background tab throttles animations.
+    if (rain.childElementCount >= 36) rain.firstElementChild.remove();
+
+    const face = document.createElement("img");
+    face.className = "lauren-rain__face";
+    face.src = imageUrl;
+    face.alt = "";
+    face.draggable = false;
+    const duration = 4 + Math.random() * 2;
+    face.style.setProperty("--size", `${70 + Math.random() * 65}px`);
+    face.style.setProperty("--x", `${Math.random() * 100}vw`);
+    face.style.setProperty("--drift", `${(Math.random() - .5) * 180}px`);
+    face.style.setProperty("--spin", `${(Math.random() - .5) * 950}deg`);
+    face.style.setProperty("--duration", `${duration}s`);
+    face.style.setProperty("--delay", initial ? `${-Math.random() * duration * .75}s` : "0s");
+    face.addEventListener("animationend", () => face.remove(), { once: true });
+    rain.appendChild(face);
+  }
+
+  function stopRain() {
+    clearInterval(spawnTimer);
+    spawnTimer = null;
+    rain?.remove();
+    rain = null;
+  }
+
+  function startRain() {
     rain = document.createElement("div");
     rain.className = "lauren-rain";
     rain.setAttribute("aria-hidden", "true");
-
-    const count = Math.min(48, Math.max(24, Math.floor(window.innerWidth / 22)));
-    for (let i = 0; i < count; i += 1) {
-      const face = document.createElement("span");
-      face.className = "lauren-rain__face";
-      face.style.setProperty("--size", `${55 + Math.random() * 55}px`);
-      face.style.setProperty("--x", `${Math.random() * 100}vw`);
-      face.style.setProperty("--drift", `${(Math.random() - .5) * 180}px`);
-      face.style.setProperty("--spin", `${(Math.random() - .5) * 950}deg`);
-      face.style.setProperty("--duration", `${4 + Math.random() * 2}s`);
-      face.style.setProperty("--delay", `${Math.random() * 2}s`);
-      rain.appendChild(face);
-    }
-
     document.body.appendChild(rain);
-    cleanupTimer = window.setTimeout(() => {
-      rain?.remove();
-      rain = null;
-    }, 8200);
+
+    const initialCount = Math.min(16, Math.max(8, Math.floor(window.innerWidth / 85)));
+    for (let i = 0; i < initialCount; i += 1) spawnFace(true);
+    spawnTimer = window.setInterval(() => spawnFace(), 320);
   }
 
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && rain) {
+      stopRain();
+      typed = "";
+      return;
+    }
+
     const target = event.target;
     if (
       event.ctrlKey || event.metaKey || event.altKey ||
@@ -89,7 +105,8 @@
     typed = (typed + event.key.toLowerCase()).slice(-trigger.length);
     if (typed === trigger) {
       typed = "";
-      makeItRain();
+      if (rain) stopRain();
+      else startRain();
     }
   });
 })();
